@@ -1267,6 +1267,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color bee
 color black
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
@@ -1326,6 +1327,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -2557,6 +2559,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_baseline_arrow_back_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2752,6 +2755,7 @@ id chain2
 id chains
 id checkbox
 id checked
+id chk_All
 id chronometer
 id circle_center
 id clear_text
@@ -2858,6 +2862,7 @@ id ignore
 id ignoreRequest
 id image
 id immediateStop
+id imv_Back
 id included
 id indeterminate
 id info
@@ -2877,6 +2882,7 @@ id line3
 id linear
 id listMode
 id list_item
+id lv_GioHang
 id marquee
 id masked
 id match_constraint
@@ -3092,6 +3098,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txt_TitleGioHang
 id unchecked
 id uniform
 id unlabeled

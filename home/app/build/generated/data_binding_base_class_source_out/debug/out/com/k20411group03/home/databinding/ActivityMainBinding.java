@@ -4,25 +4,48 @@ package com.k20411group03.home.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.k20411group03.home.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayout rootView;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView) {
+  @NonNull
+  public final CheckBox chkAll;
+
+  @NonNull
+  public final ImageView imvBack;
+
+  @NonNull
+  public final ListView lvGioHang;
+
+  @NonNull
+  public final TextView txtTitleGioHang;
+
+  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull CheckBox chkAll,
+      @NonNull ImageView imvBack, @NonNull ListView lvGioHang, @NonNull TextView txtTitleGioHang) {
     this.rootView = rootView;
+    this.chkAll = chkAll;
+    this.imvBack = imvBack;
+    this.lvGioHang = lvGioHang;
+    this.txtTitleGioHang = txtTitleGioHang;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +66,38 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @NonNull
   public static ActivityMainBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.chk_All;
+      CheckBox chkAll = ViewBindings.findChildViewById(rootView, id);
+      if (chkAll == null) {
+        break missingId;
+      }
 
-    return new ActivityMainBinding((ConstraintLayout) rootView);
+      id = R.id.imv_Back;
+      ImageView imvBack = ViewBindings.findChildViewById(rootView, id);
+      if (imvBack == null) {
+        break missingId;
+      }
+
+      id = R.id.lv_GioHang;
+      ListView lvGioHang = ViewBindings.findChildViewById(rootView, id);
+      if (lvGioHang == null) {
+        break missingId;
+      }
+
+      id = R.id.txt_TitleGioHang;
+      TextView txtTitleGioHang = ViewBindings.findChildViewById(rootView, id);
+      if (txtTitleGioHang == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((LinearLayout) rootView, chkAll, imvBack, lvGioHang,
+          txtTitleGioHang);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

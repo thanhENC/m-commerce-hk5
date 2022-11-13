@@ -29,13 +29,6 @@
             android:textSize="20sp" />
     </FrameLayout>
 
-<!--    <ScrollView-->
-<!--        android:layout_width="fill_parent"-->
-<!--        android:layout_height="wrap_content">-->
-<!--        -->
-
-<!--    </ScrollView>-->
-
     <CheckBox
         android:id="@+id/chk_All"
         android:layout_width="wrap_content"
@@ -48,15 +41,52 @@
     <ListView
         android:id="@+id/lv_GioHang"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp" />
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="20dp" />
 
     <TextView
+        android:id="@+id/txt_ChonCoupon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="10dp"
         android:text="Chọn Coupon"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_PhiVanChuyen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="10dp"
+        android:text="Phí Vận Chuyển"
         android:textSize="20sp"
-        android:paddingLeft="10dp"
-        android:background="@color/white"/>
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/txt_TongTien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="10dp"
+        android:text="Tổng thanh toán: 200.000đ"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="end"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btn_DatHang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_500"
+        android:text="ĐẶT HÀNG"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>

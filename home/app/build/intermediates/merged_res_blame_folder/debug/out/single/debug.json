@@ -40,8 +40,16 @@
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_image_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_image_24.xml"
+    },
+    {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_remove_circle_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_remove_circle_24.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\xml_data_extraction_rules.xml.flat",
@@ -50,6 +58,10 @@
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_add_circle_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_add_circle_24.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-xxhdpi_ic_launcher.webp.flat",
@@ -74,5 +86,9 @@
     {
         "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_arrow_back_24.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_arrow_back_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_cartitem.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\cartitem.xml"
     }
 ]

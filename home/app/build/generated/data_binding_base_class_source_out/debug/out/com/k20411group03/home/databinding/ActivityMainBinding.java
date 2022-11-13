@@ -4,6 +4,7 @@ package com.k20411group03.home.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,6 +24,9 @@ public final class ActivityMainBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final Button btnDatHang;
+
+  @NonNull
   public final CheckBox chkAll;
 
   @NonNull
@@ -32,15 +36,30 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ListView lvGioHang;
 
   @NonNull
+  public final TextView txtChonCoupon;
+
+  @NonNull
+  public final TextView txtPhiVanChuyen;
+
+  @NonNull
   public final TextView txtTitleGioHang;
 
-  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull CheckBox chkAll,
-      @NonNull ImageView imvBack, @NonNull ListView lvGioHang, @NonNull TextView txtTitleGioHang) {
+  @NonNull
+  public final TextView txtTongTien;
+
+  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull Button btnDatHang,
+      @NonNull CheckBox chkAll, @NonNull ImageView imvBack, @NonNull ListView lvGioHang,
+      @NonNull TextView txtChonCoupon, @NonNull TextView txtPhiVanChuyen,
+      @NonNull TextView txtTitleGioHang, @NonNull TextView txtTongTien) {
     this.rootView = rootView;
+    this.btnDatHang = btnDatHang;
     this.chkAll = chkAll;
     this.imvBack = imvBack;
     this.lvGioHang = lvGioHang;
+    this.txtChonCoupon = txtChonCoupon;
+    this.txtPhiVanChuyen = txtPhiVanChuyen;
     this.txtTitleGioHang = txtTitleGioHang;
+    this.txtTongTien = txtTongTien;
   }
 
   @Override
@@ -70,6 +89,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_DatHang;
+      Button btnDatHang = ViewBindings.findChildViewById(rootView, id);
+      if (btnDatHang == null) {
+        break missingId;
+      }
+
       id = R.id.chk_All;
       CheckBox chkAll = ViewBindings.findChildViewById(rootView, id);
       if (chkAll == null) {
@@ -88,14 +113,32 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.txt_ChonCoupon;
+      TextView txtChonCoupon = ViewBindings.findChildViewById(rootView, id);
+      if (txtChonCoupon == null) {
+        break missingId;
+      }
+
+      id = R.id.txt_PhiVanChuyen;
+      TextView txtPhiVanChuyen = ViewBindings.findChildViewById(rootView, id);
+      if (txtPhiVanChuyen == null) {
+        break missingId;
+      }
+
       id = R.id.txt_TitleGioHang;
       TextView txtTitleGioHang = ViewBindings.findChildViewById(rootView, id);
       if (txtTitleGioHang == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayout) rootView, chkAll, imvBack, lvGioHang,
-          txtTitleGioHang);
+      id = R.id.txt_TongTien;
+      TextView txtTongTien = ViewBindings.findChildViewById(rootView, id);
+      if (txtTongTien == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((LinearLayout) rootView, btnDatHang, chkAll, imvBack,
+          lvGioHang, txtChonCoupon, txtPhiVanChuyen, txtTitleGioHang, txtTongTien);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

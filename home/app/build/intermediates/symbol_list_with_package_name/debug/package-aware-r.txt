@@ -2559,7 +2559,10 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_baseline_add_circle_24
 drawable ic_baseline_arrow_back_24
+drawable ic_baseline_image_24
+drawable ic_baseline_remove_circle_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2740,6 +2743,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_DatHang
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2756,6 +2760,7 @@ id chains
 id checkbox
 id checked
 id chk_All
+id chk_ProductBuy
 id chronometer
 id circle_center
 id clear_text
@@ -2862,7 +2867,10 @@ id ignore
 id ignoreRequest
 id image
 id immediateStop
+id imv_Add
 id imv_Back
+id imv_Minus
+id imv_ProductImage
 id included
 id indeterminate
 id info
@@ -3098,7 +3106,15 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txt_ChonCoupon
+id txt_PhiVanChuyen
+id txt_ProductColor
+id txt_ProductName
+id txt_ProductPrice
+id txt_ProductQuantity
+id txt_ProductSize
 id txt_TitleGioHang
+id txt_TongTien
 id unchecked
 id uniform
 id unlabeled
@@ -3245,6 +3261,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout cartitem
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

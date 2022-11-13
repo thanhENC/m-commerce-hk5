@@ -1,6 +1,8 @@
 package com.k20411group03.adapters;
 
 import android.app.Activity;
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -26,12 +28,12 @@ public class ProductAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return products.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return products.get(i);
     }
 
     @Override
@@ -44,8 +46,18 @@ public class ProductAdapter extends BaseAdapter {
         ViewHolder viewHolder;
 
         if(view == null){
+            //link views
             viewHolder = new ViewHolder();
-            view = activity.getLayoutInflater().inflate(item_layout, null);
+            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(item_layout, null);
+
+            viewHolder.txtProductName = view.findViewById(R.id.txt_ProductName);
+            viewHolder.txtProductPrice = view.findViewById(R.id.txt_ProductPrice);
+            viewHolder.txtProductSize = view.findViewById(R.id.txt_ProductSize);
+            viewHolder.txtProductColor = view.findViewById(R.id.txt_ProductColor);
+            viewHolder.txtProductQuantity = view.findViewById(R.id.txt_ProductQuantity);
+            viewHolder.imvProductImage = view.findViewById(R.id.imv_ProductImage);
+            viewHolder.chkProductBuy = view.findViewById(R.id.chk_ProductBuy);
 
             view.setTag(viewHolder);
         }
@@ -55,19 +67,20 @@ public class ProductAdapter extends BaseAdapter {
 
         //binding data
         Product product = products.get(i);
-        viewHolder.imvProductThumb.setImageResource(product.getProduct_Image());
+        viewHolder.imvProductImage.setImageResource(product.getProduct_Image());
         viewHolder.txtProductName.setText(product.getProduct_Name());
         viewHolder.txtProductSize.setText(product.getProduct_Size());
         viewHolder.txtProductColor.setText(product.getProduct_Color());
-        viewHolder.txtProductPrice.setText("$" + String.valueOf(product.getProduct_Price()));
+        viewHolder.txtProductPrice.setText(String.valueOf(product.getProduct_Price()) + " Đ");
         viewHolder.txtProductQuantity.setText(String.valueOf(product.getProduct_Quantity()));
+        viewHolder.chkProductBuy.setChecked(product.isProduct_Checked());
 
         return view;
     }
 
     class ViewHolder{
-        ImageView imvProductThumb;
+        ImageView imvProductImage;
         TextView txtProductName, txtProductPrice, txtProductSize, txtProductColor, txtProductQuantity;
-        CheckBox chkProduct;
+        CheckBox chkProductBuy;
     }
 }

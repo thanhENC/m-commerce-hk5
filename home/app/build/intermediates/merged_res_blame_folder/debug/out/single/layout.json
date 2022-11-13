@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\cartitem.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\cartitem.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.k20411group03.home.app-mergeDebugResources-28:/layout/activity_main.xml",
+        "source": "com.k20411group03.home.app-main-31:/layout/activity_main.xml"
+    }
+]

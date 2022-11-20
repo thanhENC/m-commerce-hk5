@@ -7,32 +7,33 @@
     <ImageView
         android:id="@+id/imv_ProductImage"
         android:layout_width="150dp"
-        android:layout_height="200dp"
+        android:layout_height="175dp"
         android:src="@drawable/ic_baseline_image_24"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="175dp"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp">
+        android:paddingHorizontal="10dp"
+        android:gravity="center">
         <TextView
             android:id="@+id/txt_ProductName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cơm quê mười khó"
             android:textStyle="bold"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
         <TextView
             android:id="@+id/txt_ProductSize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Size: M"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/txt_ProductColor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Color: Red"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,7 +49,7 @@
                 android:layout_width="50sp"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:gravity="center"/>
             <ImageView
                 android:id="@+id/imv_Add"
@@ -67,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:text="100.000 Đ"
                 android:textStyle="bold"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 />
             <CheckBox
                 android:id="@+id/chk_ProductBuy"

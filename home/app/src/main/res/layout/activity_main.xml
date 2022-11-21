@@ -29,134 +29,22 @@
             android:textSize="20sp" />
     </FrameLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="480dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="510dp"
-            android:orientation="vertical"
-            android:scrollbars="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Địa chỉ nhận hàng"
-                        android:layout_marginStart="28dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:textStyle="bold"
-                        android:textSize="20sp"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:id="@+id/customersurname"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:hint="Le"
-                            android:layout_marginStart="25dp"
-                            android:textSize="20sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" "
-                            android:textSize="20sp"/>
-
-                        <TextView
-                            android:id="@+id/customerfirstname"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:hint="Thanh Hai"
-                            android:textSize="20sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" | (+84) "
-                            android:textSize="20sp"/>
-
-                        <TextView
-                            android:id="@+id/phonenumber"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:hint="0123456789"
-                            android:textSize="20sp"/>
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/address"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Here is your address"
-                        android:layout_marginStart="25dp"
-                        android:textSize="20sp"/>
-                    <TextView
-                        android:id="@+id/noteaddress"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Here is your note"
-                        android:textStyle="italic"
-                        android:layout_marginStart="25dp"
-                        android:textSize="20sp"/>
-
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/btn_address"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#CFCFCF"
-                    android:layout_gravity="right"
-                    android:text="CẬP NHẬT ĐỊA CHỈ"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginTop="10dp"/>
-
-                <CheckBox
-                    android:id="@+id/chk_All"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:text="Tất cả"
-                    android:textSize="20sp"
-                    android:layout_marginEnd="10dp"/>
-
-                <ListView
-                    android:id="@+id/lv_GioHang"
-                    android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginBottom="20dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
-
-    <TextView
-        android:id="@+id/txt_Phuongthucthanhtoan"
-        android:layout_width="match_parent"
+    <CheckBox
+        android:id="@+id/chk_All"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:paddingHorizontal="10dp"
-        android:hint="Chọn Phương thức thanh toán"
-        android:textSize="20sp" />
+        android:layout_gravity="end"
+        android:text="Tất cả"
+        android:textSize="18sp"
+        android:layout_marginEnd="10dp"/>
+
+    <ListView
+        android:id="@+id/lv_GioHang"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="20dp" />
 
     <TextView
         android:id="@+id/txt_ChonCoupon"
@@ -165,18 +53,7 @@
         android:background="@color/white"
         android:paddingHorizontal="10dp"
         android:text="Chọn Coupon"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/txt_PhiVanChuyen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:paddingHorizontal="10dp"
-        android:text="Phí Vận Chuyển"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"/>
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/txt_TongTien"
@@ -185,7 +62,7 @@
         android:background="@color/white"
         android:paddingHorizontal="10dp"
         android:text="Tổng thanh toán: 200.000đ"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="end"
         android:layout_marginTop="10dp"/>

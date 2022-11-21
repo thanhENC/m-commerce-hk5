@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bee"
+    tools:context=".ThanhToanPre">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/gray">
+        <ImageView
+            android:id="@+id/imv_Back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+        <TextView
+            android:id="@+id/txt_TitleThanhToan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="THANH TOÁN"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/txt_TitleDiaChi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Địa chỉ nhận hàng >"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:id="@+id/txt_NguoiNhanSDT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hiền Phú | 097 123 4567"
+        android:textSize="18sp"
+        android:layout_marginHorizontal="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gò Vấp, Tây Ninh, Bình Dương, Bình Định, Đồng Tháp"
+        android:textSize="18sp"
+        android:layout_marginHorizontal="10dp" />
+
+    <ListView
+        android:id="@+id/lv_GioHang"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="20dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingHorizontal="10dp"
+            android:text="Chọn Coupon"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/txt_GiaTriCoupon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:text="-100.000đ"
+            android:textSize="18sp"
+            android:gravity="end"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingHorizontal="10dp"
+            android:text="Phí vận chuyển"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/txt_PhiVanChuyen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:text="0đ"
+            android:textSize="18sp"
+            android:gravity="end"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingHorizontal="10dp"
+            android:text="Phương thức thanh toán"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/txt_PTThanhToan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:text="BIDV [*34999]"
+            android:textSize="18sp"
+            android:gravity="end"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/txt_TongTien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="10dp"
+        android:text="Tổng thanh toán: 200.000đ"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="end"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/white"
+        android:paddingHorizontal="10dp"
+        android:hint="Ghi chú cho The Weekdays"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btn_DatHang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_500"
+        android:text="ĐẶT HÀNG"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"/>
+
+
+
+</LinearLayout>

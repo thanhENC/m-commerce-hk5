@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:text="Tất cả"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:layout_marginEnd="10dp"/>
 
     <ListView
@@ -53,17 +53,7 @@
         android:background="@color/white"
         android:paddingHorizontal="10dp"
         android:text="Chọn Coupon"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/txt_PhiVanChuyen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:paddingHorizontal="10dp"
-        android:text="Phí Vận Chuyển"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"/>
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/txt_TongTien"
@@ -72,7 +62,7 @@
         android:background="@color/white"
         android:paddingHorizontal="10dp"
         android:text="Tổng thanh toán: 200.000đ"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="end"
         android:layout_marginTop="10dp"/>

@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Home"
         tools:targetApi="31" >
+        
         <activity
             android:name=".DangKy"
             android:exported="true" >
@@ -20,28 +21,35 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        
         <activity
             android:name=".DangNhap"
             android:exported="true" >
-
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        
         <activity
             android:name=".ThanhToan"
-            android:exported="false" >
+            android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        
+        <activity
+            android:name=".ThanhToanPre"
+            android:exported="true" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        
         <activity
             android:name=".MainActivity"
             android:exported="true" >
@@ -49,6 +57,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        
     </application>
 
 </manifest>

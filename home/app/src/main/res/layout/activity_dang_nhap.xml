@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DangKy"
-    android:orientation="vertical"
-    android:fillViewport="true">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    tools:context=".DangNhap"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Đăng ký"
+        android:text="Đăng nhập"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
@@ -27,12 +21,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Số điện thoại"
+            android:text="Số điện thoại/Email/Tên đăng nhập"
             android:layout_marginLeft="30dp"/>
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,71 +41,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:textSize="18sp"
-                android:inputType="phone"/>
-        </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Email"
-            android:layout_marginLeft="30dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_baseline_email_24"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="18sp"
-                android:inputType="textEmailAddress"/>
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Tên đăng nhập"
-            android:layout_marginLeft="30dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_baseline_person_24"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="18sp"
                 android:inputType="text"/>
         </LinearLayout>
     </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
@@ -134,34 +72,16 @@
                 android:inputType="textPassword"/>
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Nhập lại mật khẩu"
-            android:layout_marginLeft="20dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_baseline_lock_24"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="18sp"
-                android:inputType="textPassword"/>
-        </LinearLayout>
 
-    </LinearLayout>
+
+    <TextView
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quên mật khẩu?"
+        android:layout_gravity="center"
+        android:textSize="20sp"/>
+
     <Button
         android:textAllCaps="false"
         android:layout_width="match_parent"
@@ -207,8 +127,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
             android:adjustViewBounds="true"
-            android:maxHeight="25dp"
-            android:maxWidth="25dp"
+            android:maxHeight="30dp"
+            android:maxWidth="30dp"
             android:scaleType="fitCenter"
             android:src="@drawable/google"/>
 
@@ -238,8 +158,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
             android:adjustViewBounds="true"
-            android:maxHeight="25dp"
-            android:maxWidth="25dp"
+            android:maxHeight="30dp"
+            android:maxWidth="30dp"
             android:scaleType="fitCenter"
             android:src="@drawable/facebook"/>
 
@@ -250,26 +170,18 @@
             android:textSize="18sp"
             android:paddingRight="30dp"
             android:gravity="center"
-            android:text="Tiếp tục với Facebook" />
+            android:text="Tiếp tục với Facebook"/>
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bằng việc đăng ký, bạn đồng ý với Điều khoản dịch vụ và chính sách bảo mật của The Weekdays"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_gravity="center"
-        android:textSize="15sp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bạn đã có tài khoản?"
+            android:text="Bạn chưa có tài khoản?"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:textSize="20sp"/>
@@ -277,11 +189,11 @@
             android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đăng nhập"
+            android:text="Đăng ký"
             android:textStyle="bold"
             android:textColor="#EF8D42"
             android:textSize="25sp"/>
-    </LinearLayout>
+
 
     </LinearLayout>
-</ScrollView>
+</LinearLayout>

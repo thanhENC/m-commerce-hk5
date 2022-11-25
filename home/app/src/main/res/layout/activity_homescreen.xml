@@ -13,8 +13,7 @@
         android:text="The Weekdays"
         android:layout_gravity="center"
         android:paddingTop="450dp"
-        android:textSize="30dp"
-        android:fontFamily="@font/futura_regular"
+        android:textSize="30sp"
         android:textColor="@color/black"
         />
 
@@ -23,7 +22,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:fontFamily="@font/futura_regular"
         android:paddingLeft="80dp"
         android:paddingRight="80dp"
         android:text="Định nghĩa lại thời trang bằng cách riêng của bạn
@@ -37,10 +35,8 @@
         android:text="KHÁM PHÁ"
         android:layout_gravity="center"
         android:layout_margin="15dp"
-        android:fontFamily="@font/futura_bold"
         android:backgroundTint="@color/black"
         android:textSize="20sp"
         />
-
 
 </LinearLayout>

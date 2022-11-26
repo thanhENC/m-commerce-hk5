@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imv_Thumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_2" />
+
+    <TextView
+        android:id="@+id/txt_ItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/montserrat_light"
+        android:gravity="center"
+        android:text="ÁO SƠ MI SỌC CARO"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/txt_price"
+        android:text="250000đ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txt_originalPrice"
+            android:text="350000đ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
+            android:textSize="20sp"
+            android:textColor="#606060"
+            android:paddingRight="10dp"
+            android:shadowRadius="2"
+            />
+        <TextView
+            android:id="@+id/txt_discount"
+            android:text="-30%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
+            android:textSize="20sp"
+            android:textColor="#606060"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/layout_reviews">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_3"
+            android:layout_marginRight="10dp"/>
+        <TextView
+            android:id="@+id/txt_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3,5"
+            android:textSize="20sp"
+            android:layout_marginRight="5dp"/>
+        <TextView
+            android:id="@+id/txt_numOfReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(30)"/>
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

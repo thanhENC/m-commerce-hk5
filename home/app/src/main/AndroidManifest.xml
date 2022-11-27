@@ -13,14 +13,12 @@
         android:theme="@style/Theme.Home"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
             android:name=".flash_sale"
-            android:exported="true">
+            android:exported="true"/>
 
-=======
+        <activity
             android:name=".voucher_main"
             android:exported="true">
->>>>>>> c0a64e2b61873bd025455d0789ca1a6cffa3da69
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +29,6 @@
                 android:value="" />
         </activity>
         <activity
-<<<<<<< HEAD
             android:name=".Diachinhanhang"
             android:exported="false">
             <meta-data
@@ -39,8 +36,6 @@
                 android:value="" />
         </activity>
         <activity
-=======
->>>>>>> c0a64e2b61873bd025455d0789ca1a6cffa3da69
             android:name=".DangKy"
             android:exported="true">
             <meta-data
@@ -49,17 +44,14 @@
         </activity>
         <activity
             android:name=".dangnhap1"
-<<<<<<< HEAD
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-=======
-            android:exported="false">
 
->>>>>>> c0a64e2b61873bd025455d0789ca1a6cffa3da69
 
             <meta-data
                 android:name="android.app.lib_name"

@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\cartitem.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\cartitem.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_dang_ky.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_dang_ky.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_member2.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_member2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\demo.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\demo.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_dangnhap1.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_dangnhap1.xml"
+    },
+    {
+        "merged": "com.k20411group03.home.app-mergeDebugResources-28:/layout/activity_homescreen2.xml",
+        "source": "com.k20411group03.home.app-main-31:/layout/activity_homescreen2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\paymentitem.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\paymentitem.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_member1.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_member1.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_thanh_toan_pre.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_thanh_toan_pre.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_homescreen2.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_homescreen2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_dang_nhap.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_dang_nhap.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_scan1.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_scan1.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_thanh_toan.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_thanh_toan.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\payment_method.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\payment_method.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-mergeDebugResources-28:\\layout\\activity_homescreen.xml",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_homescreen.xml"
+    },
+    {
+        "merged": "com.k20411group03.home.app-mergeDebugResources-28:/layout/activity_homescreen.xml",
+        "source": "com.k20411group03.home.app-main-31:/layout/activity_homescreen.xml"
+    }
+]

@@ -1,12 +1,8 @@
 package com.k20411group03.home;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 
 import com.k20411group03.adapters.ProductAdapter;
@@ -19,10 +15,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-//    ActivityResultLauncher<Intent> launcher;
     ProductAdapter adapter;
     List<Product> products;
-    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,47 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         loadData();
-        addEvents();
-        getData();
-
-//        launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-//            if(result.getResultCode()== RESULT_OK && result.getData() != null){
-//                int pow = result.getData().getIntExtra("pow", 0);
-//                binding.txtResult.setText(String.valueOf(pow));
-//            }
-//        });
-    }
-
-    private void getData() {
-        intent = getIntent();
-        //int numb = Integer.parseInt(intent.getStringExtra("numb"));
-        binding.customersurname.setText(intent.getStringExtra("Ho"));
-        binding.customerfirstname.setText(intent.getStringExtra("Ten"));
-        binding.phonenumber.setText(intent.getStringExtra("Phone"));
-        binding.address.setText(intent.getStringExtra("Province"));
-        binding.noteaddress.setText(intent.getStringExtra("Note"));
-        binding.txtPhuongthucthanhtoan.setText(intent.getStringExtra("Payment"));
-
-    }
-
-    private void addEvents() {
-        binding.btnAddress.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                //Open Dia Chi Nhan Hang
-                Intent intent = new Intent (MainActivity.this,DiaChiNhanHang.class);
-                startActivity(intent);
-            }
-        });
-
-        binding.txtPhuongthucthanhtoan.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                //Open Phuong thuc thanh toan
-                Intent intent = new Intent (MainActivity.this,ThanhToan.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void loadData() {

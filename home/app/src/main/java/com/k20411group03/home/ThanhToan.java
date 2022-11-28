@@ -1,8 +1,11 @@
 package com.k20411group03.home;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 
 import com.k20411group03.adapters.PaymentAdapter;
@@ -20,6 +23,7 @@ public class ThanhToan extends AppCompatActivity {
     ActivityThanhToanBinding binding;
     PaymentAdapter adapter;
     List<Payment> payments;
+    ActivityResultLauncher<Intent> launcher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,26 @@ public class ThanhToan extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         loadData();
+        addEvents();
+    }
+
+    private void addEvents() {
+        binding.btnConfirmpayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Open gio hang
+                Intent intent = new Intent(ThanhToan.this, MainActivity.class);
+                intent.putExtra("Payment", "Momo");
+
+                startActivity(intent);
+                //Để dữ liệu được gửi đi và trả về
+                //Cach 1: Sử dụng startActivityForResult
+                //                startActivityForResult(intent,REQUEST_CODE);
+
+                //Cach 2: Sử dụng ActivityResultLauncher
+                launcher.launch(intent);
+            }
+        });
     }
 
     private void loadData() {

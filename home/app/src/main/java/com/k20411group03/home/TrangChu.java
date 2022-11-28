@@ -56,7 +56,7 @@ public class TrangChu extends AppCompatActivity {
         //Set up viewpager
         bannerList = new ArrayList<>();
         viewPager = findViewById(R.id.vp_HomeBanner);
-        int[] images = {R.drawable.img,R.drawable.banner1};
+        int[] images = {R.drawable.banner2,R.drawable.banner1};
         for (int i =0; i< images.length ; i++){
 
             Banners banner = new Banners(images[i]);

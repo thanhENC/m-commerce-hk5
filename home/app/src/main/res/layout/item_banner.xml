@@ -7,5 +7,5 @@
         android:layout_width="match_parent"
         android:layout_height="205dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/img"/>
+        android:src="@drawable/banner2"/>
 </LinearLayout>

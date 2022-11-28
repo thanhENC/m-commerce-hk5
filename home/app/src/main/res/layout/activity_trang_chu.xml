@@ -115,19 +115,19 @@
                     android:id="@+id/imv_Twitter"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:src="@drawable/img_4"
+                    android:src="@drawable/twitter"
                     android:layout_weight="1"/>
                 <ImageView
                     android:id="@+id/imv_Instagram"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    android:src="@drawable/img_5"
+                    android:src="@drawable/instagram"
                     android:layout_weight="1"/>
                 <ImageView
                     android:id="@+id/imv_Youtube"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:src="@drawable/img_6"
+                    android:src="@drawable/youtube"
                     android:layout_weight="1"/>
             </LinearLayout>
             <ImageView

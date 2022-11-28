@@ -2,7 +2,6 @@ package com.k20411group03.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -12,7 +11,6 @@ import android.view.View;
 
 import com.k20411group03.adapters.BannerAdapter;
 import com.k20411group03.adapters.ItemAdapter;
-import com.k20411group03.home.R;
 import com.k20411group03.models.Item;
 
 import java.util.ArrayList;
@@ -58,7 +56,7 @@ public class TrangChu extends AppCompatActivity {
         //Set up viewpager
         bannerList = new ArrayList<>();
         viewPager = findViewById(R.id.vp_HomeBanner);
-        int[] images = {R.drawable.img,R.drawable.img_1};
+        int[] images = {R.drawable.img,R.drawable.banner1};
         for (int i =0; i< images.length ; i++){
 
             Banners banner = new Banners(images[i]);
@@ -74,12 +72,12 @@ public class TrangChu extends AppCompatActivity {
     }
     private List<Item> getListSaleItem(){
         List<Item> list = new ArrayList<>();
-        list.add(new Item(R.drawable.img_2,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
-        list.add(new Item(R.drawable.img_2,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
-        list.add(new Item(R.drawable.img_2,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
-        list.add(new Item(R.drawable.img_2,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
-        list.add(new Item(R.drawable.img_2,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
-        list.add(new Item(R.drawable.img_2,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
+        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
+        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
+        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
+        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
+        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
+        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
         return list;
     }
 }

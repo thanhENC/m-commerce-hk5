@@ -13,6 +13,23 @@
             android:id="@+id/vp_HomeBanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imv_SaleBanner"
+                android:layout_width="match_parent"
+                android:layout_height="165dp"
+                android:src="@drawable/bannersale"
+                android:scaleType="fitCenter"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#A30000"
+                android:text="Winter sale\nup to 50% off"
+                android:textColor="@color/bee"/>
+        </FrameLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,6 +59,36 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:orientation="horizontal"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="#FF0000"
+                android:textSize="20sp"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xem thêm >>"
+                android:fontFamily="@font/montserrat_light"
+                android:textColor="#FF0000"
+                android:textSize="20sp"
+                android:gravity="right|center_vertical"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <GridView
+            android:id="@+id/gv_Category"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:numColumns="4"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

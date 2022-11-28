@@ -31,6 +31,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        
         <activity
             android:name=".TrangChu"
             android:exported="true">
@@ -38,15 +39,16 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        
         <activity
             android:name=".dangnhap1"
             android:exported="false">
-
 
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        
         <activity
             android:name=".DangNhap"
             android:exported="true">

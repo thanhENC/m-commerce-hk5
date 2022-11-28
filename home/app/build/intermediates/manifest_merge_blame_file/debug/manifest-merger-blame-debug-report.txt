@@ -1,0 +1,214 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.k20411group03.home"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+8-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:5:5-111:19
+12        android:allowBackup="true"
+12-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.8.0] C:\Users\Admin\.gradle\caches\transforms-3\87a796fe63836d99a2198ac6a6284cb3\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+14        android:dataExtractionRules="@xml/data_extraction_rules"
+14-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:7:9-65
+15        android:debuggable="true"
+16        android:extractNativeLibs="false"
+17        android:fullBackupContent="@xml/backup_rules"
+17-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:8:9-54
+18        android:icon="@mipmap/ic_launcher"
+18-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:9:9-43
+19        android:label="@string/app_name"
+19-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:10:9-41
+20        android:roundIcon="@mipmap/ic_launcher_round"
+20-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:11:9-54
+21        android:supportsRtl="true"
+21-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:12:9-35
+22        android:testOnly="true"
+23        android:theme="@style/Theme.Home" >
+23-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:13:9-42
+24        <activity
+24-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:16:9-23:20
+25            android:name="com.k20411group03.home.DangKy"
+25-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:17:13-35
+26            android:exported="true" >
+26-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:18:13-36
+27            <meta-data
+27-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:20:13-22:36
+28                android:name="android.app.lib_name"
+28-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:21:17-52
+29                android:value="" />
+29-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:22:17-33
+30        </activity>
+31        <activity
+31-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:25:9-36:20
+32            android:name="com.k20411group03.home.dangnhap1"
+32-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:26:13-38
+33            android:exported="true" >
+33-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:27:13-36
+34            <intent-filter>
+34-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:28:13-32:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:29:17-69
+35-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:29:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:31:17-77
+37-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:31:27-74
+38            </intent-filter>
+39
+40            <meta-data
+40-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:20:13-22:36
+41                android:name="android.app.lib_name"
+41-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:21:17-52
+42                android:value="" />
+42-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:22:17-33
+43        </activity>
+44        <activity
+44-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:38:9-45:20
+45            android:name="com.k20411group03.home.DangNhap"
+45-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:39:13-37
+46            android:exported="true" >
+46-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:40:13-36
+47            <meta-data
+47-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:20:13-22:36
+48                android:name="android.app.lib_name"
+48-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:21:17-52
+49                android:value="" />
+49-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:22:17-33
+50        </activity>
+51        <activity
+51-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:47:9-53:20
+52            android:name="com.k20411group03.home.homescreen"
+52-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:48:13-39
+53            android:exported="true" >
+53-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:49:13-36
+54            <meta-data
+54-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:20:13-22:36
+55                android:name="android.app.lib_name"
+55-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:21:17-52
+56                android:value="" />
+56-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:22:17-33
+57        </activity>
+58        <activity
+58-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:55:9-61:20
+59            android:name="com.k20411group03.home.homescreen2"
+59-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:56:13-40
+60            android:exported="true" >
+60-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:57:13-36
+61            <meta-data
+61-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:20:13-22:36
+62                android:name="android.app.lib_name"
+62-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:21:17-52
+63                android:value="" />
+63-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:22:17-33
+64        </activity>
+65        <activity
+65-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:63:9-69:20
+66            android:name="com.k20411group03.home.member1"
+66-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:64:13-36
+67            android:exported="true" >
+67-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:65:13-36
+68            <meta-data
+68-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:20:13-22:36
+69                android:name="android.app.lib_name"
+69-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:21:17-52
+70                android:value="" />
+70-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:22:17-33
+71        </activity>
+72        <activity
+72-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:71:9-77:20
+73            android:name="com.k20411group03.home.member2"
+73-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:72:13-36
+74            android:exported="true" >
+74-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:73:13-36
+75            <meta-data
+75-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:20:13-22:36
+76                android:name="android.app.lib_name"
+76-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:21:17-52
+77                android:value="" />
+77-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:22:17-33
+78        </activity>
+79        <activity
+79-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:79:9-85:20
+80            android:name="com.k20411group03.home.scan1"
+80-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:80:13-34
+81            android:exported="true" >
+81-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:81:13-36
+82            <meta-data
+82-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:20:13-22:36
+83                android:name="android.app.lib_name"
+83-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:21:17-52
+84                android:value="" />
+84-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:22:17-33
+85        </activity>
+86        <activity
+86-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:87:9-93:20
+87            android:name="com.k20411group03.home.ThanhToan"
+87-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:88:13-38
+88            android:exported="true" >
+88-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:89:13-36
+89            <meta-data
+89-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:20:13-22:36
+90                android:name="android.app.lib_name"
+90-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:21:17-52
+91                android:value="" />
+91-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:22:17-33
+92        </activity>
+93        <activity
+93-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:95:9-101:20
+94            android:name="com.k20411group03.home.ThanhToanPre"
+94-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:96:13-41
+95            android:exported="true" >
+95-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:97:13-36
+96            <meta-data
+96-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:20:13-22:36
+97                android:name="android.app.lib_name"
+97-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:21:17-52
+98                android:value="" />
+98-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:22:17-33
+99        </activity>
+100        <activity
+100-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:103:9-109:20
+101            android:name="com.k20411group03.home.MainActivity"
+101-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:104:13-41
+102            android:exported="true" >
+102-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:105:13-36
+103            <meta-data
+103-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:20:13-22:36
+104                android:name="android.app.lib_name"
+104-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:21:17-52
+105                android:value="" />
+105-->F:\AndroidFolder\m-commerce-hk5\home\app\src\main\AndroidManifest.xml:22:17-33
+106        </activity>
+107
+108        <provider
+108-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+109            android:name="androidx.startup.InitializationProvider"
+109-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+110            android:authorities="com.k20411group03.home.androidx-startup"
+110-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+111            android:exported="false" >
+111-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+112            <meta-data
+112-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+113                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+113-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+114                android:value="androidx.startup" />
+114-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+115            <meta-data
+115-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+116                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+116-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+117                android:value="androidx.startup" />
+117-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+118        </provider>
+119    </application>
+120
+121</manifest>

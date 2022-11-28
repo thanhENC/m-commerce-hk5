@@ -1,0 +1,262 @@
+[
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_rule.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\rule.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable-v24_payment_momo.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable-v24\\payment_momo.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_language.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\language.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable-v24_facebook.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable-v24\\facebook.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_help.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\help.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_setting.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\setting.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_homescreen2.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_homescreen2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_my_custom_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\my_custom_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_arrow_back_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_arrow_back_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_cartitem.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\cartitem.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_member1.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_member1.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable-v24_payment_cash.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable-v24\\payment_cash.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_lock.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\lock.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_close_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_close_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_scan.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\scan.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_order.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\order.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_img_1.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\img_1.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_heart.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\heart.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_thanh_toan.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_thanh_toan.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_user.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\user.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_member2.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_member2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_scan1.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_scan1.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_paymentitem.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\paymentitem.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_nen.jpg.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\nen.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_image_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_image_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_payment_method.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\payment_method.xml"
+    },
+    {
+        "merged": "com.k20411group03.home.app-merged_res-29:/layout_activity_homescreen.xml.flat",
+        "source": "com.k20411group03.home.app-main-31:/layout/activity_homescreen.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_dang_nhap.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_dang_nhap.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_homescreen.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_homescreen.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_demo.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\demo.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable-v24_payment_zalo.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable-v24\\payment_zalo.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable-v24_payment_banking.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable-v24\\payment_banking.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_chat.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\chat.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable-v24_google.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable-v24\\google.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_img_2.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\img_2.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_voucher.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\voucher.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_email_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_email_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_lock_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_lock_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_thanh_toan_pre.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_thanh_toan_pre.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_remove_circle_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_remove_circle_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_dang_ky.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_dang_ky.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_add_circle_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_add_circle_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_img.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\img.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_userlogo.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\userlogo.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\layout_activity_dangnhap1.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\layout\\activity_dangnhap1.xml"
+    },
+    {
+        "merged": "com.k20411group03.home.app-merged_res-29:/layout_activity_homescreen2.xml.flat",
+        "source": "com.k20411group03.home.app-main-31:/layout/activity_homescreen2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_person_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_person_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-merged_res-29:\\drawable_ic_baseline_phone_24.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\daemon\\7.4\\com.k20411group03.home.app-main-31:\\drawable\\ic_baseline_phone_24.xml"
+    }
+]

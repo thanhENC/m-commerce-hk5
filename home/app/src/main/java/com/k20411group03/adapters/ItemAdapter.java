@@ -46,10 +46,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder>{
         holder.imv_Thumb.setImageResource(item.getThumbID());
         holder.txt_ItemName.setText(item.getProductName());
         holder.txt_price.setText(String.valueOf(item.getPrice()));
-        holder.txt_discount.setText(String.valueOf(item.getDiscount()));
+        holder.txt_discount.setText("(-" + String.valueOf(item.getDiscount())+"%)");
         holder.txt_originalPrice.setText(String.valueOf(item.getOriginalPrice()));
-        holder.txt_rating.setText(String.valueOf(item.getRating()));
-        holder.txt_numOfReview.setText(String.valueOf(item.getNumOfReviews()));
+        holder.txt_rating.setText("(" + String.valueOf(item.getRating()) + ")");
+        holder.txt_numOfReview.setText("(" +String.valueOf(item.getNumOfReviews())+")");
     }
 
     @Override
@@ -76,7 +76,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder>{
             txt_ItemName = itemView.findViewById(R.id.txt_ItemName);
             txt_originalPrice = itemView.findViewById(R.id.txt_originalPrice);
             txt_price = itemView.findViewById(R.id.txt_price);
-            txt_discount = itemView.findViewById(R.id.txt_discount);
+            txt_discount = itemView.findViewById(R.id.txt_discount) ;
             txt_rating = itemView.findViewById(R.id.txt_rating);
             txt_numOfReview = itemView.findViewById(R.id.txt_numOfReview);
 

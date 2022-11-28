@@ -7,19 +7,30 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
+import android.widget.GridView;
 
 import com.k20411group03.adapters.BannerAdapter;
+import com.k20411group03.adapters.CategoryAdapter;
 import com.k20411group03.adapters.ItemAdapter;
 import com.k20411group03.models.Item;
+import com.k20411group03.models.category;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TrangChu extends AppCompatActivity {
     ViewPager2 viewPager;
     ArrayList<Banners> bannerList;
     RecyclerView rcvFlashsale, rcvNewArrival, rcvForYou;
+    GridView gvCategory;
+    CategoryAdapter categoryAdapter;
+
+    Timer timer;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -34,6 +45,11 @@ public class TrangChu extends AppCompatActivity {
         LinearLayoutManager saleLayoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
         rcvFlashsale.setLayoutManager(saleLayoutManager);
         rcvFlashsale.setAdapter(saleItemAdapter);
+
+        //Gridview category
+        gvCategory = findViewById(R.id.gv_Category);
+        categoryAdapter = new CategoryAdapter(TrangChu.this,R.layout.category_layout,getCategory());
+        gvCategory.setAdapter(categoryAdapter);
 
         //Set up New Arrival recyclerview
         rcvNewArrival = findViewById(R.id.rcv_NewArrival);
@@ -56,7 +72,7 @@ public class TrangChu extends AppCompatActivity {
         //Set up viewpager
         bannerList = new ArrayList<>();
         viewPager = findViewById(R.id.vp_HomeBanner);
-        int[] images = {R.drawable.banner2,R.drawable.banner1};
+        int[] images = {R.drawable.banner2,R.drawable.banner1,R.drawable.banner3};
         for (int i =0; i< images.length ; i++){
 
             Banners banner = new Banners(images[i]);
@@ -64,20 +80,72 @@ public class TrangChu extends AppCompatActivity {
         }
         BannerAdapter bannerAdapter =(BannerAdapter) new BannerAdapter(bannerList);
         viewPager.setAdapter(bannerAdapter);
-        viewPager.setClipToPadding(false);
-        viewPager.setClipChildren(false);
-        viewPager.setOffscreenPageLimit(2);
-        viewPager.getChildAt(0).setOverScrollMode(View.OVER_SCROLL_NEVER);
-        viewPager.setAdapter(bannerAdapter);
+
+        autoSlide();
+
     }
     private List<Item> getListSaleItem(){
         List<Item> list = new ArrayList<>();
-        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
-        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
-        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
-        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
-        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
-        list.add(new Item(R.drawable.somi,"Áo sơ mi caro",20000,170000,30.0,4.0,302,new String[]{"Red","Blue"},new String[]{"XL","L"}));
+        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
+        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
+        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
+        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
+        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
+        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
+        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
+        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
+
+
+
         return list;
+    }
+
+    private List<category> getCategory (){
+        List<category> cateList =new ArrayList<>();
+        cateList.add(new category(1,R.drawable.cate_tshirt,"Áo thun"));
+        cateList.add(new category(2,R.drawable.cate_polo,"Áo polo"));
+        cateList.add(new category(3,R.drawable.cate_shirt,"Áo sơ mi"));
+        cateList.add(new category(4,R.drawable.cate_jacket,"Áo khoác"));
+        cateList.add(new category(5,R.drawable.cate_jean,"Quần jean"));
+        cateList.add(new category(6,R.drawable.cateeasypant,"Quần âu"));
+        cateList.add(new category(7,R.drawable.cate_kaki,"Quần kaki"));
+        cateList.add(new category(8,R.drawable.shortpant,"Quần short"));
+        return cateList;
+    }
+
+    private void autoSlide(){
+        if(bannerList == null || bannerList.isEmpty() || viewPager == null){
+            return;
+        }
+        if(timer == null){
+            timer = new Timer();
+        }
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        int currentItem = viewPager.getCurrentItem();
+                        int totalItem = bannerList.size() - 1;
+                        if(currentItem < totalItem){
+                            currentItem++;
+                            viewPager.setCurrentItem(currentItem);
+                        }else{viewPager.setCurrentItem(0);}
+                    }
+                });
+
+            }
+        }, 1000, 3000);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if(timer != null){
+            timer.cancel();
+            timer =null;
+        }
     }
 }

@@ -1,6 +1,10 @@
 package com.k20411group03.models;
 
 public class Item {
+    int productID;
+    int cateID;
+    String description;
+    int inventory;
     int thumbID;
     String productName;
     int price;
@@ -11,7 +15,11 @@ public class Item {
     String[] color;
     String[] size;
 
-    public Item(int thumbID, String productName, int price, int originalPrice, double discount, double rating, int numOfReviews, String[] color, String[] size) {
+    public Item(int productID, int cateID, String description, int inventory, int thumbID, String productName, int price, int originalPrice, double discount, double rating, int numOfReviews, String[] color, String[] size) {
+        this.productID = productID;
+        this.cateID = cateID;
+        this.description = description;
+        this.inventory = inventory;
         this.thumbID = thumbID;
         this.productName = productName;
         this.price = price;
@@ -21,6 +29,38 @@ public class Item {
         this.numOfReviews = numOfReviews;
         this.color = color;
         this.size = size;
+    }
+
+    public int getProductID() {
+        return productID;
+    }
+
+    public void setProductID(int productID) {
+        this.productID = productID;
+    }
+
+    public int getCateID() {
+        return cateID;
+    }
+
+    public void setCateID(int cateID) {
+        this.cateID = cateID;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(int inventory) {
+        this.inventory = inventory;
     }
 
     public int getThumbID() {

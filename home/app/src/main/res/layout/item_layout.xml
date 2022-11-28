@@ -7,20 +7,20 @@
 
     <ImageView
         android:id="@+id/imv_Thumb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:src="@drawable/somi" />
 
     <TextView
         android:id="@+id/txt_ItemName"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="@font/montserrat_light"
-        android:gravity="center"
+        android:gravity="left"
         android:text="ÁO SƠ MI SỌC CARO"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="16sp" />
     <TextView
         android:id="@+id/txt_price"
         android:text="250000đ"
@@ -30,7 +30,7 @@
         android:textSize="20sp"
         android:textColor="@color/black"/>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/txt_originalPrice"
@@ -38,18 +38,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_light"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:textColor="#606060"
             android:paddingRight="10dp"
             android:shadowRadius="2"
             />
         <TextView
             android:id="@+id/txt_discount"
-            android:text="-30%"
+            android:text="(-30%)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_light"
-            android:textSize="20sp"
+            android:textSize="10sp"
             android:textColor="#606060"
             />
     </LinearLayout>
@@ -61,21 +61,21 @@
         android:id="@+id/layout_reviews">
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ratingstar"
-            android:layout_marginRight="10dp"/>
+            android:layout_height="20dp"
+            android:src="@drawable/ratingstar"/>
         <TextView
             android:id="@+id/txt_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3,5"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:layout_marginRight="5dp"/>
         <TextView
             android:id="@+id/txt_numOfReview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(30)"/>
+            android:text="(30)"
+            android:textSize="12sp"/>
     </LinearLayout>
 
 

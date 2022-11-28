@@ -20,6 +20,7 @@ public class ProductAdapter extends BaseAdapter {
     int item_layout;
     List<Product> products;
 
+
     public ProductAdapter(Activity activity, int item_layout, List<Product> products) {
         this.activity = activity;
         this.item_layout = item_layout;

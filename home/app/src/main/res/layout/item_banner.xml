@@ -5,7 +5,8 @@
     <ImageView
         android:id="@+id/imv_Banner"
         android:layout_width="match_parent"
-        android:layout_height="205dp"
-        android:scaleType="centerCrop"
+        android:layout_height="590dp"
+        android:scaleType="fitCenter"
+        android:layout_gravity="top"
         android:src="@drawable/banner2"/>
 </LinearLayout>

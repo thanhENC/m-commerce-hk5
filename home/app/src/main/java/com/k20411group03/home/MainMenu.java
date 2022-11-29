@@ -2,6 +2,7 @@ package com.k20411group03.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -25,35 +26,39 @@ public class MainMenu extends AppCompatActivity {
     }
 
     private void addEvents() {
-        binding.lnlHangMoiVe.setOnClickListener(new View.OnClickListener() {
+        binding.txtHangMoiVe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Danh Mục Nổi Bật - Hàng Mới Về
+
+                        Intent intent = new Intent(MainMenu.this, homescreen.class);
+                        startActivity(intent);
+
             }
         });
 
-        binding.lnlBoSuuTapMoi.setOnClickListener(new View.OnClickListener() {
+        binding.txtBoSuuTapMoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Bộ Sưu Tập Mới
             }
         });
 
-        binding.lnlFlashSale.setOnClickListener(new View.OnClickListener() {
+        binding.txtFlashSale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Flash Sale
             }
         });
 
-        binding.lnlSanPham.setOnClickListener(new View.OnClickListener() {
+        binding.txtSanPham.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Sản Phẩm
             }
         });
 
-        binding.lnlLienHe.setOnClickListener(new View.OnClickListener() {
+        binding.txtLienHe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Liên Hệ

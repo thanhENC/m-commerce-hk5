@@ -159,10 +159,10 @@
                 android:gravity="center"
                 android:paddingTop="20dp">
                 <ImageView
-                    android:id="@+id/imv_Twitter"
+                    android:id="@+id/imv_Facebook"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:src="@drawable/twitter"
+                    android:layout_height="25dp"
+                    android:src="@drawable/facebook_dark"
                     android:layout_weight="1"/>
                 <ImageView
                     android:id="@+id/imv_Instagram"
@@ -171,10 +171,10 @@
                     android:src="@drawable/instagram"
                     android:layout_weight="1"/>
                 <ImageView
-                    android:id="@+id/imv_Youtube"
+                    android:id="@+id/imv_TikTok"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:src="@drawable/youtube"
+                    android:layout_height="25dp"
+                    android:src="@drawable/tiktok"
                     android:layout_weight="1"/>
             </LinearLayout>
             <ImageView
@@ -235,6 +235,5 @@
                 android:gravity="center"/>
         </LinearLayout>
     </LinearLayout>
-
 
 </ScrollView>

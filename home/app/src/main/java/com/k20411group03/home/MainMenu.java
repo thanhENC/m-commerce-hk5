@@ -12,6 +12,7 @@ import com.k20411group03.home.databinding.ActivityMainMenuBinding;
 public class MainMenu extends AppCompatActivity {
 
     ActivityMainMenuBinding binding;
+    Intent intent;
 
 
     @Override
@@ -30,9 +31,8 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Danh Mục Nổi Bật - Hàng Mới Về
-
-                        Intent intent = new Intent(MainMenu.this, homescreen.class);
-                        startActivity(intent);
+                //Intent intent = new Intent(MainMenu.this, homescreen.class);
+                //startActivity(intent);
 
             }
         });
@@ -48,6 +48,8 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Flash Sale
+                intent = new Intent(MainMenu.this, FlashSaleScreen.class);
+                startActivity(intent);
             }
         });
 
@@ -55,6 +57,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Sản Phẩm
+
             }
         });
 

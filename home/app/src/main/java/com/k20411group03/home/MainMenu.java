@@ -31,8 +31,8 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Danh Mục Nổi Bật - Hàng Mới Về
-                //Intent intent = new Intent(MainMenu.this, homescreen.class);
-                //startActivity(intent);
+                Intent intent = new Intent(MainMenu.this, homescreen.class);
+                startActivity(intent);
 
             }
         });

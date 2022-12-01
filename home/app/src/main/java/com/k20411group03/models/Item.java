@@ -1,5 +1,7 @@
 package com.k20411group03.models;
 
+import android.widget.LinearLayout;
+
 public class Item {
     int productID;
     int cateID;

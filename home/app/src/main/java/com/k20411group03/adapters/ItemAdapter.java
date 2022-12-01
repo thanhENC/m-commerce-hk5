@@ -1,48 +1,74 @@
 package com.k20411group03.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.k20411group03.home.R;
 import com.k20411group03.models.Item;
+import com.k20411group03.models.Product;
 
 import java.util.List;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder>{
+public class ItemAdapter extends BaseAdapter {
+    Activity activity;
+    int item_layout;
+    List<Item> items;
 
-    private List<Item> itemList;
-    private Context context;
-
-    public ItemAdapter(Context context) {
-        this.context = context;
-    }
-
-    public void setData(List<Item> items){
-        this.itemList = items;
-        notifyDataSetChanged();
-    }
-
-    @NonNull
-    @Override
-    public ItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout,parent,false);
-        return new ItemHolder(view);
+    public ItemAdapter(Activity activity, int item_layout, List<Item> items) {
+        this.activity = activity;
+        this.item_layout = item_layout;
+        this.items = items;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
-        Item item = itemList.get(position);
-        if(itemList == null){
-            return;
+    public int getCount() {
+        return items.size();
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return items.get(i);
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+
+        ViewHolder holder;
+        ProductAdapter.ViewHolder viewHolder;
+
+        if(view == null){
+            //link views
+            holder = new ItemAdapter.ViewHolder();
+            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(item_layout, null);
+
+            holder.imv_Thumb = view.findViewById(R.id.imv_Thumb);
+            holder.txt_ItemName = view.findViewById(R.id.txt_ItemName);
+            holder.txt_price = view.findViewById(R.id.txt_price);
+            holder.txt_discount = view.findViewById(R.id.txt_discount);
+            holder.txt_originalPrice = view.findViewById(R.id.txt_originalPrice);
+            holder.txt_rating = view.findViewById(R.id.txt_rating);
+            holder.txt_numOfReview = view.findViewById(R.id.txt_numOfReview);
+
+            view.setTag(holder);
+        }
+        else{
+            holder = (ViewHolder) view.getTag();
         }
 
+        //binding data
+        Item item = items.get(i);
         holder.imv_Thumb.setImageResource(item.getThumbID());
         holder.txt_ItemName.setText(item.getProductName());
         holder.txt_price.setText(String.valueOf(item.getPrice()));
@@ -50,36 +76,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder>{
         holder.txt_originalPrice.setText(String.valueOf(item.getOriginalPrice()));
         holder.txt_rating.setText("(" + String.valueOf(item.getRating()) + ")");
         holder.txt_numOfReview.setText("(" +String.valueOf(item.getNumOfReviews())+")");
+
+        return view;
     }
-
-    @Override
-    public int getItemCount() {
-        if(itemList != null){
-            return itemList.size();
-        }else {return 0;}
-    }
-
-    public class ItemHolder extends RecyclerView.ViewHolder {
-
+    class ViewHolder{
         ImageView imv_Thumb;
-        TextView txt_ItemName;
-        TextView txt_originalPrice;
-        TextView txt_price;
-        TextView txt_discount;
-        TextView txt_rating;
-        TextView txt_numOfReview;
-
-        public ItemHolder(@NonNull View itemView) {
-            super(itemView);
-
-            imv_Thumb = itemView.findViewById(R.id.imv_Thumb);
-            txt_ItemName = itemView.findViewById(R.id.txt_ItemName);
-            txt_originalPrice = itemView.findViewById(R.id.txt_originalPrice);
-            txt_price = itemView.findViewById(R.id.txt_price);
-            txt_discount = itemView.findViewById(R.id.txt_discount) ;
-            txt_rating = itemView.findViewById(R.id.txt_rating);
-            txt_numOfReview = itemView.findViewById(R.id.txt_numOfReview);
-
-        }
+        TextView txt_ItemName, txt_price, txt_discount, txt_originalPrice, txt_rating, txt_numOfReview;
     }
 }

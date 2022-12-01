@@ -6,15 +6,17 @@ import androidx.viewpager2.widget.ViewPager2;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.k20411group03.adapters.BannerAdapter;
 import com.k20411group03.adapters.CategoryAdapter;
-import com.k20411group03.adapters.ItemAdapter;
+import com.k20411group03.adapters.ItemRecyclerAdapter;
 import com.k20411group03.models.Item;
 import com.k20411group03.models.category;
 
@@ -40,7 +42,7 @@ public class TrangChu extends AppCompatActivity {
 
         //Set up Flash sale recyclerview
         rcvFlashsale = findViewById(R.id.rcv_Flashsale);
-        ItemAdapter saleItemAdapter = new ItemAdapter(this);
+        ItemRecyclerAdapter saleItemAdapter = new ItemRecyclerAdapter(this);
         saleItemAdapter.setData(getListSaleItem());
         LinearLayoutManager saleLayoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
         rcvFlashsale.setLayoutManager(saleLayoutManager);
@@ -53,7 +55,7 @@ public class TrangChu extends AppCompatActivity {
 
         //Set up New Arrival recyclerview
         rcvNewArrival = findViewById(R.id.rcv_NewArrival);
-        ItemAdapter newItemAdapter = new ItemAdapter(this);
+        ItemRecyclerAdapter newItemAdapter = new ItemRecyclerAdapter(this);
         newItemAdapter.setData(getListSaleItem());
         LinearLayoutManager newLayoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
         rcvFlashsale.setLayoutManager(saleLayoutManager);
@@ -62,7 +64,7 @@ public class TrangChu extends AppCompatActivity {
 
         //Set up For you recyclerview
         rcvNewArrival = findViewById(R.id.rcv_ForYou);
-        ItemAdapter foryouItemAdapter = new ItemAdapter(this);
+        ItemRecyclerAdapter foryouItemAdapter = new ItemRecyclerAdapter(this);
         foryouItemAdapter.setData(getListSaleItem());
         LinearLayoutManager forYouLayoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
         rcvFlashsale.setLayoutManager(saleLayoutManager);
@@ -82,6 +84,7 @@ public class TrangChu extends AppCompatActivity {
         viewPager.setAdapter(bannerAdapter);
 
         autoSlide();
+        addEvents();
 
     }
     private List<Item> getListSaleItem(){
@@ -147,5 +150,21 @@ public class TrangChu extends AppCompatActivity {
             timer.cancel();
             timer =null;
         }
+    }
+
+    private void addEvents(){
+        gvCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                category c = (category) gvCategory.getItemAtPosition(i);
+                int cateID = c.getCateID();
+                int thumbID = c.getCateThumbID();
+                String cateName = c.getThumbName();
+                Bundle b = new Bundle();
+                Intent intent = new Intent(TrangChu.this,DanhMuc.class);
+                intent.putExtra("Cate", cateID);
+                startActivity(intent);
+            }
+        });
     }
 }

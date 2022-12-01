@@ -8,5 +8,5 @@
         android:layout_height="590dp"
         android:scaleType="fitCenter"
         android:layout_gravity="top"
-        android:src="@drawable/banner2"/>
+        android:src="@drawable/banner1"/>
 </LinearLayout>

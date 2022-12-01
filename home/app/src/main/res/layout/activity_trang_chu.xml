@@ -59,11 +59,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:orientation="horizontal"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:padding="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,18 +66,8 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:textColor="#FF0000"
                 android:textSize="20sp"
-                android:layout_weight="1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Xem thêm >>"
-                android:fontFamily="@font/montserrat_light"
-                android:textColor="#FF0000"
-                android:textSize="20sp"
-                android:gravity="right|center_vertical"
                 android:layout_weight="1"
-                android:layout_gravity="center_vertical"/>
-        </LinearLayout>
+                android:paddingHorizontal="10dp"/>
         <GridView
             android:id="@+id/gv_Category"
             android:layout_width="match_parent"

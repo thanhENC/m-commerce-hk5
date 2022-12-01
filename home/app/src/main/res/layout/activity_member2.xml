@@ -5,21 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".member2"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:background="#DADADA">
+        android:background="@color/gray">
         <ImageView
             android:id="@+id/imv_Back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="25dp"
-            android:src="@drawable/img" />
+            android:src="@drawable/ic_baseline_arrow_back_24" />
         <TextView
-            android:id="@+id/txt_TitleGioHang"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -27,140 +25,148 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
     </FrameLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:orientation="horizontal"
-        >
-        <ImageView
-            android:layout_marginStart="20dp"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/userlogo"/>
+        android:layout_marginHorizontal="10dp"
+        android:orientation="vertical" >
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="30dp"
-            android:layout_gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PHẠM NGUYỄN LÊ ĐINH"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Thành viên vàng"
-                android:textSize="18sp"/>
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:padding="15dp"
+            android:orientation="horizontal"
             >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Họ"
-            android:textSize="18sp"/>
-        <EditText
-            android:id="@+id/edt_hosetting"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:hint="Nguyễn"/>
+            <ImageView
+                android:layout_marginStart="20dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/userlogo"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="30dp"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHẠM NGUYỄN LÊ ĐINH"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thành viên vàng"
+                    android:textSize="18sp"/>
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ten"
+                android:orientation="vertical"
+                >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Họ"
                 android:textSize="18sp"/>
             <EditText
-                android:id="@+id/edt_namesetting"
+                android:id="@+id/edt_hosetting"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="Nguyễn"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Hiền Phương"/>
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ten"
+                    android:textSize="18sp"/>
+                <EditText
+                    android:id="@+id/edt_namesetting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Hiền Phương"/>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:textSize="18sp"/>
-    <EditText
-        android:id="@+id/edt_emailsetting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="phuongpnh@gmail.com"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Số điện thoại "
-        android:textSize="18sp"/>
-    <EditText
-        android:id="@+id/edt_sodienthoaisetting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="0909302030"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Địa chỉ nhà "
-        android:textSize="18sp"/>
-    <EditText
-        android:id="@+id/edt_diachinhasetting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="105 Quang Trung, phuong 9, Quan Go Vap"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Địa chỉ công ty "
-        android:textSize="18sp"/>
-    <EditText
-        android:id="@+id/edt_diachicongtysetting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="105 Thủ Dầu Một, phường 12, Thủ Đức"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tài khoản liên kết "
-        android:textSize="18sp"/>
-    <EditText
-        android:id="@+id/edt_tklienket"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="facebook.com/theweekdays"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="20dp"
-        android:gravity="center">
-        <Button
-            android:id="@+id/btn_cancelsetting"
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hủy"
+            android:text="Email"
             android:textSize="18sp"/>
-        <Button
-            android:id="@+id/btn_savesetting"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/edt_emailsetting"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Luu"
-            android:textSize="18sp"
-            android:layout_marginStart="80dp"/>
+            android:hint="phuongpnh@gmail.com"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại "
+            android:textSize="18sp"/>
+        <EditText
+            android:id="@+id/edt_sodienthoaisetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0909302030"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ nhà "
+            android:textSize="18sp"/>
+        <EditText
+            android:id="@+id/edt_diachinhasetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="105 Quang Trung, phuong 9, Quan Go Vap"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ công ty "
+            android:textSize="18sp"/>
+        <EditText
+            android:id="@+id/edt_diachicongtysetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="105 Thủ Dầu Một, phường 12, Thủ Đức"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tài khoản liên kết "
+            android:textSize="18sp"/>
+        <EditText
+            android:id="@+id/edt_tklienket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="facebook.com/theweekdays"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="20dp"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btn_CancelSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HỦY"
+                android:textSize="18sp"/>
+            <Button
+                android:id="@+id/btn_SaveSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LƯU"
+                android:textSize="18sp"
+                android:layout_marginStart="80dp"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

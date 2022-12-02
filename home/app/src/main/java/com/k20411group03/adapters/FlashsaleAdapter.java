@@ -1,5 +1,7 @@
 package com.k20411group03.adapters;
 
+import static java.lang.Math.round;
+
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -66,12 +68,14 @@ public class FlashsaleAdapter extends BaseAdapter {
         //binding data
         Flashsale flashsale = flashsales.get(i);
 
-        viewHolder.imvProductImage.setImageResource(flashsale.getProduct_Image());
-        viewHolder.txtProductName.setText(flashsale.getProduct_Name());
-        viewHolder.txtProductPrice.setText(String.valueOf(flashsale.getProduct_Price()) + " Đ");
-        viewHolder.txtProductPriceSale.setText(String.valueOf(flashsale.getProduct_PriceSale()) + " Đ");
-        viewHolder.txtFlashsaleQuantity.setText(String.valueOf(flashsale.getFlashsale_Quantity()));
-        viewHolder.txtFlashsalePercent.setText(flashsale.getFlashsale_Percent());
+        viewHolder.imvProductImage.setImageResource(R.drawable.cate_jacket);
+        viewHolder.txtProductName.setText(flashsale.getProductName());
+        viewHolder.txtProductPrice.setText(String.valueOf(flashsale.formatProductPrice(flashsale.getProductPrice())) + " Đ");
+        viewHolder.txtProductPriceSale.setText(String.valueOf(flashsale.formatProductPrice(flashsale.getSalePrice())) + " Đ");
+        viewHolder.txtFlashsaleQuantity.setText(String.valueOf(flashsale.getInventory()));
+        viewHolder.txtFlashsalePercent.setText("-" + String.valueOf(round(
+                (
+                (flashsale.getProductPrice() - flashsale.getSalePrice()) / flashsale.getProductPrice())*100)) + "%");
 
         return view;
     }

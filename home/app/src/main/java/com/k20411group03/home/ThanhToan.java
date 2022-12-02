@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -23,6 +24,8 @@ public class ThanhToan extends AppCompatActivity {
     ActivityThanhToanBinding binding;
     PaymentAdapter adapter;
     List<Payment> payments;
+    DatabaseHelper db;
+    private String False;
     //ActivityResultLauncher<Intent> launcher;
 
     @Override
@@ -33,22 +36,33 @@ public class ThanhToan extends AppCompatActivity {
         binding = ActivityThanhToanBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        createDb();
         loadData();
         addEvents();
     }
 
+    private void createDb() {
+        db = new DatabaseHelper(ThanhToan.this);
+        db.createSampleData();
+    }
+
     private void loadData() {
         payments = new ArrayList<>();
+        Cursor c = db.getData("SELECT * FROM " + DatabaseHelper.TBL_NAME);
+        while (c.moveToNext()){
+            payments.add(new Payment(c.getInt(0),
+                    c.getString(1),
+                    c.getString(2),
+                    c.getInt(3),
+                    c.getExtras().getBoolean(String.valueOf(false))
+            ));
+        }
+        c.close();
 
-        payments.add(new Payment(false, R.drawable.payment_cash, "Thanh toán tiền mặt", "Thanh toán khi nhận hàng"));
-        payments.add(new Payment(false, R.drawable.payment_momo, "Ví Momo", ""));
-
-        payments.add(new Payment(false, R.drawable.payment_zalo, "Ví ZaloPay", ""));
-
-        payments.add(new Payment(false, R.drawable.payment_banking, "Thẻ ATM/ Internet Banking", "Hỗ trợ hơn 20 ngân hàng"));
-
+        //Init data
         adapter = new PaymentAdapter(ThanhToan.this, R.layout.payment_method, payments);
         binding.lvPhuongThucThanhToan.setAdapter(adapter);
+
     }
 
     private void addEvents() {

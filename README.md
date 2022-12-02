@@ -13,8 +13,7 @@ Dự án môn học được phát triển bởi các sinh viên lớp `Phát Tr
 - <a href="https://www.linkedin.com/in/hoan-hao-dinh/" target="_blank">Đinh Hoàn Hảo</a>
 - <a href="https://www.linkedin.com/in/hunggianguyen/" target="_blank">Nguyễn Gia Hưng</a>
 
-![image](https://user-images.githubusercontent.com/44209630/205210788-d9e928a9-30c0-4dfb-b8f0-324ecd7e864f.png)
-
+<img src="https://user-images.githubusercontent.com/44209630/205210788-d9e928a9-30c0-4dfb-b8f0-324ecd7e864f.png" alt="The Weekdays -🌟Daily Outfit For Boy🌟" style="display: block; margin-left: auto; margin-right: auto; width: 50%;"/>
 
 ## Nội dung
 Phát triển ứng dụng mobile cho thương hiệu thời trang giả định <a href="https://www.facebook.com/profile.php?id=100064076131819" target="_blank">The Weekdays</a>. Nhóm thực hiện qua các giai đoạn

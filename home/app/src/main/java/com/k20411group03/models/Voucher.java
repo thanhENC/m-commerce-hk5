@@ -1,40 +1,35 @@
 package com.k20411group03.models;
 
 public class Voucher {
-    String vouchertitle;
-    String vouchersubtitle;
-    String HSDvoucher;
+    String titleOfVoucher, hsdVoucher, maxValue;
 
-    public String getVouchertitle() {
-        return vouchertitle;
+    public Voucher(String titleOfVoucher, String hsdVoucher, String maxValue) {
+        this.titleOfVoucher = titleOfVoucher;
+        this.hsdVoucher = hsdVoucher;
+        this.maxValue = maxValue;
     }
 
-    public void setVouchertitle(String vouchertitle) {
-        this.vouchertitle = vouchertitle;
+    public String getTitleOfVoucher() {
+        return titleOfVoucher;
     }
 
-    public String getVouchersubtitle() {
-        return vouchersubtitle;
+    public void setTitleOfVoucher(String titleOfVoucher) {
+        this.titleOfVoucher = titleOfVoucher;
     }
 
-    public void setVouchersubtitle(String vouchersubtitle) {
-        this.vouchersubtitle = vouchersubtitle;
+    public String getHsdVoucher() {
+        return hsdVoucher;
     }
 
-    public String getHSDvoucher() {
-        return HSDvoucher;
+    public void setHsdVoucher(String hsdVoucher) {
+        this.hsdVoucher = hsdVoucher;
     }
 
-    public void setHSDvoucher(String HSDvoucher) {
-        this.HSDvoucher = HSDvoucher;
+    public String getMaxValue() {
+        return maxValue;
     }
 
-
-
-    public Voucher(String vouchertitle, String DonToiThieu, String HSDvoucher) {
-        this.vouchertitle = vouchertitle;
-        this.vouchersubtitle = DonToiThieu;
-        this.HSDvoucher = HSDvoucher;
+    public void setMaxValue(String maxValue) {
+        this.maxValue = maxValue;
     }
-
 }

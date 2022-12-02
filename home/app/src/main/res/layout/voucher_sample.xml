@@ -4,19 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:weightSum="6"
+    android:weightSum="7"
     >
 
     <ImageView
-        android:layout_width="80dp"
+        android:layout_width="0dp"
         android:layout_height="90dp"
         android:layout_gravity="center_vertical"
         android:padding="10dp"
         android:src="@drawable/voucher"
-        android:layout_weight="1"/>
+        android:background="#FFC107"
+        android:layout_weight="1.5"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:orientation="vertical"
@@ -25,8 +26,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Giảm 30%"
-            android:id="@+id/txt_GiaTriCoupon"
+            android:text="Giảm 30% cho đơn từ ₫100K"
+            android:id="@+id/txt_tenvoucher"
             android:textSize="18sp"
             android:textColor="@color/black"
             android:padding="5dp"/>
@@ -34,39 +35,41 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đơn tối thiểu đ150K"
-            android:id="@+id/txt_GiaTriToiThieu"
+            android:text="Giảm tối đa đ150K"
+            android:id="@+id/txt_MaxValueGiam"
             android:textColor="@color/black"
             android:padding="5dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:text="HSD: 15.11.2022"
             android:id="@+id/txt_HanSuDungVoucher"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1.5">
 
         <Button
-            android:layout_width="90dp"
+            android:id="@+id/txt_dungngayvoucher"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFFFFF"
             android:text="Dùng ngay"
             android:textColor="@color/black"
-
             app:strokeColor="#FFC107"
-            app:strokeWidth="1.5dp" />
+            app:strokeWidth="1.5dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/txt_dieukienvoucher"
             android:clickable="true"
             android:contextClickable="true"
             android:defaultFocusHighlightEnabled="true"

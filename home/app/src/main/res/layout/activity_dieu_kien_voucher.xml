@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DieuKienVoucher"
+    android:padding="10dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="7"
+                >
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center_vertical"
+                    android:padding="10dp"
+                    android:src="@drawable/voucher"
+                    android:background="#FFC107"
+                    android:layout_weight="1.5"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_weight="4">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giảm 30% đơn từ ₫100K"
+                        android:id="@+id/txt_tenvoucher"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giảm tối đa đ150K"
+                        android:id="@+id/txt_MaxValueGiam"
+                        android:textColor="@color/black"
+                        android:padding="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="HSD: 15.11.2022"
+                        android:id="@+id/txt_HanSuDungVoucher"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_weight="1.5">
+
+                    <Button
+                        android:id="@+id/txt_dungngayvoucher"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#FFFFFF"
+                        android:text="Dùng ngay"
+                        android:textColor="@color/black"
+                        app:strokeColor="#FFC107"
+                        app:strokeWidth="1.5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/txt_dieukienvoucher"
+                        android:clickable="true"
+                        android:contextClickable="true"
+                        android:defaultFocusHighlightEnabled="true"
+                        android:text="Điều kiện"
+                        android:textColor="#3F51B5" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ưu đãi"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/txt_noidunguudai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NỘI DUNG GIẢM GIÁ"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Có hiệu lực"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/txt_noidunghieuluc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hiệu lực sử dụng Voucher chèn tại đây"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thiết bị"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chỉ áp dụng cho ứng dụng Android"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phương thức thanh toán"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/txt_noidungphuongthucthanhtoan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phương thức thanh toán ở đây"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Điều kiện"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/txt_dieukiensudungvoucher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Điều kiện sử dụng voucher ở đây"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/btn_dungngayvoucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Đến giỏ hàng để sử dụng"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+</ScrollView>

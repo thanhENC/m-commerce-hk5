@@ -1,17 +1,28 @@
 package com.k20411group03.models;
 
 public class Payment {
+    int paymentId;
     boolean paymentRadio;
     int paymentImage;
     String paymentName;
     String paymentNote;
 
-    public Payment (boolean paymentRadio, int paymentImage, String paymentName, String paymentNote) {
-        this.paymentRadio = paymentRadio;
-        this.paymentImage = paymentImage;
+    public Payment (int paymentId , String paymentName, String paymentNote, int paymentImage, boolean paymentRadio) {
+        this.paymentId = paymentId;
         this.paymentName = paymentName;
         this.paymentNote = paymentNote;
+        this.paymentImage = paymentImage;
+        this.paymentRadio = paymentRadio;
     }
+
+    public int getpaymentId() {
+        return paymentId;
+    }
+
+    public void setpaymentId(int paymentId) {
+        this.paymentId = paymentId;
+    }
+
 
     public int getPaymentImage() {
         return paymentImage;
@@ -19,14 +30,6 @@ public class Payment {
 
     public void setPaymentImage(int paymentImage) {
         this.paymentImage = paymentImage;
-    }
-
-    public boolean getpaymentRadio() {
-        return paymentRadio;
-    }
-
-    public void setProduct_Price(boolean paymentRadio) {
-        this.paymentRadio = paymentRadio;
     }
 
     public  String getPaymentName() {return paymentName; }
@@ -42,6 +45,14 @@ public class Payment {
     public void setPaymentNote(String paymentNote) {
         this.paymentNote = paymentNote;
     }
+
+    public boolean getpaymentRadio() { return paymentRadio;
+    }
+
+    public void setPaymentRadio(boolean paymentRadio) {
+        this.paymentRadio = paymentRadio;
+    }
+
 }
 
 

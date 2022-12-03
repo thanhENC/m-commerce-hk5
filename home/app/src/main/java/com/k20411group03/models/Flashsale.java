@@ -1,68 +1,81 @@
 package com.k20411group03.models;
 
 public class Flashsale {
-    String product_Name;
-    int product_PriceSale;
-    int product_Price;
-    int product_Image;
-    int flashsale_Quantity;
-    String flashsale_Percent;
+    int ProductID;
+    String productName;
+    byte[] Thumbnail;
+    double ProductPrice;
+    double SalePrice;
+    int Inventory;
 
-    public Flashsale(String product_Name, int product_Price, int product_PriceSale, int product_Image, int flashsale_Quantity, String flashsale_Percent) {
-        this.product_Image = product_Image;
-        this.product_Name = product_Name;
-        this.product_Price = product_Price;
-        this.product_PriceSale = product_PriceSale;
-        this.flashsale_Quantity = flashsale_Quantity;
-        this.flashsale_Percent = flashsale_Percent;
+    public Flashsale(int productID, String productName, byte[] thumbnail, double productPrice, double salePrice, int inventory) {
+        ProductID = productID;
+        this.productName = productName;
+        Thumbnail = thumbnail;
+        ProductPrice = productPrice;
+        SalePrice = salePrice;
+        Inventory = inventory;
     }
 
-    public String getProduct_Name() {
-        return product_Name;
+    public int getProductID() {
+        return ProductID;
     }
 
-    public void setProduct_Name(String product_Name) {
-        this.product_Name = product_Name;
+    public void setProductID(int productID) {
+        ProductID = productID;
     }
 
-    public int getProduct_PriceSale() {
-        return product_PriceSale;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct_PriceSale(int product_PriceSale) {
-        this.product_PriceSale = product_PriceSale;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public int getProduct_Price() {
-        return product_Price;
+    public byte[] getThumbnail() {
+        return Thumbnail;
     }
 
-    public void setProduct_Price(int product_Price) {
-        this.product_Price = product_Price;
+    public void setThumbnail(byte[] thumbnail) {
+        Thumbnail = thumbnail;
     }
 
-    public int getProduct_Image() {
-        return product_Image;
+    public double getProductPrice() {
+        return ProductPrice;
     }
 
-    public void setProduct_Image(int product_Image) {
-        this.product_Image = product_Image;
+    public String formatProductPrice(double price) {
+        String str = (int) price + "";
+        int count = 0;
+        for(int i = str.length() - 1; i > 0; i--){
+            count++;
+            if(count == 3){
+                str = str.substring(0, i) + "." + str.substring(i);
+                count = 0;
+            }
+        }
+        return str;
     }
 
-    public int getFlashsale_Quantity() {
-        return flashsale_Quantity;
+    public void setProductPrice(double productPrice) {
+        ProductPrice = productPrice;
     }
 
-    public void setFlashsale_Quantity(int flashsale_Quantity) {
-        this.flashsale_Quantity = flashsale_Quantity;
+    public double getSalePrice() {
+        return SalePrice;
     }
 
-    public String getFlashsale_Percent() {
-        return flashsale_Percent;
+    public void setSalePrice(double salePrice) {
+        SalePrice = salePrice;
     }
 
-    public void setFlashsale_Percent(String flashsale_Percent) {
-        this.flashsale_Percent = flashsale_Percent;
+    public int getInventory() {
+        return Inventory;
+    }
+
+    public void setInventory(int inventory) {
+        Inventory = inventory;
     }
 }
 

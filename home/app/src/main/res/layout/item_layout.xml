@@ -6,7 +6,9 @@
     android:padding="10dp"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/white"
+    android:layout_marginHorizontal="2dp">
 
     <ImageView
         android:id="@+id/imv_Thumb"

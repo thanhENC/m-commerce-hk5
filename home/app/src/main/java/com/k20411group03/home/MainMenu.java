@@ -31,9 +31,9 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Danh Mục Nổi Bật - Hàng Mới Về
-                Intent intent = new Intent(MainMenu.this, homescreen.class);
+                Intent intent = new Intent(MainMenu.this, ProductCollection.class);
+                intent.putExtra("screenTitle", "Hàng mới về");
                 startActivity(intent);
-
             }
         });
 
@@ -41,6 +41,9 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Bộ Sưu Tập Mới
+                Intent intent = new Intent(MainMenu.this, ProductCollection.class);
+                intent.putExtra("screenTitle", "Bộ sưu tập mới");
+                startActivity(intent);
             }
         });
 
@@ -57,7 +60,9 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Mở màn hình Sản Phẩm
-
+                intent = new Intent(MainMenu.this, ProductCollection.class);
+                intent.putExtra("screenTitle", "Sản phẩm");
+                startActivity(intent);
             }
         });
 

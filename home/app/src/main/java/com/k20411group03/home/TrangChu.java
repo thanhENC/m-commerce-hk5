@@ -1,5 +1,6 @@
 package com.k20411group03.home;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
@@ -7,16 +8,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Switch;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.k20411group03.adapters.BannerAdapter;
 import com.k20411group03.adapters.CategoryAdapter;
 import com.k20411group03.adapters.ItemRecyclerAdapter;
+import com.k20411group03.models.Banners;
 import com.k20411group03.models.Item;
 import com.k20411group03.models.category;
 
@@ -31,10 +38,10 @@ public class TrangChu extends AppCompatActivity {
     RecyclerView rcvFlashsale, rcvNewArrival, rcvForYou;
     GridView gvCategory;
     CategoryAdapter categoryAdapter;
-
+    BottomNavigationView navigationView;
     Timer timer;
 
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,18 +65,16 @@ public class TrangChu extends AppCompatActivity {
         ItemRecyclerAdapter newItemAdapter = new ItemRecyclerAdapter(this);
         newItemAdapter.setData(getListSaleItem());
         LinearLayoutManager newLayoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
-        rcvFlashsale.setLayoutManager(saleLayoutManager);
         rcvNewArrival.setLayoutManager(newLayoutManager);
         rcvNewArrival.setAdapter(newItemAdapter);
 
         //Set up For you recyclerview
-        rcvNewArrival = findViewById(R.id.rcv_ForYou);
+        rcvForYou = findViewById(R.id.rcv_ForYou);
         ItemRecyclerAdapter foryouItemAdapter = new ItemRecyclerAdapter(this);
         foryouItemAdapter.setData(getListSaleItem());
         LinearLayoutManager forYouLayoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
-        rcvFlashsale.setLayoutManager(saleLayoutManager);
-        rcvNewArrival.setLayoutManager(forYouLayoutManager);
-        rcvNewArrival.setAdapter(foryouItemAdapter);
+        rcvForYou.setLayoutManager(forYouLayoutManager);
+        rcvForYou.setAdapter(foryouItemAdapter);
 
         //Set up viewpager
         bannerList = new ArrayList<>();
@@ -83,10 +88,14 @@ public class TrangChu extends AppCompatActivity {
         BannerAdapter bannerAdapter =(BannerAdapter) new BannerAdapter(bannerList);
         viewPager.setAdapter(bannerAdapter);
 
+
+
+
         autoSlide();
         addEvents();
 
     }
+
     private List<Item> getListSaleItem(){
         List<Item> list = new ArrayList<>();
         list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
@@ -153,6 +162,43 @@ public class TrangChu extends AppCompatActivity {
     }
 
     private void addEvents(){
+        navigationView = findViewById(R.id.mn_home);
+        navigationView.setSelectedItemId(R.id.item_home);
+        navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.item_home:
+                        return true;
+                    case  R.id.item_member1:
+                        Intent intent1 = new Intent(getApplicationContext(),member1.class);
+                        intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent1);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.item_noti:
+                        Intent intent2 =new Intent(getApplicationContext(),ThongBao.class);
+                        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent2);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.item_scan:
+                        Intent intent3 =new Intent(getApplicationContext(),scan1.class);
+                        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent3);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.item_wishlist:
+                        Intent intent4 =new Intent(getApplicationContext(),Wishlist.class);
+                        intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent4);
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
         gvCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -160,11 +206,11 @@ public class TrangChu extends AppCompatActivity {
                 int cateID = c.getCateID();
                 int thumbID = c.getCateThumbID();
                 String cateName = c.getThumbName();
-                Bundle b = new Bundle();
                 Intent intent = new Intent(TrangChu.this,DanhMuc.class);
                 intent.putExtra("Cate", cateID);
                 startActivity(intent);
             }
         });
+
     }
 }

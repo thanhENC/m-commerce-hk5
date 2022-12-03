@@ -1,4 +1,4 @@
-package com.k20411group03.home;
+package com.k20411group03.models;
 
 public class Banners {
     int bannerId;

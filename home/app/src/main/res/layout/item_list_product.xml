@@ -12,26 +12,18 @@
 
         <ImageView
             android:id="@+id/imv_ProductImage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="11"/>
+            android:layout_width="0dp"
+            android:layout_height="115dp"
+            android:layout_weight="4"
+            android:src="@drawable/jean001"
+            android:layout_gravity="center"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingHorizontal="10dp"
-            android:layout_weight="4">
-
-            <TextView
-                android:id="@+id/txt_ProductName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Sơ mi quốc dân"
-                android:textColor="@color/black"
-                android:paddingVertical="5dp"
-                android:textStyle="bold"
-                android:textSize="25sp" />
+            android:layout_weight="11">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,73 +32,127 @@
                 android:weightSum="10">
 
                 <TextView
-                    android:id="@+id/txt_ProductPrice"
+                    android:id="@+id/txt_ProductName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_weight="9"
-                    android:text="135.000"
-                    android:textColor="#F44336"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat_light"
+                    android:gravity="left"
+                    android:text="ÁO SƠ MI SỌC CARO"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_weight="9"/>
+
                 <ImageView
                     android:id="@+id/imv_AddWishList"
-                    android:layout_width="35dp"
+                    android:layout_width="0dp"
                     android:layout_height="35dp"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_favorite_border_24"/>
+                    android:layout_gravity="center"/>
+
             </LinearLayout>
 
-            <FrameLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="5dp">
+                android:orientation="horizontal"
+                android:weightSum="10">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/txt_SalePrice"
+                    android:text="250.000 Đ"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
-                    android:weightSum="10">
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_weight="4"/>
 
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:src="@drawable/ic_baseline_star_rate_24"
-                        android:layout_gravity="left"
-                        android:layout_weight="1"/>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3.8">
 
                     <TextView
+                        android:id="@+id/txt_ProductPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="47 Ratings"
-                        android:textColor="#111111"
-                        android:layout_marginStart="10dp"
+                        android:text="150.000 Đ"
                         android:layout_gravity="center"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#919191"
                         android:textSize="18sp"
-                        android:gravity="left"
-                        android:layout_weight="8"/>
+                        />
 
                     <ImageView
-                        android:id="@+id/imv_AddToCart"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:src="@drawable/ic_baseline_shopping_cart_24" />
-                </LinearLayout>
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/line"/>
+                </FrameLayout>
 
+                <TextView
+                    android:id="@+id/txt_SalePercent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="-15%"
+                    android:layout_weight="2.2"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="#F44336"
+                    android:textSize="18sp"/>
 
-            </FrameLayout>
-            <TextView
-                android:id="@+id/txt_Size"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Size:"
-                android:textColor="@color/black"
-                android:paddingVertical="3dp"
-                android:textSize="25sp"/>
+            </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="top"
+                            android:src="@drawable/ic_baseline_star_rate_24"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3,5"
+                            android:textSize="18sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="#000000"
+                            android:layout_gravity="top"
+                            android:gravity="left | center"
+                            android:layout_weight="1.5"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="(47 Ratings)"
+                            android:textColor="#111111"
+                            android:layout_gravity="top"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:gravity="left"
+                            android:layout_weight="7.5"/>
+
+                    </LinearLayout>
+
+                </FrameLayout>
 
         </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

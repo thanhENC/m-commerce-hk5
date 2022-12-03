@@ -1,31 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/imv_ThongBao"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="175dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/thongbao_1" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imv_ThongBao"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/thongbao_1" />
 
-    <TextView
-        android:id="@+id/txt_ThongBaoTitle"
+        <TextView
+            android:id="@+id/txt_ThongBaoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THÔNG BÁO"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="5dp"/>
+
+        <TextView
+            android:id="@+id/txt_ThongBaoContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nội dung thông báo"
+            android:textSize="18sp"
+            android:paddingHorizontal="5dp"/>
+    </LinearLayout>
+</ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/mn_bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="THÔNG BÁO"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:paddingHorizontal="5dp"/>
-
-    <TextView
-        android:id="@+id/txt_ThongBaoContent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nội dung thông báo"
-        android:textSize="18sp"
-        android:paddingHorizontal="5dp"/>
-
-</LinearLayout>
+        android:layout_height="75dp"
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_gravity="end|bottom"
+        app:itemTextColor="@color/bottom_navigation_style"
+        app:itemIconTint="@color/bottom_navigation_style"
+        app:labelVisibilityMode="unlabeled"
+        android:layout_marginTop="5dp"/>
+</FrameLayout>

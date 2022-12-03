@@ -6,31 +6,31 @@
     android:layout_height="match_parent"
     android:background="@drawable/welcome"
     android:orientation="vertical"
-    tools:context=".homescreen">
+    tools:context=".homescreen"
+    android:weightSum="10">
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:gravity="bottom"
-        android:paddingTop="400dp"
         android:text="The Weekdays"
         android:textColor="#ffffff"
         android:textSize="50sp"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        android:layout_weight="6"/>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:paddingLeft="80dp"
-        android:paddingRight="80dp"
+        android:paddingHorizontal="80dp"
         android:text="Định nghĩa lại thời trang bằng cách riêng của bạn"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="23sp"/>
+        android:textSize="23sp"
+        android:layout_weight="1"/>
 
     <Button
         android:id="@+id/btn_KhamPha"
@@ -42,6 +42,6 @@
         android:text="KHÁM PHÁ"
         android:textColor="#111111
 "
-        android:textSize="20sp" />
+        android:textSize="20sp"/>
 
 </LinearLayout>

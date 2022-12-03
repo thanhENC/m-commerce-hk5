@@ -17,7 +17,6 @@ public class homescreen2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen2);
-        Log.i("HomeScreen2","onCreate");
         binding = ActivityHomescreen2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         addEvents();

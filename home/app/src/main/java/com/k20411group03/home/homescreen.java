@@ -16,7 +16,6 @@ public class homescreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
-        Log.i("HomeScreen","onCreate");
         binding = ActivityHomescreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         addEvents();

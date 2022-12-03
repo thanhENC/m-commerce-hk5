@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".homescreen"
-    android:orientation="vertical">
+    android:background="@drawable/welcome"
+    android:orientation="vertical"
+    tools:context=".homescreen">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The Weekdays"
         android:layout_gravity="center"
-        android:paddingTop="450dp"
-        android:textSize="30sp"
-        android:textColor="@color/black"
-        />
+        android:gravity="bottom"
+        android:paddingTop="400dp"
+        android:text="The Weekdays"
+        android:textColor="#ffffff"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,19 +27,21 @@
         android:layout_marginTop="15dp"
         android:paddingLeft="80dp"
         android:paddingRight="80dp"
-        android:text="Định nghĩa lại thời trang bằng cách riêng của bạn
-"
+        android:text="Định nghĩa lại thời trang bằng cách riêng của bạn"
         android:textAlignment="center"
-        android:textSize="20sp" />
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"/>
 
     <Button
+        android:id="@+id/btn_KhamPha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="KHÁM PHÁ"
         android:layout_gravity="center"
         android:layout_margin="15dp"
-        android:backgroundTint="@color/black"
-        android:textSize="20sp"
-        />
+        android:backgroundTint="@color/bee"
+        android:text="KHÁM PHÁ"
+        android:textColor="#111111
+"
+        android:textSize="20sp" />
 
 </LinearLayout>

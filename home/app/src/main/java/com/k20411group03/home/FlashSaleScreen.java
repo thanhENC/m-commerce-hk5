@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.k20411group03.Utils;
 import com.k20411group03.adapters.FlashsaleAdapter;
 import com.k20411group03.home.databinding.ActivityFlashSaleScreenBinding;
 import com.k20411group03.models.Flashsale;
@@ -17,7 +18,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 public class FlashSaleScreen extends AppCompatActivity {
 

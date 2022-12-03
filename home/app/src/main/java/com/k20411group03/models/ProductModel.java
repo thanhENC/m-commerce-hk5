@@ -69,6 +69,19 @@ public class ProductModel {
         this.productSalePrice = productSalePrice;
     }
 
+    public String formatProductPrice(double price) {
+        String str = (int) price + "";
+        int count = 0;
+        for(int i = str.length() - 1; i > 0; i--){
+            count++;
+            if(count == 3){
+                str = str.substring(0, i) + "." + str.substring(i);
+                count = 0;
+            }
+        }
+        return str;
+    }
+
     public String getProductDescription() {
         return productDescription;
     }

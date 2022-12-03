@@ -114,14 +114,14 @@ public class TrangChu extends AppCompatActivity {
 
     private List<category> getCategory (){
         List<category> cateList =new ArrayList<>();
-        cateList.add(new category(1,R.drawable.cate_tshirt,"Áo thun"));
-        cateList.add(new category(2,R.drawable.cate_polo,"Áo polo"));
-        cateList.add(new category(3,R.drawable.cate_shirt,"Áo sơ mi"));
-        cateList.add(new category(4,R.drawable.cate_jacket,"Áo khoác"));
-        cateList.add(new category(5,R.drawable.cate_jean,"Quần jean"));
-        cateList.add(new category(6,R.drawable.cateeasypant,"Quần âu"));
-        cateList.add(new category(7,R.drawable.cate_kaki,"Quần kaki"));
-        cateList.add(new category(8,R.drawable.shortpant,"Quần short"));
+        cateList.add(new category("AT",R.drawable.cate_tshirt,"Áo thun"));
+        cateList.add(new category("PL",R.drawable.cate_polo,"Áo polo"));
+        cateList.add(new category("SM",R.drawable.cate_shirt,"Áo sơ mi"));
+        cateList.add(new category("AK",R.drawable.cate_jacket,"Áo khoác"));
+        cateList.add(new category("JE",R.drawable.cate_jean,"Quần jean"));
+        cateList.add(new category("TA",R.drawable.cateeasypant,"Quần âu"));
+        cateList.add(new category("KK",R.drawable.cate_kaki,"Quần kaki"));
+        cateList.add(new category("SH",R.drawable.shortpant,"Quần short"));
         return cateList;
     }
 
@@ -203,9 +203,7 @@ public class TrangChu extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 category c = (category) gvCategory.getItemAtPosition(i);
-                int cateID = c.getCateID();
-                int thumbID = c.getCateThumbID();
-                String cateName = c.getThumbName();
+                String cateID = c.getCateID();
                 Intent intent = new Intent(TrangChu.this,DanhMuc.class);
                 intent.putExtra("Cate", cateID);
                 startActivity(intent);

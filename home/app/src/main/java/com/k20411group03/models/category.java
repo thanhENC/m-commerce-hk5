@@ -1,21 +1,21 @@
 package com.k20411group03.models;
 
 public class category {
-    int cateID;
+    String cateID;
     int cateThumbID;
     String thumbName;
 
-    public category(int cateID, int cateThumbID, String thumbName) {
+    public category(String cateID, int cateThumbID, String thumbName) {
         this.cateID = cateID;
         this.cateThumbID = cateThumbID;
         this.thumbName = thumbName;
     }
 
-    public int getCateID() {
+    public String getCateID() {
         return cateID;
     }
 
-    public void setCateID(int cateID) {
+    public void setCateID(String cateID) {
         this.cateID = cateID;
     }
 

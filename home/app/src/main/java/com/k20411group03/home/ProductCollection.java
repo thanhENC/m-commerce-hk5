@@ -3,79 +3,37 @@ package com.k20411group03.home;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
+import com.k20411group03.Utils;
+import com.k20411group03.adapters.FlashsaleAdapter;
 import com.k20411group03.adapters.ProductCollectionAdapter;
 import com.k20411group03.home.databinding.ActivityProductCollectionBinding;
+import com.k20411group03.models.Flashsale;
 import com.k20411group03.models.ProductModel;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ProductCollection extends AppCompatActivity {
-
-//    ActivityProductCollectionBinding binding;
-//    BosuutapmoiAdapter adapter;
-//    ArrayList<Bosuutapmoi> listProduct;
-//
-//    Intent intent;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        //setContentView(R.layout.activity_new_collection);
-//        binding = ActivityProductCollectionBinding.inflate(getLayoutInflater());
-//        setContentView(binding.getRoot());
-//        loadData();
-//    }
-//
-//    private void loadData() {
-//        intent = getIntent();
-//        String screenTitle = intent.getStringExtra("screenTitle");
-//        if(screenTitle != null){
-//            binding.tvTitle.setText(screenTitle.toUpperCase());
-//
-//            if(screenTitle == "Bộ sưu tập mới"){
-//                listProduct = new ArrayList<>();
-//                listProduct.add(new Bosuutapmoi("SP Bo Suu Tap 1", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Bo Suu Tap 2", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Bo Suu Tap 3", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Bo Suu Tap 4", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Bo Suu Tap 5", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Bo Suu Tap 6", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Bo Suu Tap 7", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Bo Suu Tap 8", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Bo Suu Tap 9", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Bo Suu Tap 10", 250000, R.drawable.nen));
-//
-//                adapter = new BosuutapmoiAdapter(ProductCollection.this, R.layout.item_list_bosuutapmoi, listProduct);
-//                binding.lvProductCollection.setAdapter(adapter);
-//            }
-//            else if(screenTitle == "Hàng mới về"){
-//                listProduct = new ArrayList<>();
-//                listProduct.add(new Bosuutapmoi("SP Hang Moi Ve 1", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Hang Moi Ve 2", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Hang Moi Ve 3", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Hang Moi Ve 4", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Hang Moi Ve 5", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Hang Moi Ve 6", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Hang Moi Ve 7", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Hang Moi Ve 8", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Hang Moi Ve 9", 250000, R.drawable.nen));
-//                listProduct.add(new Bosuutapmoi("SP Hang Moi Ve 10", 250000, R.drawable.nen));
-//
-//                adapter = new BosuutapmoiAdapter(ProductCollection.this, R.layout.item_list_bosuutapmoi, listProduct);
-//                binding.lvProductCollection.setAdapter(adapter);
-//            }
-//        }
-//    }
 
     ActivityProductCollectionBinding binding;
     ProductCollectionAdapter adapter;
     ArrayList<ProductModel> listProduct;
 
-    ProductModel selectedProduct = null;
+    public static SQLiteDatabase db;
 
     Intent intent;
 
@@ -86,6 +44,8 @@ public class ProductCollection extends AppCompatActivity {
         binding = ActivityProductCollectionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        registerForContextMenu(binding.lvProductCollection);
+
         loadData();
         addEvents();
     }
@@ -94,7 +54,7 @@ public class ProductCollection extends AppCompatActivity {
         binding.lvProductCollection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                selectedProduct = listProduct.get(position);
+                ProductModel selectedProduct = listProduct.get(position);
 
                 //INTENT ĐẾN MÀN HÌNH CHI TIẾT SẢN PHẨM
 
@@ -116,38 +76,138 @@ public class ProductCollection extends AppCompatActivity {
     private void loadData() {
         listProduct = new ArrayList<>();
 
+        db = openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
+
         intent = getIntent();
         String screenTitle = intent.getStringExtra("screenTitle");
 
         if(screenTitle != null){
             binding.txtTitle.setText(screenTitle.toUpperCase());
             if(screenTitle.equals("Bộ sưu tập mới")){
-                listProduct.add(new ProductModel(100, "Bộ sưu tập mới 1", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(101, "Bộ sưu tập mới 2", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(102, "Bộ sưu tập mới 3", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(103, "Bộ sưu tập mới 4", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(104, "Bộ sưu tập mới 5", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
+                Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE(" + Utils.COL_CATEGORY + " = 'PL')",null);
+                int count = c.getCount();
+
+                binding.txtNumberOfProduct.setText(String.valueOf(count) + " SẢN PHẨM");
+
+                int productID;
+                String productName;
+                String categoryID;
+                byte[] productImage;
+                Double productPrice;
+                Double productSalePrice;
+                String productDescription;
+                int productInventory;
+                while (c.moveToNext()) {
+                    productID = c.getInt(0);
+                    productName = c.getString(1);
+                    categoryID = c.getString(2);
+                    productImage = c.getBlob(3);
+                    productPrice = c.getDouble(4);
+                    productSalePrice = c.getDouble(5);
+                    productDescription = c.getString(6);
+                    productInventory = c. getInt(7);
+
+                    listProduct.add(new ProductModel(productID, productName, categoryID, productImage, productPrice, productSalePrice, productDescription, productInventory));
+                }
+
+                //Đóng database để giải phóng bộ nhớ:
+                c.close();
             }
             else if(screenTitle.equals("Hàng mới về")){
-                listProduct.add(new ProductModel(100, "Hàng mới về 1", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(101, "Hàng mới về 2", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(102, "Hàng mới về 3", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(103, "Hàng mới về 4", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(104, "Hàng mới về 5", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
+
+//                List<Integer> hangmoive = new ArrayList<Integer>;
+//                hangmoive = Arrays.asList(100, 101, 112, 113, 114, 121, 122, 131, 132, 200, 201, 210, 211, 219, 220, 229, 230);
+
+                Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE(" + Utils.COL_ID + " IN (100, 101, 112, 113, 114, 121, 122, 131, 132, 200, 201, 210, 211, 219, 220, 229, 230))",null);
+                int count = c.getCount();
+
+                binding.txtNumberOfProduct.setText(String.valueOf(count) + " SẢN PHẨM");
+
+                int productID;
+                String productName;
+                String categoryID;
+                byte[] productImage;
+                Double productPrice;
+                Double productSalePrice;
+                String productDescription;
+                int productInventory;
+                while (c.moveToNext()) {
+                    productID = c.getInt(0);
+                    productName = c.getString(1);
+                    categoryID = c.getString(2);
+                    productImage = c.getBlob(3);
+                    productPrice = c.getDouble(4);
+                    productSalePrice = c.getDouble(5);
+                    productDescription = c.getString(6);
+                    productInventory = c. getInt(7);
+
+                    listProduct.add(new ProductModel(productID, productName, categoryID, productImage, productPrice, productSalePrice, productDescription, productInventory));
+                }
+
+                //Đóng database để giải phóng bộ nhớ:
+                c.close();
             }
             else if(screenTitle.equals("Sản phẩm")){
-                listProduct.add(new ProductModel(100, "San pham 1", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(101, "San pham 2", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(102, "San pham 3", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(103, "San pham 4", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-                listProduct.add(new ProductModel(104, "San pham 5", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
+                Cursor c = db.query(Utils.TBL_NAME, null, null, null, null, null, null);;
+                int count = c.getCount();
+
+                binding.txtNumberOfProduct.setText(String.valueOf(count) + " SẢN PHẨM");
+
+                int productID;
+                String productName;
+                String categoryID;
+                byte[] productImage;
+                Double productPrice;
+                Double productSalePrice;
+                String productDescription;
+                int productInventory;
+                while (c.moveToNext()) {
+                    productID = c.getInt(0);
+                    productName = c.getString(1);
+                    categoryID = c.getString(2);
+                    productImage = c.getBlob(3);
+                    productPrice = c.getDouble(4);
+                    productSalePrice = c.getDouble(5);
+                    productDescription = c.getString(6);
+                    productInventory = c. getInt(7);
+
+                    listProduct.add(new ProductModel(productID, productName, categoryID, productImage, productPrice, productSalePrice, productDescription, productInventory));
+                }
+
+                //Đóng database để giải phóng bộ nhớ:
+                c.close();
+
             }
         }
         else{
-            binding.txtTitle.setText("SẢN PHẨM");
-            listProduct.add(new ProductModel(103, "San pham null 1", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-            listProduct.add(new ProductModel(104, "San pham null 2", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
-            listProduct.add(new ProductModel(105, "San pham null 3", "AT", null, 250000.0, 200000.0, "Áo thun cotton đến từ The Weekdays", 25));
+            Cursor c = db.query(Utils.TBL_NAME, null, null, null, null, null, null);;
+            int count = c.getCount();
+
+            binding.txtNumberOfProduct.setText(String.valueOf(count) + " SẢN PHẨM");
+
+            int productID;
+            String productName;
+            String categoryID;
+            byte[] productImage;
+            Double productPrice;
+            Double productSalePrice;
+            String productDescription;
+            int productInventory;
+            while (c.moveToNext()) {
+                productID = c.getInt(0);
+                productName = c.getString(1);
+                categoryID = c.getString(2);
+                productImage = c.getBlob(3);
+                productPrice = c.getDouble(4);
+                productSalePrice = c.getDouble(5);
+                productDescription = c.getString(6);
+                productInventory = c. getInt(7);
+
+                listProduct.add(new ProductModel(productID, productName, categoryID, productImage, productPrice, productSalePrice, productDescription, productInventory));
+            }
+
+            //Đóng database để giải phóng bộ nhớ:
+            c.close();
         }
 
         adapter = new ProductCollectionAdapter(ProductCollection.this, R.layout.item_list_product, listProduct);

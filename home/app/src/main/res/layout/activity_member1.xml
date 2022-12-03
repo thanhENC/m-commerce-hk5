@@ -246,8 +246,36 @@
                 />
         </LinearLayout>
 
-
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#DADADA"
+            android:layout_marginTop="10dp">
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/btn_dangxuat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:layout_marginTop="2dp"
+            android:padding="10dp">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/logout"
+                android:layout_marginStart="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đăng xuất"
+                android:textSize="18dp"
+                android:layout_marginStart="20dp"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
     </LinearLayout>
 
 

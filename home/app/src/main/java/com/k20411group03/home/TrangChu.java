@@ -17,6 +17,7 @@ import android.widget.GridView;
 import com.k20411group03.adapters.BannerAdapter;
 import com.k20411group03.adapters.CategoryAdapter;
 import com.k20411group03.adapters.ItemRecyclerAdapter;
+import com.k20411group03.models.Banners;
 import com.k20411group03.models.Item;
 import com.k20411group03.models.category;
 

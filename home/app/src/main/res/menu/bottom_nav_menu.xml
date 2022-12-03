@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/item_noti"
+        android:title="Noti"
+        android:icon="@drawable/ic_noti"/>
+    <item
+        android:id="@+id/item_wishlist"
+        android:title="Wishlist"
+        android:icon="@drawable/ic_wishlist"/>
+    <item
+        android:id="@+id/item_scan"
+        android:title="Scan"
+        android:icon="@drawable/ic_scan"/>
+    <item
+        android:id="@+id/item_member1"
+        android:title="Member"
+        android:icon="@drawable/ic_membership"/>
+</menu>

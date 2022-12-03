@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Wishlist">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Code giao diện trong cục này nha-->
+
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/mn_wishlist"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_gravity="end|bottom"
+        app:itemIconTint="@color/bottom_navigation_style"
+        app:labelVisibilityMode="unlabeled"
+        android:layout_marginTop="5dp"/>
+</FrameLayout>

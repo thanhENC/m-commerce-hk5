@@ -1,5 +1,10 @@
 package com.k20411group03.models;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+import com.k20411group03.DisplayHelper;
+
 public class ProductModel {
     int productID;
     String productName;
@@ -86,15 +91,10 @@ public class ProductModel {
     }
 
     public String formatProductPrice(double price) {
-        String str = (int) price + "";
-        int count = 0;
-        for(int i = str.length() - 1; i > 0; i--){
-            count++;
-            if(count == 3){
-                str = str.substring(0, i) + "." + str.substring(i);
-                count = 0;
-            }
-        }
-        return str;
+        return DisplayHelper.formatPrice(price);
+    }
+
+    public Bitmap getBitmapProductImage() {
+        return BitmapFactory.decodeByteArray(productImage, 0, productImage.length);
     }
 }

@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -12,6 +13,7 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,14 +31,32 @@ android {
     buildFeatures{
         viewBinding true
     }
+    buildToolsVersion '30.0.3'
 }
 
 dependencies {
+    implementation platform('com.google.firebase:firebase-bom:31.1.0')
     implementation 'com.github.bumptech.glide:glide:4.14.2'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    implementation 'org.jetbrains:annotations:16.0.2'
+
+    //scalable size unit ( support for diferent screen sizes)
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+
+    //rounded image view
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-messaging:23.1.0'
+    implementation 'com.google.firebase:firebase-firestore:24.4.1'
+
+    //MultiDex
+implementation 'androidx.multidex:multidex:2.0.1'
 }

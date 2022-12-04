@@ -28,12 +28,13 @@
         android:layout_height="30sp"
         android:src="@drawable/user"/>
     <EditText
-        android:id="@+id/edt_DangNhap"
+        android:id="@+id/inputEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15sp"
         android:textSize="18dp"
-        android:hint="Số điện thoại/ Email/ Tên đăng nhập"/>
+        android:hint="Số điện thoại/ Email/ Tên đăng nhập"
+        android:imeOptions="actionNext"/>
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,22 +47,39 @@
             android:layout_height="30sp"
             android:src="@drawable/lock"/>
         <EditText
-            android:id="@+id/edt_MatKhau"
+            android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15sp"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
             android:textSize="18dp"
-            android:hint="Số điện thoại/ Email/ Tên đăng nhập"/>
+            android:hint="Mật Khẩu"/>
     </LinearLayout>
-    <Button
-        android:id="@+id/btn_DangNhap"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="ĐĂNG NHẬP"
-        android:backgroundTint="@color/black"
-        android:textSize="18dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="@dimen/_20sdp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="ĐĂNG NHẬP"
+            android:backgroundTint="@color/black"
+            android:textSize="18dp"
+            android:layout_marginTop="20dp"
+            app:cornerRadius="8sp"
+            />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+    </FrameLayout>
+
     <TextView
         android:id="@+id/btn_QuenMatKhau"
         android:layout_width="wrap_content"
@@ -137,7 +155,7 @@
             android:textSize="18dp"/>
     </LinearLayout>
     <TextView
-        android:id="@+id/txt_CoTK"
+        android:id="@+id/textCreateNewAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

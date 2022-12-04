@@ -27,150 +27,161 @@
             android:textSize="20sp" />
     </FrameLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:layout_gravity="center"
-        android:weightSum="9">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/search"
-            android:layout_weight="1"/>
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:hint="Nhập sản phẩm bạn đang tìm kiếm"
-            android:textSize="18sp"
-            android:layout_weight="7"/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/close_cancel"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:weightSum="6">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="5"
-            android:paddingLeft="20dp"
-            android:text="TÌM KIẾM GẦN ĐÂY"
-            android:textColor="#000000"
-            android:textSize="20sp" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:src="@drawable/delete" />
-    </LinearLayout>
-        <TextView
-            android:id="@+id/txt_AoNam"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:text="Áo nam"
-            android:textSize="18sp" />
-        <TextView
-            android:id="@+id/txt_QuanNam"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:text="Quần nam"
-            android:textSize="18sp" />
-        <TextView
-            android:id="@+id/txt_AoSoMi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:text="Áo sơ mi nam"
-            android:textSize="18sp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:weightSum="9">
 
-        <TextView
-            android:id="@+id/txt_AoKhoacNam"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:text="Áo khoác nam"
-            android:textSize="18sp" />
+                <ImageView
+                    android:id="@+id/imv_Search"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/search"
+                    android:layout_weight="1"/>
 
-        <TextView
-            android:id="@+id/txt_Shorts"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:text="Quần shorts"
-            android:textSize="18sp" />
+                <EditText
+                    android:id="@+id/edt_Search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:hint=" Nhập sản phẩm bạn đang tìm kiếm "
+                    android:textSize="18sp"
+                    android:layout_weight="7"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:text="TÌM KIẾM PHỔ BIẾN"
-        android:textColor="#000000"
-        android:textSize="20sp" />
+                <ImageView
+                    android:id="@+id/imv_EmptySearchBar"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/close_cancel"
+                    android:layout_weight="1"/>
 
-        <TextView
-            android:id="@+id/txt_AoThun"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:text="Áo Thun"
-            android:textSize="18sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:weightSum="6">
 
-        <TextView
-            android:id="@+id/txt_QuanKaki"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:text="Quần Kaki"
-            android:textSize="18sp" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="5"
+                    android:paddingLeft="20dp"
+                    android:text="TÌM KIẾM GẦN ĐÂY"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:src="@drawable/delete" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_AoThunRelax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="áo thun nam relax"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_QuanDai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="quần dài"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/txt_AoSoMi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="sơ mi nhung"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_AoKhoacNam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="Áo khoác nam"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_QuanShorts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="Quần shorttttttt"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="TÌM KIẾM PHỔ BIẾN"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_AoThun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="Áo Thun"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_QuanJogger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="Quần Jogger"
+                android:textSize="18sp" />
 
 
-        <TextView
-            android:id="@+id/txt_AoPolo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:text="Áo Polo"
-            android:textSize="18sp" />
-
-
-
+            <TextView
+                android:id="@+id/txt_AoPolo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="Áo Polo"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

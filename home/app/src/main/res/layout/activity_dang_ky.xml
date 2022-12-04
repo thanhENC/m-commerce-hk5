@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".DangKy"
     android:orientation="vertical"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:overScrollMode="never">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,9 +46,11 @@
                 android:src="@drawable/ic_baseline_phone_24"
                 android:layout_gravity="right"/>
             <EditText
+                android:id="@+id/inputPhone"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:textSize="18sp"
+                android:imeOptions="actionNext"
                 android:inputType="phone"/>
         </LinearLayout>
 
@@ -73,9 +76,11 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_baseline_email_24"/>
             <EditText
+                android:id="@+id/inputEmail"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:textSize="18sp"
+                android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"/>
         </LinearLayout>
     </LinearLayout>
@@ -101,9 +106,11 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_baseline_person_24"/>
             <EditText
+                android:id="@+id/inputName"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:textSize="18sp"
+                android:imeOptions="actionNext"
                 android:inputType="text"/>
         </LinearLayout>
     </LinearLayout>
@@ -128,9 +135,12 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_baseline_lock_24"/>
             <EditText
+                android:id="@+id/inputPassword"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:textSize="18sp"
+                android:hint="Password"
+                android:imeOptions="actionNext"
                 android:inputType="textPassword"/>
         </LinearLayout>
     </LinearLayout>
@@ -155,22 +165,37 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_baseline_lock_24"/>
             <EditText
+                android:id="@+id/inputConfirmPassword"
+                android:hint="Confirm Password"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:textSize="18sp"
+                android:imeOptions="actionDone"
                 android:inputType="textPassword"/>
         </LinearLayout>
 
     </LinearLayout>
-    <Button
-        android:textAllCaps="false"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Tiếp tục"
-        android:textSize="20sp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:backgroundTint="#000000"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="ĐĂNG KÝ"
+                android:backgroundTint="@color/black"
+                android:textSize="18dp"
+                android:layout_marginTop="20dp"
+                app:cornerRadius="8sp"
+                />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+        </FrameLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -274,6 +299,7 @@
             android:layout_marginRight="30dp"
             android:textSize="20sp"/>
         <TextView
+            android:id="@+id/textSignIn"
             android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

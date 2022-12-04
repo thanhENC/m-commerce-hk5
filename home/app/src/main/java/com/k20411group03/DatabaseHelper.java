@@ -1,4 +1,4 @@
-package com.k20411group03.home;
+package com.k20411group03;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import com.k20411group03.models.Payment;
+import com.k20411group03.home.R;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 

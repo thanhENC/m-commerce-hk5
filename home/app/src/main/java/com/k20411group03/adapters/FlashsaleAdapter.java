@@ -4,6 +4,8 @@ import static java.lang.Math.round;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,7 +70,8 @@ public class FlashsaleAdapter extends BaseAdapter {
         //binding data
         Flashsale flashsale = flashsales.get(i);
 
-        viewHolder.imvProductImage.setImageResource(R.drawable.cate_jacket);
+        //viewHolder.imvProductImage.setImageResource(R.drawable.cate_jacket);
+        viewHolder.imvProductImage.setImageBitmap(convertByteArrayToBitmap(flashsale.getThumbnail()));
         viewHolder.txtProductName.setText(flashsale.getProductName());
         viewHolder.txtProductPrice.setText(String.valueOf(flashsale.formatProductPrice(flashsale.getProductPrice())) + " Đ");
         viewHolder.txtProductPriceSale.setText(String.valueOf(flashsale.formatProductPrice(flashsale.getSalePrice())) + " Đ");
@@ -79,6 +82,11 @@ public class FlashsaleAdapter extends BaseAdapter {
 
         return view;
     }
+
+    private Bitmap convertByteArrayToBitmap(byte[] image) {
+        return BitmapFactory.decodeByteArray(image, 0, image.length);
+    }
+
     class ViewHolder {
         public
         ImageView imvProductImage;

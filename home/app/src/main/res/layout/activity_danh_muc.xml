@@ -1,42 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DanhMuc">
-    <LinearLayout
+    tools:context=".DanhMuc"
+    android:orientation="vertical">
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/gray">
+        <ImageView
+            android:id="@+id/imv_Back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Category"
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="#FF0000"
-            android:textSize="20sp"
-            android:paddingHorizontal="10dp"/>
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="DANH MỤC"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="#FF0000"
+                android:textSize="20sp"
+                android:paddingHorizontal="10dp"/>
 
-        <GridView
-            android:id="@+id/gv_Category"
-            android:layout_width="match_parent"
-            android:layout_height="270dp"
-            android:numColumns="4"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="50 sản phẩm"
-            android:fontFamily="@font/montserrat"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:paddingHorizontal="10dp"/>
-        <GridView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numColumns="2"
-            android:id="@+id/gv_Item"/>
-    </LinearLayout>
+            <GridView
+                android:id="@+id/gv_Category"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:numColumns="4"
+                />
+            <TextView
+                android:id="@+id/txt_categoryname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Sản phẩm"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="#FF0000"
+                android:textSize="20sp"
+                android:paddingHorizontal="10dp"/>
 
-</ScrollView>
+            <GridView
+                android:id="@+id/gv_Item"
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:numColumns="2" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

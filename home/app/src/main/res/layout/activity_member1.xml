@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".member1"
     android:orientation="vertical">
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -281,6 +282,7 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/mn_membership"
         android:layout_width="match_parent"

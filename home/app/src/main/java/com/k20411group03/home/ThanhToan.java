@@ -1,20 +1,14 @@
 package com.k20411group03.home;
 
-import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
 
+import com.k20411group03.DatabaseHelper;
 import com.k20411group03.adapters.PaymentAdapter;
-import com.k20411group03.adapters.ProductAdapter;
-import com.k20411group03.home.databinding.ActivityMainBinding;
 import com.k20411group03.home.databinding.ActivityThanhToanBinding;
 import com.k20411group03.models.Payment;
-import com.k20411group03.models.Product;
 
 import java.util.ArrayList;
 import java.util.List;

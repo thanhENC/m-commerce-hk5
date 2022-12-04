@@ -1,4 +1,4 @@
-package com.k20411group03.home;
+package com.k20411group03;
 
 public class Utils {
     public static final String DB_NAME = "theweekdays.db";

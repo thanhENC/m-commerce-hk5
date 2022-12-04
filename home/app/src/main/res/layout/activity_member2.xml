@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".member2"
     android:orientation="vertical">
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -80,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
+                    
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -207,6 +208,6 @@
         app:itemIconTint="@color/bottom_navigation_style"
         app:labelVisibilityMode="unlabeled"
         android:layout_marginTop="5dp">
-
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+    
 </FrameLayout>

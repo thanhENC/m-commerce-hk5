@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,12 +27,14 @@ public class member1 extends AppCompatActivity {
         //setContentView(R.layout.activity_member1);
         binding= ActivityMember1Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         addEvents();
     }
     private void addEvents(){
         //Bottom navigation
         //navigationView = findViewById(R.id.mn_membership);
         navigationView = binding.mnMembership;
+
         navigationView.setSelectedItemId(R.id.item_member1);
         navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

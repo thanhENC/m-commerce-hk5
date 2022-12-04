@@ -3,7 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    style="@style/Theme.AppCompat.Light.NoActionBar">
+    style="@style/Theme.AppCompat.Light.NoActionBar"
+    android:padding="30dp">
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_baseline_check_circle_outline_24"
+        android:layout_gravity="center"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +25,7 @@
         android:text="Đi đến giỏ hàng"
         android:textSize="20dp"
         android:fontFamily="@font/montserrat"
-        android:id="@+id/btn_DenGioHang"
+        android:id="@+id/btn_GoToCart"
         android:backgroundTint="@color/black"
         android:layout_gravity="center"
         android:textColor="@color/white"

@@ -14,16 +14,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.k20411group03.home.R;
-import com.k20411group03.models.Flashsale;
+import com.k20411group03.models.ProductModel;
 
 import java.util.List;
 
 public class FlashsaleAdapter extends BaseAdapter {
     Activity activity;
     int item_layout;
-    List<Flashsale> flashsales;
+    List<ProductModel> flashsales;
 
-    public FlashsaleAdapter(Activity activity, int item_layout, List<Flashsale> flashsales) {
+    public FlashsaleAdapter(Activity activity, int item_layout, List<ProductModel> flashsales) {
         this.activity = activity;
         this.item_layout = item_layout;
         this.flashsales = flashsales;
@@ -68,17 +68,17 @@ public class FlashsaleAdapter extends BaseAdapter {
         }
 
         //binding data
-        Flashsale flashsale = flashsales.get(i);
+        ProductModel flashsale = flashsales.get(i);
 
         //viewHolder.imvProductImage.setImageResource(R.drawable.cate_jacket);
-        viewHolder.imvProductImage.setImageBitmap(convertByteArrayToBitmap(flashsale.getThumbnail()));
+        viewHolder.imvProductImage.setImageBitmap(convertByteArrayToBitmap(flashsale.getProductImage()));
         viewHolder.txtProductName.setText(flashsale.getProductName());
-        viewHolder.txtProductPrice.setText(String.valueOf(flashsale.formatProductPrice(flashsale.getProductPrice())) + " Đ");
-        viewHolder.txtProductPriceSale.setText(String.valueOf(flashsale.formatProductPrice(flashsale.getSalePrice())) + " Đ");
-        viewHolder.txtFlashsaleQuantity.setText(String.valueOf(flashsale.getInventory()));
+        viewHolder.txtProductPrice.setText(flashsale.formatProductPrice(flashsale.getProductPrice()) + " Đ");
+        viewHolder.txtProductPriceSale.setText(flashsale.formatProductPrice(flashsale.getProductSalePrice()) + " Đ");
+        viewHolder.txtFlashsaleQuantity.setText(String.valueOf(flashsale.getProductInventory()));
         viewHolder.txtFlashsalePercent.setText("-" + String.valueOf(round(
                 (
-                (flashsale.getProductPrice() - flashsale.getSalePrice()) / flashsale.getProductPrice())*100)) + "%");
+                (flashsale.getProductPrice() - flashsale.getProductSalePrice()) / flashsale.getProductPrice())*100)) + "%");
 
         return view;
     }

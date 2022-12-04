@@ -10,4 +10,5 @@
     <color name="gray">#BDBDBD</color>
     <color name="bee">#E6E6E6</color>
     <color name="red">#FF0000</color>
+    <color name="price">#FF0000</color>
 </resources>

@@ -7,21 +7,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.k20411group03.home.MainActivity;
 import com.k20411group03.home.R;
 import com.k20411group03.models.Product;
+import com.k20411group03.models.ProductInCartModel;
 
 import java.util.List;
 
-public class ProductAdapter extends BaseAdapter {
-    Activity activity;
+public class ProductInCartAdapter extends BaseAdapter {
+    //Đính Cart Activity trực tiếp
+    MainActivity activity;
     int item_layout;
-    List<Product> products;
+    List<ProductInCartModel> products;
 
-
-    public ProductAdapter(Activity activity, int item_layout, List<Product> products) {
+    public ProductInCartAdapter(MainActivity activity, int item_layout, List<ProductInCartModel> products) {
         this.activity = activity;
         this.item_layout = item_layout;
         this.products = products;
@@ -67,21 +70,46 @@ public class ProductAdapter extends BaseAdapter {
         }
 
         //binding data
-        Product product = products.get(i);
-        viewHolder.imvProductImage.setImageResource(product.getProduct_Image());
-        viewHolder.txtProductName.setText(product.getProduct_Name());
-        viewHolder.txtProductSize.setText(product.getProduct_Size());
-        viewHolder.txtProductColor.setText(product.getProduct_Color());
-        viewHolder.txtProductPrice.setText(String.valueOf(product.getProduct_Price()) + " Đ");
-        viewHolder.txtProductQuantity.setText(String.valueOf(product.getProduct_Quantity()));
-        viewHolder.chkProductBuy.setChecked(product.isProduct_Checked());
+        ProductInCartModel product = products.get(i);
+        viewHolder.imvProductImage.setImageBitmap(product.getBitmapProductImage());
+        viewHolder.txtProductName.setText(product.getProductName());
+        viewHolder.txtProductSize.setText(product.getProductSize());
+        viewHolder.txtProductColor.setText(product.getProductColor());
+        viewHolder.txtProductPrice.setText(product.formatProductPrice(product.getProductSalePrice()));
+        viewHolder.txtProductQuantity.setText(String.valueOf(product.getProductInventory()));
+        viewHolder.chkProductBuy.setChecked(product.getProductIsChecked());
+
+        //Nếu check vào checkbox sẽ cập nhật Tổng giá trị đơn hàng
+//        viewHolder.chkProductBuy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//
+//            }
+//        });
 
         return view;
     }
 
+    //ViewHolder
     class ViewHolder{
         ImageView imvProductImage;
         TextView txtProductName, txtProductPrice, txtProductSize, txtProductColor, txtProductQuantity;
         CheckBox chkProductBuy;
+    }
+
+    //Sum of all products in cart
+    public double sumOfAllProductsInCart(){
+        if (products.size() == 0){
+            return 0;
+        }
+        else{
+            double sum = 0;
+            for (ProductInCartModel product : products){
+                if(product.getProductIsChecked()){
+                    sum += product.getProductSalePrice() * product.getProductInventory();
+                }
+            }
+            return sum;
+        }
     }
 }

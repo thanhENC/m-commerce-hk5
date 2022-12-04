@@ -1,7 +1,11 @@
 package com.k20411group03.adapters;
 
+import static java.lang.Math.round;
+
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +45,11 @@ public class ProductCollectionAdapter extends BaseAdapter {
         return 0;
     }
 
+    public static class ViewHolder {
+        ImageView imvProductImage;
+        TextView txtProductName, txtProductPrice, txtSalePrice, txtSalePercent;
+    }
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder;
@@ -52,7 +61,9 @@ public class ProductCollectionAdapter extends BaseAdapter {
             view = inflater.inflate(item_layout, null);
 
             holder.txtProductName = view.findViewById(R.id.txt_ProductName);
+            holder.txtSalePrice  = view.findViewById(R.id.txt_SalePrice);
             holder.txtProductPrice = view.findViewById(R.id.txt_ProductPrice);
+            holder.txtSalePercent = view.findViewById(R.id.txt_SalePercent);
             holder.imvProductImage = view.findViewById(R.id.imv_ProductImage);
 
             view.setTag(holder);
@@ -63,19 +74,22 @@ public class ProductCollectionAdapter extends BaseAdapter {
 //set data
         ProductModel product = productCollections.get(i);
         holder.txtProductName.setText(product.getProductName());
-        holder.txtProductPrice.setText(String.valueOf(product.getProductPrice()));
-        //holder.imvProductImage.setImageResource(product.getProduct_Image());
-        holder.imvProductImage.setImageResource(R.drawable.ic_launcher_background);
+        holder.txtProductPrice.setText(String.valueOf(product.formatProductPrice(product.getProductPrice())) + " Đ");
+        holder.txtSalePrice.setText(String.valueOf(product.formatProductPrice(product.getProductSalePrice())) + " Đ");
+        holder.imvProductImage.setImageBitmap(convertByteArrayToBitmap(product.getProductImage()));
+        holder.txtSalePercent.setText("-" + String.valueOf(round(
+                (
+                        (product.getProductPrice() - product.getProductSalePrice()) / product.getProductPrice())*100)) + "%");
 
         return view;
+    }
+
+    private Bitmap convertByteArrayToBitmap(byte[] image) {
+        return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
 
 //    Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
 //    ImageView image = (ImageView) findViewById(R.id.imageView1);
 //image.setImageBitmap(Bitmap.createScaledBitmap(bmp, image.getWidth(), image.getHeight(), false));
 
-    public static class ViewHolder {
-        ImageView imvProductImage;
-        TextView txtProductName, txtProductPrice;
-    }
 }

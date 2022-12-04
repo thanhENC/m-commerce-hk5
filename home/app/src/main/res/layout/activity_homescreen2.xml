@@ -5,26 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".homescreen2"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/weclome2"
+    android:weightSum="10">
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:text="SỬ DỤNG COOKIES"
         android:layout_gravity="center"
-        android:paddingTop="200dp"
+        android:gravity="bottom"
         android:textSize="30sp"
-        android:textColor="@color/black"
-        />
+        android:textColor="@color/bee"
+        android:textStyle="bold"
+        android:layout_weight="4"/>
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:text="@string/txtCookies"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
         android:textSize="20sp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="20dp"
-        android:textColor="@color/black"
-        />
+        android:textColor="@color/bee"
+        android:layout_weight="4"/>
+    <Button
+        android:id="@+id/btn_DongY"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Đồng ý"
+        android:textColor="#111111"
+    android:layout_gravity="center"
+    android:layout_margin="15dp"
+    android:backgroundTint="@color/bee"
+    android:textSize="20sp"/>
+
 
 </LinearLayout>

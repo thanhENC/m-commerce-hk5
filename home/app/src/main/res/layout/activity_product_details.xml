@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imv_sp1"
+        android:id="@+id/imv_ProductThumbDetail"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:src="@drawable/nen" />
@@ -24,6 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Áo thun cực mát đến từ The Weekdays"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:gravity="left"
         android:layout_marginTop="20dp"
@@ -34,71 +36,164 @@
         android:layout_height="wrap_content"
         android:text="10000"
         android:textColor="#FF5722"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:gravity="left"
         android:textStyle="bold"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingVertical="10dp">
     <TextView
         android:id="@+id/txt_ProductsDetailSize"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Size: "
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:gravity="left"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_marginRight="20dp"
+        />
+
+    <RadioGroup
+        android:id="@+id/radioGroupSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rad_SizeM"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="M"
+            android:button="@null"
+            android:gravity="center"
+            android:buttonTint="@color/black"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_size_checked"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+        <RadioButton
+            android:id="@+id/rad_SizeL"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="L"
+            android:gravity="center"
+            android:button="@null"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_size_checked"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+        <RadioButton
+            android:id="@+id/rad_SizeXL"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="XL"
+            android:gravity="center"
+            android:button="@null"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_size_checked"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+    </RadioGroup>
+</LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="10">
+        android:weightSum="10"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số lượng:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
         <ImageView
-            android:layout_width="0dp"
+            android:id="@+id/imv_Minus"
+            android:layout_width="10dp"
             android:layout_height="35dp"
             android:src="@drawable/ic_baseline_remove_circle_24"
             android:layout_weight="1"/>
         <TextView
-            android:layout_width="0dp"
+            android:id="@+id/txt_ProductsDetailQuantity"
+            android:layout_width="10dp"
             android:layout_height="35dp"
-            android:text="01"
+            android:text="1"
             android:textSize="20sp"
             android:gravity="center"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            />
         <ImageView
-            android:layout_width="0dp"
+            android:id="@+id/imv_Add"
+            android:layout_width="10dp"
             android:layout_height="35dp"
             android:src="@drawable/ic_baseline_add_circle_24"
             android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="6"
+            android:gravity="right|center_vertical">
+            <ImageView
+                android:id="@+id/imv_AddWishList"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_baseline_favorite_border_24" />
+        </LinearLayout>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:src="@drawable/ic_baseline_favorite_border_24"
-            android:layout_weight="12"/>
     </LinearLayout>
 
     <Button
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:id="@+id/btn_AddToCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Thêm vào giỏ hàng"
-        android:backgroundTint="#111111"
+        android:textColor="@color/white"
         android:layout_marginTop="10dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mô tả"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"/>
-    <TextView
-        android:id="@+id/txt_ProductsDetailDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:text="Đây là dòng mô tả cho mục mô tả nằm trong mô tả Đây là dòng"/>
-    <TextView
+
+        <TextView
+            android:id="@+id/txt_ProductsDetailDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đây là dòng mô tả cho mục mô tả nằm trong mô tả Đây là dòng"
+            android:textSize="18dp" />
+
+        <TextView
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Chính sách đổi trả"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"/>
         <TextView
@@ -113,7 +208,8 @@
             android:layout_height="wrap_content"
             android:text="Cam kết"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
         <TextView
             android:id="@+id/txt_ProductsDetailPromise"
             android:layout_width="match_parent"
@@ -132,7 +228,8 @@
             android:layout_height="wrap_content"
             android:text="Đánh giá"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <LinearLayout
             android:layout_width="match_parent"

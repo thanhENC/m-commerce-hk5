@@ -42,8 +42,6 @@ public class DanhMuc extends AppCompatActivity {
 
         cateID = getIntent().getStringExtra("Cate");
 
-        //setContentView(R.layout.activity_danh_muc);
-        Bundle extras = getIntent().getExtras();
         //Gridview category
         categoryAdapter = new CategoryAdapter(DanhMuc.this, R.layout.category_layout, getCategory());
         binding.gvCategory.setAdapter(categoryAdapter);
@@ -51,7 +49,40 @@ public class DanhMuc extends AppCompatActivity {
         //ItemAdapter productAdapter = new ItemAdapter(DanhMuc.this,R.layout.item_layout,getProduct());
         loadData();
         addEvents();
+    }
 
+    private void loadData(){
+        ArrayList<ProductModel> products = new ArrayList<>();
+        db = openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
+        Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE(" + Utils.COL_CATEGORY + " = '" + cateID + "')",null);
+        c.moveToFirst();
+        int ProductID;
+        String ProductName;
+        String Category;
+        byte[] Thumbnail;
+        Double ProductPrice;
+        Double SalePrice;
+        String ProductDescription;
+        int Inventory;
+        while (c.moveToNext()) {
+            ProductID = c.getInt(0);
+            ProductName = c.getString(1);
+            Category = c.getString(2);
+            Thumbnail = c.getBlob(3);
+            ProductPrice = c.getDouble(4);
+            SalePrice = c.getDouble(5);
+            ProductDescription = c.getString(6);
+            Inventory = c.getInt(7);
+
+            products.add(new ProductModel(ProductID, ProductName, Category, Thumbnail, ProductPrice, SalePrice,ProductDescription, Inventory));
+        }
+        //Đóng database để giải phóng bộ nhớ:
+        c.close();
+
+        ItemAdapter productAdapter = new ItemAdapter(DanhMuc.this,R.layout.item_layout2,products);
+        binding.gvItem.setAdapter(productAdapter);
+
+        //Set tên danh mục
         switch (cateID) {
             case "AT":
                 binding.txtCategoryname.setText("Áo thun");
@@ -79,37 +110,7 @@ public class DanhMuc extends AppCompatActivity {
                 break;
 
         }
-    }
 
-    private void loadData(){
-        ArrayList<ProductModel> products = new ArrayList<>();
-        db = openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
-        Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE(" + Utils.COL_CATEGORY + " = '" + cateID + "')",null);
-        int ProductID;
-        String ProductName;
-        String Category;
-        byte[] Thumbnail;
-        Double ProductPrice;
-        Double SalePrice;
-        String ProductDescription;
-        int Inventory;
-        while (c.moveToNext()) {
-            ProductID = c.getInt(0);
-            ProductName = c.getString(1);
-            Category = c.getString(2);
-            Thumbnail = c.getBlob(3);
-            ProductPrice = c.getDouble(4);
-            SalePrice = c.getDouble(5);
-            ProductDescription = c.getString(6);
-            Inventory = c.getInt(7);
-
-            products.add(new ProductModel(ProductID, ProductName, Category, Thumbnail, ProductPrice, SalePrice,ProductDescription, Inventory));
-        }
-        //Đóng database để giải phóng bộ nhớ:
-        c.close();
-
-        ItemAdapter productAdapter = new ItemAdapter(DanhMuc.this,R.layout.item_layout2,products);
-        binding.gvItem.setAdapter(productAdapter);
     }
 
     private void addEvents() {
@@ -120,6 +121,17 @@ public class DanhMuc extends AppCompatActivity {
                 String cateID = c.getCateID();
                 Intent intent = new Intent(DanhMuc.this,DanhMuc.class);
                 intent.putExtra("Cate", cateID);
+                startActivity(intent);
+            }
+        });
+
+        //Click vào sản phẩm
+        binding.gvItem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ProductModel p = (ProductModel) binding.gvItem.getItemAtPosition(i);
+                Intent intent = new Intent(DanhMuc.this, ProductDetails.class);
+                intent.putExtra("ProductID", p.getProductID());
                 startActivity(intent);
             }
         });

@@ -1,75 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".scan1"
     android:orientation="vertical">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:background="#DADADA">
-        <ImageView
-            android:id="@+id/imv_Back"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
-            android:src="@drawable/img" />
-        <TextView
-            android:id="@+id/txt_TitleGioHang"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="THIẾT LẬP TÀI KHOẢN"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-    </FrameLayout>
-    <ImageView
-        android:id="@+id/imv_Photo"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:paddingTop="20dp"
-        android:src="@drawable/scan"/>
-    <TextView
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:paddingTop="20dp"
-        android:text="Bạn có thể quét mã vạch của sản phẩm để kiểm tra màu sắc, kích cỡ, số lượng hàng có sẵn."/>
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="#DADADA">
+            <TextView
+                android:id="@+id/txt_TitleGioHang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="SCAN SẢN PHẨM"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </FrameLayout>
 
-    <EditText
-        android:id="@+id/edt_nhapmascan"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:layout_gravity="center"
-        android:paddingTop="30dp"
-        android:hint="Hoặc nhập số của mã vạch"/>
-    <Button
-        android:id="@+id/btn_quetScan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="quét"
-        android:textSize="18dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"/>
-</LinearLayout>
+        <SurfaceView
+            android:id="@+id/sfv_cameraSurfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_Result"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="20dp"/>
+
+        <TextView
+            android:id="@+id/txt_notification"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:text="Bạn có thể quét mã vạch của sản phẩm để kiểm tra màu sắc, kích cỡ, số lượng hàng có sẵn."/>
+
+        <EditText
+            android:id="@+id/edt_nhapmascan"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_gravity="center"
+            android:paddingTop="30dp"
+            android:hint="Hoặc nhập số của mã vạch"
+            android:inputType="number"
+            android:maxLength="3"/>
+
+        <Button
+            android:id="@+id/btn_Scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="quét"
+            android:textSize="18dp" />
+    </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/mn_scan"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        app:menu="@menu/bottom_nav_menu"
-        android:layout_gravity="end|bottom"
-        app:itemIconTint="@color/bottom_navigation_style"
-        app:labelVisibilityMode="unlabeled"
-        android:layout_marginTop="5dp"/>
-</FrameLayout>
+        />
+</LinearLayout>

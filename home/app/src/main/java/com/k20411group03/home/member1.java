@@ -1,27 +1,40 @@
 package com.k20411group03.home;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.k20411group03.home.databinding.ActivityMember1Binding;
 
 public class member1 extends AppCompatActivity {
+    ActivityMember1Binding binding;
     BottomNavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_member1);
+        //setContentView(R.layout.activity_member1);
+        binding= ActivityMember1Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         addEvents();
     }
     private void addEvents(){
         //Bottom navigation
-        navigationView = findViewById(R.id.mn_membership);
+        //navigationView = findViewById(R.id.mn_membership);
+        navigationView = binding.mnMembership;
+
         navigationView.setSelectedItemId(R.id.item_member1);
         navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -55,6 +68,32 @@ public class member1 extends AppCompatActivity {
                         return true;
                 }
                 return false;
+            }
+        });
+
+        //Button Đăng xuất
+        binding.btnDangxuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Dialog dialog = new Dialog(member1.this);
+                dialog.setContentView(R.layout.dialog_dangxuat);
+                dialog.setCanceledOnTouchOutside(false);
+                TextView txtDangXuat = dialog.findViewById(R.id.txtYes);
+                txtDangXuat.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(member1.this, TrangChu.class);
+                        startActivity(intent);
+                    }
+                });
+                TextView txtHuy = dialog.findViewById(R.id.txtQuit);
+                txtHuy.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
     }

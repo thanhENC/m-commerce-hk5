@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bạn có muốn đăng xuất khỏi tài khoản?"
+        android:textSize="16sp"
+        android:layout_margin="20dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right"
+        >
+        <TextView
+            android:id="@+id/txtQuit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HỦY"
+            android:paddingHorizontal="30dp"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="10dp"
+            />
+        <TextView
+            android:id="@+id/txtYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ĐĂNG XUẤT"
+            android:textStyle="bold"
+            android:textColor="#F44336"
+            android:paddingHorizontal="30dp"
+            android:textSize="18sp"
+            android:paddingBottom="10dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

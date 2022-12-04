@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.k20411group03.Utils;
 import com.k20411group03.adapters.FlashsaleAdapter;
 import com.k20411group03.home.databinding.ActivityFlashSaleScreenBinding;
-import com.k20411group03.models.Flashsale;
+import com.k20411group03.models.ProductModel;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -23,7 +23,7 @@ public class FlashSaleScreen extends AppCompatActivity {
 
     ActivityFlashSaleScreenBinding binding;
     FlashsaleAdapter adapter;
-    ArrayList<Flashsale> flashsales;
+    ArrayList<ProductModel> flashsales;
 
     public static SQLiteDatabase db;
 
@@ -80,7 +80,7 @@ public class FlashSaleScreen extends AppCompatActivity {
             SalePrice = c.getDouble(5);
             Inventory = c.getInt(7);
 
-            flashsales.add(new Flashsale(ProductID, ProductName, Thumbnail, ProductPrice, SalePrice, Inventory));
+            flashsales.add(new ProductModel(ProductID, ProductName, null, Thumbnail, ProductPrice, SalePrice, null, Inventory));
         }
 
         //Đóng database để giải phóng bộ nhớ:

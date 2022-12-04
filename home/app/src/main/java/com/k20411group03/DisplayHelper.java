@@ -1,5 +1,8 @@
 package com.k20411group03;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 public class DisplayHelper {
     public static String formatPrice(double price){
         String str = (int) price + "";
@@ -12,5 +15,8 @@ public class DisplayHelper {
             }
         }
         return str;
+    }
+    public static Bitmap convertByteArrayToBitmap(byte[] image) {
+        return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
 }

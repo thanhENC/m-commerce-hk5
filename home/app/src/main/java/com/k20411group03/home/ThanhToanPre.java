@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
 import com.k20411group03.adapters.PaymentItemAdapter;
-import com.k20411group03.adapters.ProductAdapter;
 import com.k20411group03.home.databinding.ActivityThanhToanPreBinding;
 import com.k20411group03.models.Product;
 

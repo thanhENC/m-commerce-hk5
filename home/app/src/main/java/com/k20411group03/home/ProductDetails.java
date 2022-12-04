@@ -22,7 +22,7 @@ public class ProductDetails extends AppCompatActivity {
     ActivityProductDetailsBinding binding;
     int productID;
     int quantity;
-    String size = "M";
+    String size = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,16 +84,39 @@ public class ProductDetails extends AppCompatActivity {
         binding.btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(ProductDetails.this, MainActivity.class);
-//                intent.putExtra("ProductID", productID);
-//                intent.putExtra("Quantity", quantity);
-//                intent.putExtra("Size", size);
-//                startActivity(intent);
-                //Hiển thị dialog thông báo
-                Dialog dialog = new Dialog(ProductDetails.this);
-                dialog.setContentView(R.layout.add_to_cart_dialog);
+                //Lưu dữ liệu giỏ hàng vào database
 
-                Button btnContinueShopping = dialog.findViewById(R.id.btnContinueShopping);
+                //Kiểm tra đơn hàng hợp lệ
+                if (size.equals("")){
+                    Toast.makeText(ProductDetails.this, "Vui lòng chọn size", Toast.LENGTH_SHORT).show();
+                    return;
+                }else {
+                    //Lưu dữ liệu giỏ hàng vào database
+                    //Hiển thị dialog thông báo đã thêm vào giỏ hàng
+                    Dialog dialog = new Dialog(ProductDetails.this);
+                    dialog.setContentView(R.layout.add_to_cart_dialog);
+                    dialog.show();
+
+                    Button btnContinueShopping = dialog.findViewById(R.id.btn_ContinueShopping);
+                    Button btnGoToCart = dialog.findViewById(R.id.btn_GoToCart);
+                    btnContinueShopping.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intentHome = new Intent();
+                            intentHome.setClass(ProductDetails.this, ProductCollection.class);
+                            startActivity(intentHome);
+                        }
+                    });
+                    btnGoToCart.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intentCart = new Intent();
+                            intentCart.setClass(ProductDetails.this, MainActivity.class);
+                            startActivity(intentCart);
+                        }
+                    });
+                }
+
             }
         });
 

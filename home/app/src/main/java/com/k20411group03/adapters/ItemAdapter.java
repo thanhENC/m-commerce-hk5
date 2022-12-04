@@ -47,7 +47,7 @@ public class ItemAdapter extends BaseAdapter {
 
         ViewHolder holder;
         //An xóa ProductAdapter, chuyển thành ProductInCartAdapter đại diện cho giỏ hàng
-        ProductAdapter.ViewHolder viewHolder;
+        ItemAdapter.ViewHolder viewHolder;
 
         if(view == null){
             //link views

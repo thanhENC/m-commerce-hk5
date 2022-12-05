@@ -1,6 +1,7 @@
 package com.k20411group03.home;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
@@ -12,11 +13,16 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.TypefaceSpan;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Switch;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -46,6 +52,14 @@ public class TrangChu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_chu);
+
+        //Custom action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setCustomView(R.layout.custom_action_bar);
+        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         //Set up Flash sale recyclerview
         rcvFlashsale = findViewById(R.id.rcv_Flashsale);
@@ -88,14 +102,40 @@ public class TrangChu extends AppCompatActivity {
         BannerAdapter bannerAdapter =(BannerAdapter) new BannerAdapter(bannerList);
         viewPager.setAdapter(bannerAdapter);
 
-
-
-
         autoSlide();
         addEvents();
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //Sự kiện action bar
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                Intent intentSearch = new Intent(TrangChu.this, ActivitySearch.class);
+                startActivity(intentSearch);
+                break;
+            case R.id.action_cart:
+                Intent intentCart = new Intent(TrangChu.this, MainActivity.class);
+                startActivity(intentCart);
+                break;
+            case R.id.action_menu:
+                Intent intentMenu = new Intent(TrangChu.this, MainMenu.class);
+                startActivity(intentMenu);
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    //"Ai nạp data thì sửa cái này" - said Copilot.
     private List<Item> getListSaleItem(){
         List<Item> list = new ArrayList<>();
         list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
@@ -162,6 +202,8 @@ public class TrangChu extends AppCompatActivity {
     }
 
     private void addEvents(){
+
+        //Sự kiện khi click vào navigation bar
         navigationView = findViewById(R.id.mn_home);
         navigationView.setSelectedItemId(R.id.item_home);
         navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -199,6 +241,8 @@ public class TrangChu extends AppCompatActivity {
             }
         });
 
+
+        //Sự kiện khi click vào các item trong danh mục
         gvCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -210,5 +254,16 @@ public class TrangChu extends AppCompatActivity {
             }
         });
 
+
+        //click vào viewpager chuyển sang trang bộ sưu tập (chưa xong)
+        viewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangChu.this,ProductCollection.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 }

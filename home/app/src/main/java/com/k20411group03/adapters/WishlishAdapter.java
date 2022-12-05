@@ -68,7 +68,7 @@ public class WishlishAdapter extends BaseAdapter {
         holder.txtSalePrice.setText(product.formatProductPrice(product.getProductSalePrice()) + " đ");
         holder.imvProductImage.setImageBitmap(product.getBitmapProductImage());
 
-        return null;
+        return view;
     }
 
     public static class ViewHolder{

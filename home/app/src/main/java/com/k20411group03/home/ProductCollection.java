@@ -57,11 +57,12 @@ public class ProductCollection extends AppCompatActivity {
 
                 //INTENT ĐẾN MÀN HÌNH CHI TIẾT SẢN PHẨM
 
-                //intent = new Intent(ProductCollection.this, ProductDetail.class);
+                intent = new Intent(ProductCollection.this, ProductDetails.class);
                 //Bundle bundle = new Bundle();
                 //bundle.putSerializable("selectedProduct", (Serializable) selectedProduct);
                 //intent.putExtras(bundle);
-                //startActivity(intent);
+                intent.putExtra("ProductID", selectedProduct.getProductID());
+                startActivity(intent);
             }
         });
     }
@@ -72,7 +73,7 @@ public class ProductCollection extends AppCompatActivity {
         super.onResume();
     }
 
-    //==========LOAD DỮ LIỆU TỪ DATABASE VÀO LISTVIEW==========
+    //===============LOAD DỮ LIỆU TỪ DATABASE VÀO LISTVIEW===============
     //NHẬN INTENT TỪ MÀN HÌNH SEARCH
     //NHẬN INTENT TỪ MÀN MAIN MENU
     //Intent screenTitle

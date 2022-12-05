@@ -85,7 +85,7 @@
                         android:id="@+id/edt_firstname"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:hint="Van A"
+                        android:hint="Văn An"
                         android:textColor="@color/black"
                         android:padding="5dp"
                         android:textSize="24sp"/>
@@ -103,17 +103,34 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
                 android:textSize="20sp"/>
-            <EditText
-                android:id="@+id/edt_province"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:hint="Ho Chi Minh"
-                android:textColor="@color/black"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
-                android:textSize="24sp"/>
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txt_province"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:hint="Ho Chi Minh"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:layout_weight="9"/>
+
+                <Spinner
+                    android:id="@+id/spinner_province"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -124,17 +141,33 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
                 android:textSize="20sp"/>
-            <EditText
-                android:id="@+id/edt_district"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:hint="District 1"
-                android:textColor="@color/black"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
-                android:textSize="24sp"/>
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txt_district"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:hint="Binh Thanh"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:layout_weight="9"/>
+
+                <Spinner
+                    android:id="@+id/spinner_district"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:spinnerMode="dropdown"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -145,17 +178,33 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
                 android:textSize="20sp"/>
-            <EditText
-                android:id="@+id/edt_ward"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:hint="Ward 25"
-                android:textColor="@color/black"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
-                android:textSize="24sp"/>
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txt_ward"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:hint="Phuong 25"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:layout_weight="9"/>
+
+                <Spinner
+                    android:id="@+id/spinner_ward"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:spinnerMode="dropdown"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"

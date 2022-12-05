@@ -36,20 +36,22 @@
         android:text="Địa chỉ nhận hàng >"
         android:textStyle="bold"
         android:textSize="20sp"
+        android:background="@color/white"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="10dp" />
     <TextView
         android:id="@+id/txt_NguoiNhanSDT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hiền Phú | 097 123 4567"
+        android:text="Lê Hiền Phú | 097 123 4567"
         android:textSize="18sp"
         android:layout_marginHorizontal="10dp" />
 
     <TextView
+        android:id="@+id/txt_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gò Vấp, Tây Ninh, Bình Dương, Bình Định, Đồng Tháp"
+        android:hint="461 Nguyễn Bình, Phường Hiệp Thành, Thành phố Thủ Dầu Một, Tỉnh Bình Dương"
         android:textSize="18sp"
         android:layout_marginHorizontal="10dp" />
 
@@ -137,6 +139,7 @@
         android:layout_marginTop="10dp"/>
 
     <EditText
+        android:id="@+id/txt_noteaddress"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:background="@color/white"

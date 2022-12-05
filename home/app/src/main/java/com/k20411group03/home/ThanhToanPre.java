@@ -1,6 +1,7 @@
 package com.k20411group03.home;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 
 import com.k20411group03.adapters.PaymentItemAdapter;
@@ -22,6 +24,7 @@ public class ThanhToanPre extends AppCompatActivity {
     ActivityThanhToanPreBinding binding;
     PaymentItemAdapter adapter;
     List<Product> products;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,40 @@ public class ThanhToanPre extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         loadData();
+        addEvents();
+        getData();
     }
+
+    private void getData() {
+
+        Intent intent = getIntent();
+        binding.txtNguoiNhanSDT.setText( intent.getStringExtra("Ho") + " " + intent.getStringExtra("Ten") + " | " + intent.getStringExtra("Phone"));
+        binding.txtAddress.setText(intent.getStringExtra("Street") + ", " + intent.getStringExtra("Ward") + ", " + intent.getStringExtra("District") + ", " + intent.getStringExtra("Province"));
+    }
+
+    private void addEvents() {
+
+        binding.txtTitleDiaChi.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                //Open Dia Chi Nhan Hang
+                Intent intent = new Intent (ThanhToanPre.this, DiaChiNhanHang.class);
+                startActivity(intent);
+
+            }
+        });
+
+        binding.txtPTThanhToan.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                //Open Phuong thuc thanh toan
+                Intent intent = new Intent (ThanhToanPre.this,ThanhToan.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
 
     //Thêm action
     @Override

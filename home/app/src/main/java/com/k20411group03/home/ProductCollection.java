@@ -15,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.k20411group03.Utils;
-import com.k20411group03.adapters.FlashsaleAdapter;
 import com.k20411group03.adapters.ProductCollectionAdapter;
 import com.k20411group03.home.databinding.ActivityProductCollectionBinding;
 import com.k20411group03.models.ProductModel;

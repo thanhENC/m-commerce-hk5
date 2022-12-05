@@ -46,49 +46,55 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="10dp">
+                    android:layout_height="wrap_content">
                     <TextView
-                        android:layout_width="200dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Họ (*)"
+                        android:text="Họ"
+                        android:textColor="#0029BD"
+                        android:fontFamily="@font/montserrat"
+                        android:textStyle="bold"
                         android:padding="5dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
                         android:textSize="20sp"/>
                     <TextView
-                        android:layout_width="200dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Tên (*)"
+                        android:text="Tên"
                         android:padding="5dp"
+                        android:textColor="#0029BD"
+                        android:fontFamily="@font/montserrat"
+                        android:textStyle="bold"
                         android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
                         android:textSize="20sp"/>
 
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="10dp">
+                    android:layout_height="wrap_content">
 
                     <EditText
                         android:id="@+id/edt_surname"
-                        android:layout_width="200dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:hint="Nguyen"
+                        android:hint="Lê"
                         android:textColor="@color/black"
                         android:layout_marginEnd="10dp"
+                        android:layout_marginStart="20dp"
                         android:textSize="24sp"/>
                     <EditText
                         android:id="@+id/edt_firstname"
-                        android:layout_width="200dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:hint="Văn An"
                         android:textColor="@color/black"
                         android:padding="5dp"
-                        android:textSize="24sp"/>
+                        android:textSize="24sp"
+                        android:layout_marginEnd="10dp"/>
 
                 </TableRow>
 
@@ -97,7 +103,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tỉnh/ Thành phố (*)"
+                android:text="Tỉnh/ Thành phố"
+                android:textColor="#0029BD"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
                 android:padding="5dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
@@ -135,7 +144,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Quận/ Huyện (*)"
+                android:text="Quận/ Huyện"
+                android:textColor="#0029BD"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
                 android:padding="5dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
@@ -174,6 +186,9 @@
                 android:layout_height="wrap_content"
                 android:text="Phường/ Xã"
                 android:padding="5dp"
+                android:textColor="#0029BD"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
@@ -209,7 +224,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Địa chỉ (*)"
+                android:text="Địa chỉ nhà riêng"
+                android:textColor="#0029BD"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
                 android:padding="5dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
@@ -220,7 +238,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:hint="123/A Dong Khoi"
+                android:hint="123/A Đồng Khởi, Khu phố 5"
                 android:textColor="@color/black"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="20dp"
@@ -230,8 +248,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Số điện thoại (*)"
+                android:text="Số điện thoại"
                 android:padding="5dp"
+                android:textColor="#0029BD"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
@@ -242,27 +263,6 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:hint="0168 123 456"
-                android:textColor="@color/black"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="10dp"
-                android:textSize="24sp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ghi chú nhận hàng"
-                android:padding="5dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"/>
-            <EditText
-                android:id="@+id/edt_noteaddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:hint="Weekday only"
                 android:textColor="@color/black"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="20dp"

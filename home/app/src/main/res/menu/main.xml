@@ -20,29 +20,6 @@
         android:icon="@drawable/ic_baseline_menu_24"
         android:title="Menu"
         android:orderInCategory="100"
-        app:showAsAction="always" >
-        <menu>
-            <item
-                android:id="@+id/action_HangMoiVe"
-                android:title="Hàng mới về"
-                android:icon="@drawable/ic_baseline_arrow_forward_24"/>
-            <item
-                android:id="@+id/action_BoSuuTap"
-                android:title="Bộ sưu tập mới"
-                android:icon="@drawable/ic_baseline_arrow_forward_24"/>
-            <item
-                android:id="@+id/action_Flashsale"
-                android:title="Flash sale"
-                android:icon="@drawable/ic_baseline_arrow_forward_24"/>
-            <item
-                android:id="@+id/action_SanPham"
-                android:title="Sản phẩm"
-                android:icon="@drawable/ic_baseline_arrow_forward_24"/>
-            <item
-                android:id="@+id/action_LienHe"
-                android:title="Liên hệ"
-                android:icon="@drawable/ic_baseline_arrow_forward_24"/>
-        </menu>
-    </item>
+        app:showAsAction="always" />
 
 </menu>

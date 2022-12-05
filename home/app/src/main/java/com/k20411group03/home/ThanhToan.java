@@ -1,9 +1,14 @@
 package com.k20411group03.home;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.k20411group03.DatabaseHelper;
 import com.k20411group03.adapters.PaymentAdapter;
@@ -26,6 +31,14 @@ public class ThanhToan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
+
+        //Custom action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setCustomView(R.layout.custom_action_bar);
+        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         binding = ActivityThanhToanBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -57,6 +70,35 @@ public class ThanhToan extends AppCompatActivity {
         adapter = new PaymentAdapter(ThanhToan.this, R.layout.payment_method, payments);
         binding.lvPhuongThucThanhToan.setAdapter(adapter);
 
+    }
+
+    //Thêm action
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //Sự kiện action bar
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                Intent intentSearch = new Intent(ThanhToan.this, ActivitySearch.class);
+                startActivity(intentSearch);
+                break;
+            case R.id.action_cart:
+                Intent intentCart = new Intent(ThanhToan.this, MainActivity.class);
+                startActivity(intentCart);
+                break;
+            case R.id.action_menu:
+                Intent intentMenu = new Intent(ThanhToan.this, MainMenu.class);
+                startActivity(intentMenu);
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void addEvents() {

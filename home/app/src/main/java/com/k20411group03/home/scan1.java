@@ -62,13 +62,13 @@ public class scan1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan1);
 
-        //Custom action bar
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setCustomView(R.layout.custom_action_bar);
-        actionBar.setDisplayUseLogoEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+//         //Custom action bar
+//         ActionBar actionBar = getSupportActionBar();
+//         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+//         actionBar.setDisplayShowCustomEnabled(true);
+//         actionBar.setCustomView(R.layout.custom_action_bar);
+//         actionBar.setDisplayUseLogoEnabled(true);
+//         actionBar.setDisplayShowHomeEnabled(true);
 
         check = false;
 
@@ -170,32 +170,31 @@ public class scan1 extends AppCompatActivity {
             }
         });
     }
-    //Thêm action
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+//     //Thêm action
+//     @Override
+//     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-    //Sự kiện action bar
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_search:
-                Intent intentSearch = new Intent(scan1.this, ActivitySearch.class);
-                startActivity(intentSearch);
-                break;
-            case R.id.action_cart:
-                Intent intentCart = new Intent(scan1.this, MainActivity.class);
-                startActivity(intentCart);
-                break;
-            case R.id.action_menu:
-                Intent intentMenu = new Intent(scan1.this, MainMenu.class);
-                startActivity(intentMenu);
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
+//         getMenuInflater().inflate(R.menu.main, menu);
+//         return super.onCreateOptionsMenu(menu);
+//     }
+//     //Sự kiện action bar
+//     @Override
+//     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//         switch (item.getItemId()) {
+//             case R.id.action_search:
+//                 Intent intentSearch = new Intent(scan1.this, ActivitySearch.class);
+//                 startActivity(intentSearch);
+//                 break;
+//             case R.id.action_cart:
+//                 Intent intentCart = new Intent(scan1.this, MainActivity.class);
+//                 startActivity(intentCart);
+//                 break;
+//             case R.id.action_menu:
+//                 Intent intentMenu = new Intent(scan1.this, MainMenu.class);
+//                 startActivity(intentMenu);
+//                 break;
+//         }
+//         return super.onOptionsItemSelected(item);
+//     }
 }
+

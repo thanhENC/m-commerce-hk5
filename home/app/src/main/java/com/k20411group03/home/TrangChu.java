@@ -107,6 +107,7 @@ public class TrangChu extends AppCompatActivity {
 
     }
 
+    //Thêm action
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 

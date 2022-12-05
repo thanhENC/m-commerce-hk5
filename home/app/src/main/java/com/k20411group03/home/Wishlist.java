@@ -28,7 +28,7 @@ public class Wishlist extends AppCompatActivity {
     ActivityWishlistBinding binding;
     WishlishAdapter adapter;
 
-    SQLiteDatabase db;
+    public static SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class Wishlist extends AppCompatActivity {
 //         actionBar.setDisplayShowHomeEnabled(true);
 
         loadData();
-        //addEvents();
+        addEvents();
     }
 // load data
 
@@ -68,10 +68,10 @@ public class Wishlist extends AppCompatActivity {
                 CustomerData.insertToWishlist(new ProductModel(id, name, null, image, null, salePrice, null, 1));
             }
             c.close();
-            db.close();
         }
 
         adapter = new WishlishAdapter(this, R.layout.item_wishlist, CustomerData.wishlist);
+        binding.lvProductCollection.setAdapter(adapter);
     }
 
 //     //Thêm action
@@ -103,45 +103,45 @@ public class Wishlist extends AppCompatActivity {
 //         return super.onOptionsItemSelected(item);
 //     }
 
-//    private void addEvents(){
-//        //Bottom navigation
-//        navigationView = findViewById(R.id.mn_wishlist);
-//        navigationView.setSelectedItemId(R.id.item_wishlist);
-//        navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                switch (item.getItemId()){
-//                    case  R.id.item_wishlist:
-//                        return true;
-//                    case R.id.item_scan:
-//                        Intent intent1 = new Intent(getApplicationContext(),scan1.class);
-//                        intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                        startActivity(intent1);
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                    case  R.id.item_member1:
-//                        Intent intent2 = new Intent(getApplicationContext(),member1.class);
-//                        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                        startActivity(intent2);
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                    case  R.id.item_noti:
-//                        Intent intent3 =new Intent(getApplicationContext(),ThongBao.class);
-//                        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                        startActivity(intent3);
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                    case  R.id.item_home:
-//                        Intent intent4 =new Intent(getApplicationContext(),TrangChu.class);
-//                        intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                        startActivity(intent4);
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                }
-//                return false;
-//            }
-//        });
-//    }
+    private void addEvents(){
+        //Bottom navigation
+        navigationView = findViewById(R.id.mn_wishlist);
+        navigationView.setSelectedItemId(R.id.item_wishlist);
+        navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case  R.id.item_wishlist:
+                        return true;
+                    case R.id.item_scan:
+                        Intent intent1 = new Intent(getApplicationContext(),scan1.class);
+                        intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent1);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.item_member1:
+                        Intent intent2 = new Intent(getApplicationContext(),member1.class);
+                        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent2);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.item_noti:
+                        Intent intent3 =new Intent(getApplicationContext(),ThongBao.class);
+                        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent3);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.item_home:
+                        Intent intent4 =new Intent(getApplicationContext(),TrangChu.class);
+                        intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent4);
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+    }
 
     @Override
     protected void onResume() {

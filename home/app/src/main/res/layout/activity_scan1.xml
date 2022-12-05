@@ -68,6 +68,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="quét"
+            android:backgroundTint="@color/black"
             android:textSize="18dp" />
     </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView

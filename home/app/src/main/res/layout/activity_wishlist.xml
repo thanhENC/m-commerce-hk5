@@ -9,20 +9,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!-- Code giao diện trong cục này nha-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="WISHLIST"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:background="#DADADA" />
+            <ListView
+                android:id="@+id/lv_ProductCollection"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"/>
 
         </LinearLayout>
     </ScrollView>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/mn_wishlist"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        app:menu="@menu/bottom_nav_menu"
-        android:layout_gravity="end|bottom"
-        app:itemIconTint="@color/bottom_navigation_style"
-        app:labelVisibilityMode="unlabeled"
-        android:layout_marginTop="5dp"/>
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/mn_wishlist"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="75dp"-->
+<!--        app:menu="@menu/bottom_nav_menu"-->
+<!--        android:layout_gravity="end|bottom"-->
+<!--        app:itemIconTint="@color/bottom_navigation_style"-->
+<!--        app:labelVisibilityMode="unlabeled"-->
+<!--        android:layout_marginTop="5dp"/>-->
 </FrameLayout>

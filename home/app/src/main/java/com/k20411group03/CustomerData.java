@@ -2,6 +2,8 @@ package com.k20411group03;
 
 import com.k20411group03.models.ProductModel;
 
+import java.util.ArrayList;
+
 public class CustomerData {
     //Tạm thời set cố định, sau này sẽ lấy từ database sau khi đăng nhập thành công
     public static class info{
@@ -56,7 +58,8 @@ public class CustomerData {
 
     public static ProductModel[] cart = new ProductModel[0];
 
-    public static ProductModel[] wishlist = new ProductModel[0];
+    public static ArrayList<ProductModel> wishlist = new ArrayList<>();
+    //select * from PRODUCT where ProductID in (select ProductID from WISHLIST WHERE CustomerID = 5)
 
     //insert product to cart
     public static void insertToCart(ProductModel product){
@@ -83,24 +86,11 @@ public class CustomerData {
 
     //insert product to wishlist
     public static void insertToWishlist(ProductModel product){
-        ProductModel[] temp = new ProductModel[wishlist.length + 1];
-        for(int i = 0; i < wishlist.length; i++){
-            temp[i] = wishlist[i];
-        }
-        temp[wishlist.length] = product;
-        wishlist = temp;
+        wishlist.add(product);
     }
 
     //remove product from wishlist
     public static void removeFromWishlist(ProductModel product){
-        ProductModel[] temp = new ProductModel[wishlist.length - 1];
-        int j = 0;
-        for(int i = 0; i < wishlist.length; i++){
-            if(wishlist[i].getProductID() != product.getProductID()){
-                temp[j] = wishlist[i];
-                j++;
-            }
-        }
-        wishlist = temp;
+        wishlist.remove(product);
     }
 }

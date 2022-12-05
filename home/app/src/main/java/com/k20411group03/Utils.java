@@ -66,5 +66,25 @@ public class Utils {
         public static final String COL_QUANTITY = "Quantity";
     }
 
+    //BẢNG COUPON
+    public static class Coupon {
+        public static final String TBL_NAME = "COUPON";
+        public static final String COL_CODE = "CouponCode";
+        public static final String COL_TITLE = "CouponTitle";
+        public static final String COL_MEMBERSHIPSCORE = "MembershipScore";
+        public static final String COL_TYPE = "CouponType";
+        public static final String COL_VALIDFROM = "ValidDate";
+        public static final String COL_EXPIRE = "ExpireDate";
+        public static final String COL_MINIMUM = "MinimumNetPrice";
+        public static final String COL_MAXIMUM = "MaximumNetPrice";
+        public static final String COL_COUPONVALUE = "CouponValue";
+    }
+
+    //BẢNG WISHLIST
+    public static class Wishlist {
+        public static final String TBL_NAME = "WISHLIST";
+        public static final String COL_CUSTOMERID = "CustomerID";
+        public static final String COL_PRODUCTID = "ProductID";
+    }
 }
 

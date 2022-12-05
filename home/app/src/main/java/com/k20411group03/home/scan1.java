@@ -5,6 +5,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Camera;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -30,14 +32,13 @@ import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
-
+import com.k20411group03.DatabaseHelper;
+import com.k20411group03.Utils;
 
 
 import java.io.IOException;
 
 public class scan1 extends AppCompatActivity {
-
-
     SurfaceView surfaceView;
     CameraSource cameraSource;
     TextView textView;
@@ -45,6 +46,7 @@ public class scan1 extends AppCompatActivity {
     EditText editText;
     Button button;
     Boolean check = false;
+    public static SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,20 +62,31 @@ public class scan1 extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
 
         check = false;
-
         editText = (EditText) findViewById(R.id.edt_nhapmascan);
-
         textView = (TextView) findViewById(R.id.tv_Result);
         button = (Button) findViewById(R.id.btn_Scan);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String txt = editText.getText().toString();
-                if (txt.isEmpty()) {
+                try {
+                    int txt = Integer.parseInt(editText.getText().toString());
+                    db = openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
+
+                    Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE " + Utils.COL_ID + " = " + txt, null);
+                    if (c.getCount() == 0) {
+                        Toast.makeText(scan1.this, "Mã sản phẩm không tồn tại", Toast.LENGTH_SHORT).show();
+                        textView.setText("");
+                    } else {
+                        c.close();
+                        int id = Integer.parseInt(editText.getText().toString());
+                        Intent intent = new Intent(scan1.this, ProductDetails.class);
+                        intent.putExtra("ProductID", txt);
+                        startActivity(intent);
+                    }
+                }
+                catch (Exception e){
                     Toast.makeText(scan1.this, "Vui lòng nhập mã sản phẩm", Toast.LENGTH_SHORT).show();
-                } else {
-                    textView.setText(txt);
                 }
             }
         });
@@ -102,9 +115,7 @@ public class scan1 extends AppCompatActivity {
 
             @Override
             public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
-
             }
-
             @Override
             public void surfaceDestroyed(@NonNull SurfaceHolder holder) {
                 cameraSource.stop();
@@ -121,9 +132,7 @@ public class scan1 extends AppCompatActivity {
                     textView.post(new Runnable() {
                         @Override
                         public void run() {
-
                             textView.setText(qrCodes.valueAt(0).displayValue);
-
                             try{
                                 Intent intent = new Intent(scan1.this, ProductDetails.class);
                                 int id = Integer.parseInt(qrCodes.valueAt(0).displayValue);
@@ -134,16 +143,12 @@ public class scan1 extends AppCompatActivity {
                             catch (Exception e){
                                 Toast.makeText(scan1.this, "Mã sản phẩm không hợp lệ", Toast.LENGTH_SHORT).show();
                             }
-
                         }
                     });
                 }
-
-
             }
         });
     }
-
     //Thêm action
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -151,7 +156,6 @@ public class scan1 extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     //Sự kiện action bar
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -169,8 +173,6 @@ public class scan1 extends AppCompatActivity {
                 startActivity(intentMenu);
                 break;
         }
-
         return super.onOptionsItemSelected(item);
     }
-
 }

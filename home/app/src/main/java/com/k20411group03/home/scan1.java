@@ -34,11 +34,14 @@ import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 import com.k20411group03.DatabaseHelper;
 import com.k20411group03.Utils;
+import com.k20411group03.Utils;
 
 
 import java.io.IOException;
 
 public class scan1 extends AppCompatActivity {
+
+
     SurfaceView surfaceView;
     CameraSource cameraSource;
     TextView textView;
@@ -47,6 +50,12 @@ public class scan1 extends AppCompatActivity {
     Button button;
     Boolean check = false;
     public static SQLiteDatabase db;
+
+    @Override
+    protected void onResume() {
+        check = false;
+        super.onResume();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +71,9 @@ public class scan1 extends AppCompatActivity {
 //         actionBar.setDisplayShowHomeEnabled(true);
 
         check = false;
+
         editText = (EditText) findViewById(R.id.edt_nhapmascan);
+
         textView = (TextView) findViewById(R.id.tv_Result);
         button = (Button) findViewById(R.id.btn_Scan);
 
@@ -134,11 +145,21 @@ public class scan1 extends AppCompatActivity {
                         public void run() {
                             textView.setText(qrCodes.valueAt(0).displayValue);
                             try{
-                                Intent intent = new Intent(scan1.this, ProductDetails.class);
-                                int id = Integer.parseInt(qrCodes.valueAt(0).displayValue);
-                                check = true;
-                                intent.putExtra("ProductID", id);
-                                startActivity(intent);
+                                int txt = Integer.parseInt(qrCodes.valueAt(0).displayValue);
+                                db = openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
+
+                                Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE " + Utils.COL_ID + " = " + txt, null);
+                                if (c.getCount() == 0) {
+                                    Toast.makeText(scan1.this, "Mã sản phẩm không tồn tại", Toast.LENGTH_SHORT).show();
+                                    //textView.setText("");
+                                } else {
+                                    c.close();
+                                    int id = Integer.parseInt(qrCodes.valueAt(0).displayValue);
+                                    Intent intent = new Intent(scan1.this, ProductDetails.class);
+                                    intent.putExtra("ProductID", txt);
+                                    check = true;
+                                    startActivity(intent);
+                                }
                             }
                             catch (Exception e){
                                 Toast.makeText(scan1.this, "Mã sản phẩm không hợp lệ", Toast.LENGTH_SHORT).show();
@@ -176,3 +197,4 @@ public class scan1 extends AppCompatActivity {
 //         return super.onOptionsItemSelected(item);
 //     }
 }
+

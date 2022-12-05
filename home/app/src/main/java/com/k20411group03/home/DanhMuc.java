@@ -42,13 +42,13 @@ public class DanhMuc extends AppCompatActivity {
         binding = ActivityDanhMucBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //Custom action bar
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setCustomView(R.layout.custom_action_bar);
-        actionBar.setDisplayUseLogoEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+//         //Custom action bar
+//         ActionBar actionBar = getSupportActionBar();
+//         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+//         actionBar.setDisplayShowCustomEnabled(true);
+//         actionBar.setCustomView(R.layout.custom_action_bar);
+//         actionBar.setDisplayUseLogoEnabled(true);
+//         actionBar.setDisplayShowHomeEnabled(true);
 
         cateID = getIntent().getStringExtra("Cate");
 

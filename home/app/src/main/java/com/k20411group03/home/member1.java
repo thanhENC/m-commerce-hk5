@@ -112,6 +112,14 @@ public class member1 extends AppCompatActivity {
             }
         });
 
+        //Button Lien he
+        binding.lienHe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(member1.this, UserActivity.class);
+                startActivity(intent);
+            }
+        });
         //Button Đăng xuất
         binding.btnDangxuat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +131,7 @@ public class member1 extends AppCompatActivity {
                 txtDangXuat.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(member1.this, TrangChu.class);
+                        Intent intent = new Intent(getApplicationContext(), TrangChu.class);
                         startActivity(intent);
                     }
                 });

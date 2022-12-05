@@ -15,7 +15,6 @@ import com.k20411group03.DisplayHelper;
 import com.k20411group03.Utils;
 import com.k20411group03.adapters.ProductInCartAdapter;
 import com.k20411group03.home.databinding.ActivityMainBinding;
-import com.k20411group03.models.Product;
 import com.k20411group03.models.ProductInCartModel;
 
 import java.util.ArrayList;

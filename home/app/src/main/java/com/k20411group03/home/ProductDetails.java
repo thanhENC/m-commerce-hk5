@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.k20411group03.DisplayHelper;
 import com.k20411group03.Utils;
 import com.k20411group03.home.databinding.ActivityProductDetailsBinding;
 import com.k20411group03.models.ProductModel;
@@ -20,6 +21,7 @@ import com.k20411group03.models.ProductModel;
 public class ProductDetails extends AppCompatActivity {
     public static SQLiteDatabase db;
     ActivityProductDetailsBinding binding;
+    ProductModel product;
     int productID;
     int quantity;
     String size = "";
@@ -44,42 +46,36 @@ public class ProductDetails extends AppCompatActivity {
         db = openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
         Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE(" + Utils.COL_ID + " = " + productID + ")",null);
         c.moveToFirst();
-        String ProductName = c.getString(1);
-        byte[] Thumbnail = c.getBlob(3);
-        Double SalePrice = c.getDouble(5);
-        String ProductDescription = c.getString(6);
-        quantity = 1;
 
         //Đóng database để giải phóng bộ nhớ:
         db.close();
 
+        product = new ProductModel(c.getInt(0), c.getString(1), null, c.getBlob(3), c.getDouble(4), c.getDouble(5), c.getString(6), 1);
+
         //Hiển thị dữ liệu lên giao diện
-        binding.txtProductsDetailName.setText(ProductName);
-        binding.txtProductsDetailPrice.setText(SalePrice.toString());
-        binding.txtProductsDetailDescription.setText(ProductDescription);
-        binding.imvProductThumbDetail.setImageBitmap(convertByteArrayToBitmap(Thumbnail));
-    }
-    private Bitmap convertByteArrayToBitmap(byte[] image) {
-        return BitmapFactory.decodeByteArray(image, 0, image.length);
+        binding.txtProductsDetailName.setText(product.getProductName());
+        binding.txtProductsDetailPrice.setText(product.formatProductPrice(product.getProductSalePrice()));
+        binding.txtProductsDetailDescription.setText(product.getProductDescription());
+        binding.imvProductThumbDetail.setImageBitmap(product.getBitmapProductImage());
     }
 
     private void addEvents(){
-    binding.imvAdd.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            quantity++;
-            binding.txtProductsDetailQuantity.setText(quantity + "");
-        }
-    });
-    binding.imvMinus.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            if(quantity > 1){
-                quantity--;
+        binding.imvAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                quantity++;
                 binding.txtProductsDetailQuantity.setText(quantity + "");
             }
-        }
-    });
+        });
+        binding.imvMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(quantity > 1){
+                    quantity--;
+                    binding.txtProductsDetailQuantity.setText(quantity + "");
+                }
+            }
+        });
         //Thêm sản phẩm vào giỏ hàng
         binding.btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,14 +98,17 @@ public class ProductDetails extends AppCompatActivity {
                     btnContinueShopping.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intentHome = new Intent();
-                            intentHome.setClass(ProductDetails.this, ProductCollection.class);
-                            startActivity(intentHome);
+                            dialog.dismiss();
+                            //Intent intentHome = new Intent();
+                            //intentHome.setClass(ProductDetails.this, ProductCollection.class);
+                            //intentHome.putExtra("screenTitle", "Sản phẩm");
+                            //startActivity(intentHome);
                         }
                     });
                     btnGoToCart.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            dialog.dismiss();
                             Intent intentCart = new Intent();
                             intentCart.setClass(ProductDetails.this, MainActivity.class);
                             startActivity(intentCart);

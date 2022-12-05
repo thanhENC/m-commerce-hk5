@@ -127,9 +127,24 @@ public class TrangChu extends AppCompatActivity {
                 Intent intentCart = new Intent(TrangChu.this, MainActivity.class);
                 startActivity(intentCart);
                 break;
-            case R.id.action_menu:
-                Intent intentMenu = new Intent(TrangChu.this, MainMenu.class);
-                startActivity(intentMenu);
+            case R.id.action_BoSuuTap:
+                Intent intentBoSuuTap = new Intent(TrangChu.this, ProductCollection.class);
+                intentBoSuuTap.putExtra("screenTitle", "Bộ sưu tập mới");
+                startActivity(intentBoSuuTap);
+                break;
+            case R.id.action_HangMoiVe:
+                Intent intentSanPhamMoi = new Intent(TrangChu.this, ProductCollection.class);
+                intentSanPhamMoi.putExtra("screenTitle", "Hàng mới về");
+                startActivity(intentSanPhamMoi);
+                break;
+            case R.id.action_Flashsale:
+                Intent intentFlashsale = new Intent(TrangChu.this, FlashSaleScreen.class);
+                startActivity(intentFlashsale);
+                break;
+            case R.id.action_SanPham:
+                Intent intentSanPham = new Intent(TrangChu.this, ProductCollection.class);
+                intentSanPham.putExtra("screenTitle", "Sản phẩm");
+                startActivity(intentSanPham);
                 break;
         }
 
@@ -265,6 +280,4 @@ public class TrangChu extends AppCompatActivity {
             }
         });
     }
-
-
 }

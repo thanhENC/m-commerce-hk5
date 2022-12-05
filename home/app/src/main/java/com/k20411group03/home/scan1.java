@@ -74,6 +74,15 @@ public class scan1 extends AppCompatActivity {
                     Toast.makeText(scan1.this, "Vui lòng nhập mã sản phẩm", Toast.LENGTH_SHORT).show();
                 } else {
                     textView.setText(txt);
+                    try{
+                        Intent intent = new Intent(scan1.this, ProductDetails.class);
+                        int id = Integer.parseInt(txt);
+                        intent.putExtra("ProductID", id);
+                        startActivity(intent);
+                    }
+                    catch (Exception e){
+                        Toast.makeText(scan1.this, "Mã sản phẩm không hợp lệ", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -121,9 +130,7 @@ public class scan1 extends AppCompatActivity {
                     textView.post(new Runnable() {
                         @Override
                         public void run() {
-
                             textView.setText(qrCodes.valueAt(0).displayValue);
-
                             try{
                                 Intent intent = new Intent(scan1.this, ProductDetails.class);
                                 int id = Integer.parseInt(qrCodes.valueAt(0).displayValue);
@@ -134,16 +141,12 @@ public class scan1 extends AppCompatActivity {
                             catch (Exception e){
                                 Toast.makeText(scan1.this, "Mã sản phẩm không hợp lệ", Toast.LENGTH_SHORT).show();
                             }
-
                         }
                     });
                 }
-
-
             }
         });
     }
-
     //Thêm action
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -151,7 +154,6 @@ public class scan1 extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     //Sự kiện action bar
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

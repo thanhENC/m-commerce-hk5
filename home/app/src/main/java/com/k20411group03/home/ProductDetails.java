@@ -7,10 +7,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.k20411group03.DisplayHelper;
@@ -32,6 +36,14 @@ public class ProductDetails extends AppCompatActivity {
 
         binding = ActivityProductDetailsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        //Custom action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setCustomView(R.layout.custom_action_bar);
+        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         loadData();
         addEvents();
@@ -150,6 +162,50 @@ public class ProductDetails extends AppCompatActivity {
             }
         });
 
+    }
+
+    //Thêm action
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //Sự kiện action bar
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                Intent intentSearch = new Intent(this, ActivitySearch.class);
+                startActivity(intentSearch);
+                break;
+            case R.id.action_cart:
+                Intent intentCart = new Intent(this, MainActivity.class);
+                startActivity(intentCart);
+                break;
+            case R.id.action_BoSuuTap:
+                Intent intentBoSuuTap = new Intent(this, ProductCollection.class);
+                intentBoSuuTap.putExtra("screenTitle", "Bộ sưu tập mới");
+                startActivity(intentBoSuuTap);
+                break;
+            case R.id.action_HangMoiVe:
+                Intent intentSanPhamMoi = new Intent(this, ProductCollection.class);
+                intentSanPhamMoi.putExtra("screenTitle", "Hàng mới về");
+                startActivity(intentSanPhamMoi);
+                break;
+            case R.id.action_Flashsale:
+                Intent intentFlashsale = new Intent(this, FlashSaleScreen.class);
+                startActivity(intentFlashsale);
+                break;
+            case R.id.action_SanPham:
+                Intent intentSanPham = new Intent(this, ProductCollection.class);
+                intentSanPham.putExtra("screenTitle", "Sản phẩm");
+                startActivity(intentSanPham);
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
 

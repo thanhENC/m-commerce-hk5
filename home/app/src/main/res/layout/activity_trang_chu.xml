@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TrangChu"
     android:orientation="vertical"
-    android:paddingVertical="2dp">
+    android:paddingVertical="2dp"
+    android:theme="@style/Theme.AppCompat.NoActionBar"
+    android:weightSum="10">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_weight="8">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +31,7 @@
                     <ImageView
                         android:id="@+id/imv_SaleBanner"
                         android:layout_width="match_parent"
-                        android:layout_height="163dp"
+                        android:layout_height="165dp"
                         android:src="@drawable/bannersale"
                         android:scaleType="fitCenter"/>
                     <Button
@@ -225,7 +228,7 @@
                     <TextView
                         android:id="@+id/txt_blog"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="70dp"
                         android:fontFamily="@font/montserrat_bold"
                         android:text="Blog"
                         android:textSize="20sp"
@@ -247,5 +250,5 @@
         app:itemTextColor="@color/bottom_navigation_style"
         app:itemIconTint="@color/bottom_navigation_style"
         app:labelVisibilityMode="unlabeled"
-        android:layout_marginTop="5dp"/>
-</FrameLayout>
+        android:layout_weight="1"/>
+</LinearLayout>

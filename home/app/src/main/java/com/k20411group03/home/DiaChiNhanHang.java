@@ -24,7 +24,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.k20411group03.Utils;
-import com.k20411group03.adapters.AddressAdapter;
 import com.k20411group03.home.databinding.ActivityDiaChiNhanHangBinding;
 
 import java.io.File;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".member1"
+    tools:context=".MacDinhMember"
     android:orientation="vertical">
 
     <FrameLayout
@@ -38,32 +38,52 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
                 android:orientation="horizontal"
-                >
+                android:padding="5dp"
+                android:weightSum="6">
+
                 <ImageView
-                    android:layout_marginStart="20dp"
-                    android:layout_width="60dp"
+                    android:layout_width="0dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/userlogo"/>
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/userlogo" />
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_marginStart="30dp"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:layout_weight="5">
+
                     <TextView
-                        android:id="@+id/textName"
+                        android:id="@+id/buttonDangKy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PHẠM NGUYỄN LÊ ĐINH"
-                        android:textSize="20sp"
-                        android:textStyle="bold"/>
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginEnd="30dp"
+                        android:gravity="right"
+                        android:text="ĐĂNG KÝ"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:background="@drawable/background_rounded"/>
+
                     <TextView
+                        android:id="@+id/buttonDangNhap"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Thành viên vàng"
-                        android:textSize="18dp"/>
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginEnd="20dp"
+                        android:text="ĐĂNG NHẬP"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:background="@drawable/background_rounded"/>
+
+
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -234,29 +254,10 @@
                         android:layout_gravity="center"
                         />
                 </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/btn_dangxuat"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="#FFFFFF"
-                    android:layout_marginTop="2dp"
-                    android:padding="10dp">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/logout"
-                        android:layout_marginStart="10dp"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Đăng xuất"
-                        android:textSize="18dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_gravity="center"
-                        />
-                </LinearLayout>
+                    android:text="Phiên bản 1.0.0"/>
 
             </LinearLayout>
         </LinearLayout>

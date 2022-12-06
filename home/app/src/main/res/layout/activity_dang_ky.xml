@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Đăng ký"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
@@ -31,10 +32,24 @@
         android:layout_marginRight="20dp"
         android:orientation="vertical">
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông tin đăng ký(*)"
+            android:layout_marginStart="20dp"
+            android:textColor="#F44336"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:fontFamily="@font/montserrat_bold"/>
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Số điện thoại"
-            android:layout_marginLeft="30dp"/>
+            android:textSize="20sp"
+            android:textColor="#0029BD"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_marginStart="20dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -66,7 +81,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Email"
-            android:layout_marginLeft="30dp"/>
+            android:textSize="20sp"
+            android:textColor="#0029BD"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -95,7 +116,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Tên đăng nhập"
-            android:layout_marginLeft="30dp"/>
+            android:textSize="20sp"
+            android:textColor="#0029BD"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -125,7 +152,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Mật khẩu"
-            android:layout_marginLeft="30dp"/>
+            android:textSize="20sp"
+            android:textColor="#0029BD"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -155,7 +188,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Nhập lại mật khẩu"
-            android:layout_marginLeft="20dp"/>
+            android:textSize="20sp"
+            android:textColor="#0029BD"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -165,12 +204,235 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_baseline_lock_24"/>
             <EditText
+                android:fontFamily="@font/montserrat"
                 android:id="@+id/inputConfirmPassword"
                 android:hint="Confirm Password"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Thông tin chi tiết(*)"
+            android:layout_marginStart="20dp"
+            android:textColor="#F44336"
+            android:textSize="18sp"
+            android:padding="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Họ"
+                        android:textColor="#0029BD"
+                        android:fontFamily="@font/montserrat"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:textSize="20sp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Tên"
+                        android:padding="5dp"
+                        android:textColor="#0029BD"
+                        android:fontFamily="@font/montserrat"
+                        android:textStyle="bold"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:textSize="20sp"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_surname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:hint="Lê"
+                        android:textColor="@color/black"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="20dp"
+                        android:textSize="24sp"/>
+                    <EditText
+                        android:id="@+id/edt_firstname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Văn An"
+                        android:textColor="@color/black"
+                        android:padding="5dp"
+                        android:textSize="24sp"
+                        android:layout_marginEnd="10dp"/>
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tỉnh/ Thành phố"
+                android:textColor="#0029BD"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txt_province"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:hint="Ho Chi Minh"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:layout_weight="9"/>
+
+                <Spinner
+                    android:id="@+id/spinner_province"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quận/ Huyện"
+                android:textColor="#0029BD"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txt_district"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:hint="Binh Thanh"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:layout_weight="9"/>
+
+                <Spinner
+                    android:id="@+id/spinner_district"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:spinnerMode="dropdown"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phường/ Xã"
+                android:padding="5dp"
+                android:textColor="#0029BD"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txt_ward"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:hint="Phuong 25"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:layout_weight="9"/>
+
+                <Spinner
+                    android:id="@+id/spinner_ward"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:spinnerMode="dropdown"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Địa chỉ nhà riêng"
+                android:textColor="#0029BD"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/edt_street"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:hint="123/A Đồng Khởi, Khu phố 5"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="24sp"/>
+
+
         </LinearLayout>
 
     </LinearLayout>

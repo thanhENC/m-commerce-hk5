@@ -11,6 +11,9 @@ import android.os.Bundle;
 import android.service.autofill.UserData;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -28,6 +31,8 @@ public class Wishlist extends AppCompatActivity {
     ActivityWishlistBinding binding;
     WishlishAdapter adapter;
 
+    ProductModel selectedProduct;
+
     public static SQLiteDatabase db;
 
     @Override
@@ -36,13 +41,14 @@ public class Wishlist extends AppCompatActivity {
         //setContentView(R.layout.activity_wishlist);
         binding = ActivityWishlistBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-//         //Custom action bar
-//         ActionBar actionBar = getSupportActionBar();
-//         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//         actionBar.setDisplayShowCustomEnabled(true);
-//         actionBar.setCustomView(R.layout.custom_action_bar);
-//         actionBar.setDisplayUseLogoEnabled(true);
-//         actionBar.setDisplayShowHomeEnabled(true);
+
+         //Custom action bar
+         ActionBar actionBar = getSupportActionBar();
+         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+         actionBar.setDisplayShowCustomEnabled(true);
+         actionBar.setCustomView(R.layout.custom_action_bar);
+         actionBar.setDisplayUseLogoEnabled(true);
+         actionBar.setDisplayShowHomeEnabled(true);
 
         loadData();
         addEvents();
@@ -74,34 +80,58 @@ public class Wishlist extends AppCompatActivity {
         binding.lvProductCollection.setAdapter(adapter);
     }
 
-//     //Thêm action
-//     @Override
-//     public boolean onCreateOptionsMenu(Menu menu) {
+    //Xóa khỏi wishlist
+    public void deleteWishlist(ProductModel p){
+        db =  openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
+        db.execSQL("delete from " + Utils.Wishlist.TBL_NAME + " where " + Utils.Wishlist.COL_PRODUCTID + " = " + p.getProductID() + " and " + Utils.Wishlist.COL_CUSTOMERID + " = " + CustomerData.info.USER_ID);
+        CustomerData.wishlist.remove(p);
+        adapter.notifyDataSetChanged();
+        Toast.makeText(this, "Đã xóa khỏi " + p.getProductName() + " wishlist", Toast.LENGTH_SHORT).show();
+    }
 
-//         getMenuInflater().inflate(R.menu.main, menu);
-//         return super.onCreateOptionsMenu(menu);
-//     }
+    //Thêm action
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
-//     //Sự kiện action bar
-//     @Override
-//     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//         switch (item.getItemId()) {
-//             case R.id.action_search:
-//                 Intent intentSearch = new Intent(Wishlist.this, ActivitySearch.class);
-//                 startActivity(intentSearch);
-//                 break;
-//             case R.id.action_cart:
-//                 Intent intentCart = new Intent(Wishlist.this, MainActivity.class);
-//                 startActivity(intentCart);
-//                 break;
-//             case R.id.action_menu:
-//                 Intent intentMenu = new Intent(Wishlist.this, MainMenu.class);
-//                 startActivity(intentMenu);
-//                 break;
-//         }
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
-//         return super.onOptionsItemSelected(item);
-//     }
+    //Sự kiện action bar
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                Intent intentSearch = new Intent(this, ActivitySearch.class);
+                startActivity(intentSearch);
+                break;
+            case R.id.action_cart:
+                Intent intentCart = new Intent(this, MainActivity.class);
+                startActivity(intentCart);
+                break;
+            case R.id.action_BoSuuTap:
+                Intent intentBoSuuTap = new Intent(this, ProductCollection.class);
+                intentBoSuuTap.putExtra("screenTitle", "Bộ sưu tập mới");
+                startActivity(intentBoSuuTap);
+                break;
+            case R.id.action_HangMoiVe:
+                Intent intentSanPhamMoi = new Intent(this, ProductCollection.class);
+                intentSanPhamMoi.putExtra("screenTitle", "Hàng mới về");
+                startActivity(intentSanPhamMoi);
+                break;
+            case R.id.action_Flashsale:
+                Intent intentFlashsale = new Intent(this, FlashSaleScreen.class);
+                startActivity(intentFlashsale);
+                break;
+            case R.id.action_SanPham:
+                Intent intentSanPham = new Intent(this, ProductCollection.class);
+                intentSanPham.putExtra("screenTitle", "Sản phẩm");
+                startActivity(intentSanPham);
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     private void addEvents(){
         //Bottom navigation
@@ -139,6 +169,16 @@ public class Wishlist extends AppCompatActivity {
                         return true;
                 }
                 return false;
+            }
+        });
+        //selected item
+        binding.lvProductCollection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selectedProduct = CustomerData.wishlist.get(position);
+                Intent intent = new Intent(Wishlist.this, ProductDetails.class);
+                intent.putExtra("ProductID", selectedProduct.getProductID());
+                startActivity(intent);
             }
         });
     }

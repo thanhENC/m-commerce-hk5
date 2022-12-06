@@ -2,6 +2,7 @@ package com.k20411group03.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
@@ -27,11 +28,11 @@ public class dangnhap1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         preferenceManager= new PreferenceManager(getApplicationContext());
         //màn hình đăng nhập: nếu ng dùng đã đăng nhập thành công, thì dù out khỏi app vẫn lưu lại đc thông tin và không bị sign out
-        if(preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)){
-            Intent intent = new Intent(getApplicationContext(),TrangChu.class); // chuyển qua trang chủ ?
-            startActivity(intent);
-            finish();
-        }
+//        if(preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)){
+//            Intent intent = new Intent(getApplicationContext(),TrangChu.class); // chuyển qua trang chủ ?
+//            startActivity(intent);
+//            finish();
+//        }
         binding = ActivityDangnhap1Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setListeners();
@@ -77,14 +78,16 @@ public class dangnhap1 extends AppCompatActivity {
                         preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
                         preferenceManager.putString(Constants.KEY_USER_ID, task.getResult().getDocuments().get(0).getId());
                         preferenceManager.putString(Constants.KEY_EMAIL, task.getResult().getDocuments().get(0).getString(Constants.KEY_EMAIL));
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Toast.makeText(dangnhap1.this, "Đăng nhập tài khoản thành công!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), member1.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     }else{
                         loading(false);
-                        Toast.makeText(dangnhap1.this, "Unable to sign in", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(dangnhap1.this, "Lỗi đăng nhập, chưa thành công!", Toast.LENGTH_SHORT).show();
                     }
                 });
+
 
     }
     private void loading(Boolean isLoading){

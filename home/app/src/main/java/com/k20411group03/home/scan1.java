@@ -32,6 +32,7 @@ import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.k20411group03.DatabaseHelper;
 import com.k20411group03.Utils;
 import com.k20411group03.Utils;
@@ -50,6 +51,7 @@ public class scan1 extends AppCompatActivity {
     Button button;
     Boolean check = false;
     public static SQLiteDatabase db;
+    BottomNavigationView navigationView;
 
     @Override
     protected void onResume() {
@@ -169,6 +171,8 @@ public class scan1 extends AppCompatActivity {
                 }
             }
         });
+
+        addEvents();
     }
     //Thêm action
     @Override
@@ -212,6 +216,47 @@ public class scan1 extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void addEvents(){
+        //Sự kiện khi click vào navigation bar
+        navigationView = findViewById(R.id.mn_home);
+        navigationView.setSelectedItemId(R.id.item_scan);
+        navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.item_scan:
+                        return true;
+                    case  R.id.item_member1:
+                        Intent intent1 = new Intent(getApplicationContext(),member1.class);
+                        intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent1);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.item_noti:
+                        Intent intent2 =new Intent(getApplicationContext(),ThongBao.class);
+                        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent2);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.item_home:
+                        Intent intent3 =new Intent(getApplicationContext(),TrangChu.class);
+                        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent3);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case  R.id.item_wishlist:
+                        Intent intent4 =new Intent(getApplicationContext(),Wishlist.class);
+                        intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent4);
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
     }
 
 }

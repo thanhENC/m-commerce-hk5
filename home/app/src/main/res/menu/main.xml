@@ -38,10 +38,6 @@
                 android:id="@+id/action_SanPham"
                 android:title="Sản phẩm"
                 android:icon="@drawable/ic_baseline_arrow_forward_24"/>
-            <item
-                android:id="@+id/action_LienHe"
-                android:title="Liên hệ"
-                android:icon="@drawable/ic_baseline_arrow_forward_24"/>
         </menu>
     </item>
 

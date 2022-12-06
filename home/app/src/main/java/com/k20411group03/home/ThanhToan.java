@@ -90,29 +90,29 @@ public class ThanhToan extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_search:
-                Intent intentSearch = new Intent(this, ActivitySearch.class);
+                Intent intentSearch = new Intent(ThanhToan.this, ActivitySearch.class);
                 startActivity(intentSearch);
                 break;
             case R.id.action_cart:
-                Intent intentCart = new Intent(this, MainActivity.class);
+                Intent intentCart = new Intent(ThanhToan.this, MainActivity.class);
                 startActivity(intentCart);
                 break;
             case R.id.action_BoSuuTap:
-                Intent intentBoSuuTap = new Intent(this, ProductCollection.class);
+                Intent intentBoSuuTap = new Intent(ThanhToan.this, ProductCollection.class);
                 intentBoSuuTap.putExtra("screenTitle", "Bộ sưu tập mới");
                 startActivity(intentBoSuuTap);
                 break;
             case R.id.action_HangMoiVe:
-                Intent intentSanPhamMoi = new Intent(this, ProductCollection.class);
+                Intent intentSanPhamMoi = new Intent(ThanhToan.this, ProductCollection.class);
                 intentSanPhamMoi.putExtra("screenTitle", "Hàng mới về");
                 startActivity(intentSanPhamMoi);
                 break;
             case R.id.action_Flashsale:
-                Intent intentFlashsale = new Intent(this, FlashSaleScreen.class);
+                Intent intentFlashsale = new Intent(ThanhToan.this, FlashSaleScreen.class);
                 startActivity(intentFlashsale);
                 break;
             case R.id.action_SanPham:
-                Intent intentSanPham = new Intent(this, ProductCollection.class);
+                Intent intentSanPham = new Intent(ThanhToan.this, ProductCollection.class);
                 intentSanPham.putExtra("screenTitle", "Sản phẩm");
                 startActivity(intentSanPham);
                 break;
@@ -138,6 +138,13 @@ public class ThanhToan extends AppCompatActivity {
 //                launcher.launch(intent);
 //            }
 //        });
+
+        binding.imvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         // When clicking on the item, the dialog will appear
         binding.lvPhuongThucThanhToan.setOnItemClickListener(new AdapterView.OnItemClickListener() {

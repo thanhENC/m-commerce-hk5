@@ -62,6 +62,16 @@ public class ActivitySearch extends AppCompatActivity {
 //     }
 
     private void addEvents() {
+
+        //Nút back
+        binding.imvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //end activity
+                finish();
+            }
+        });
+
         binding.imvSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

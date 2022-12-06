@@ -107,6 +107,15 @@ public class ProductCollection extends AppCompatActivity {
 
 
     private void addEvents() {
+
+        //nút back
+        binding.imvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         binding.lvProductCollection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

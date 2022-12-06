@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.k20411group03.CartValue;
 import com.k20411group03.DisplayHelper;
 import com.k20411group03.Utils;
 import com.k20411group03.adapters.ProductInCartAdapter;
@@ -127,6 +128,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
+
+        //back button
+        binding.imvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         binding.txtThanhtoan.setText(String.valueOf(DisplayHelper.getValue(binding.txtSum.getText().toString()) -
                 DisplayHelper.getValue(binding.txtGiatriCoupon.getText().toString())));

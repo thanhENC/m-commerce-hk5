@@ -42,13 +42,13 @@ public class DanhMuc extends AppCompatActivity {
         binding = ActivityDanhMucBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-//         //Custom action bar
-//         ActionBar actionBar = getSupportActionBar();
-//         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//         actionBar.setDisplayShowCustomEnabled(true);
-//         actionBar.setCustomView(R.layout.custom_action_bar);
-//         actionBar.setDisplayUseLogoEnabled(true);
-//         actionBar.setDisplayShowHomeEnabled(true);
+         //Custom action bar
+         ActionBar actionBar = getSupportActionBar();
+         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+         actionBar.setDisplayShowCustomEnabled(true);
+         actionBar.setCustomView(R.layout.custom_action_bar);
+         actionBar.setDisplayUseLogoEnabled(true);
+         actionBar.setDisplayShowHomeEnabled(true);
 
         cateID = getIntent().getStringExtra("Cate");
 
@@ -60,6 +60,53 @@ public class DanhMuc extends AppCompatActivity {
         loadData();
         addEvents();
     }
+    //Thêm action
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //Sự kiện action bar
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                Intent intentSearch = new Intent(DanhMuc.this, ActivitySearch.class);
+                startActivity(intentSearch);
+                break;
+            case R.id.action_cart:
+                Intent intentCart = new Intent(DanhMuc.this, MainActivity.class);
+                startActivity(intentCart);
+                break;
+            case R.id.action_BoSuuTap:
+                Intent intentBoSuuTap = new Intent(DanhMuc.this, ProductCollection.class);
+                intentBoSuuTap.putExtra("screenTitle", "Bộ sưu tập mới");
+                startActivity(intentBoSuuTap);
+                break;
+            case R.id.action_HangMoiVe:
+                Intent intentSanPhamMoi = new Intent(DanhMuc.this, ProductCollection.class);
+                intentSanPhamMoi.putExtra("screenTitle", "Hàng mới về");
+                startActivity(intentSanPhamMoi);
+                break;
+            case R.id.action_Flashsale:
+                Intent intentFlashsale = new Intent(DanhMuc.this, FlashSaleScreen.class);
+                startActivity(intentFlashsale);
+                break;
+            case R.id.action_SanPham:
+                Intent intentSanPham = new Intent(DanhMuc.this, ProductCollection.class);
+                intentSanPham.putExtra("screenTitle", "Sản phẩm");
+                startActivity(intentSanPham);
+                break;
+        }
+
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
     private void loadData(){
         ArrayList<ProductModel> products = new ArrayList<>();
         db = openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
@@ -131,6 +178,14 @@ public class DanhMuc extends AppCompatActivity {
                 Intent intent = new Intent(DanhMuc.this,DanhMuc.class);
                 intent.putExtra("Cate", cateID);
                 startActivity(intent);
+            }
+        });
+
+        //back button
+        binding.imvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 

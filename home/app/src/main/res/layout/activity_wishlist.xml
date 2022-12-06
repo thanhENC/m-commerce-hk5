@@ -5,17 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Wishlist">
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/gray">
+        <ImageView
+            android:id="@+id/imv_Back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <!-- Code giao diện trong cục này nha-->
-
-        </LinearLayout>
-    </ScrollView>
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="WISHLIST"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </FrameLayout>
+    <ListView
+        android:id="@+id/lv_ProductCollection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="75dp"/>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/mn_wishlist"
         android:layout_width="match_parent"

@@ -33,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
 
-        //Custom action bar
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setCustomView(R.layout.custom_action_bar);
-        actionBar.setDisplayUseLogoEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+//         //Custom action bar
+//         ActionBar actionBar = getSupportActionBar();
+//         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+//         actionBar.setDisplayShowCustomEnabled(true);
+//         actionBar.setCustomView(R.layout.custom_action_bar);
+//         actionBar.setDisplayUseLogoEnabled(true);
+//         actionBar.setDisplayShowHomeEnabled(true);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -48,30 +48,30 @@ public class MainActivity extends AppCompatActivity {
         addEvents();
     }
 
-    //Thêm action
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+//     //Thêm action
+//     @Override
+//     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+//         getMenuInflater().inflate(R.menu.main, menu);
+//         return super.onCreateOptionsMenu(menu);
+//     }
 
-    //Sự kiện action bar
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_search:
-                Intent intentSearch = new Intent(MainActivity.this, ActivitySearch.class);
-                startActivity(intentSearch);
-                break;
-            case R.id.action_menu:
-                Intent intentMenu = new Intent(MainActivity.this, MainMenu.class);
-                startActivity(intentMenu);
-                break;
-        }
+//     //Sự kiện action bar
+//     @Override
+//     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//         switch (item.getItemId()) {
+//             case R.id.action_search:
+//                 Intent intentSearch = new Intent(MainActivity.this, ActivitySearch.class);
+//                 startActivity(intentSearch);
+//                 break;
+//             case R.id.action_menu:
+//                 Intent intentMenu = new Intent(MainActivity.this, MainMenu.class);
+//                 startActivity(intentMenu);
+//                 break;
+//         }
 
-        return super.onOptionsItemSelected(item);
-    }
+//         return super.onOptionsItemSelected(item);
+//     }
 
     private void loadData() {
         products = new ArrayList<>();

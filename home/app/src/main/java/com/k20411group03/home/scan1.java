@@ -34,11 +34,14 @@ import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 import com.k20411group03.DatabaseHelper;
 import com.k20411group03.Utils;
+import com.k20411group03.Utils;
 
 
 import java.io.IOException;
 
 public class scan1 extends AppCompatActivity {
+
+
     SurfaceView surfaceView;
     CameraSource cameraSource;
     TextView textView;
@@ -49,20 +52,28 @@ public class scan1 extends AppCompatActivity {
     public static SQLiteDatabase db;
 
     @Override
+    protected void onResume() {
+        check = false;
+        super.onResume();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan1);
 
-        //Custom action bar
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setCustomView(R.layout.custom_action_bar);
-        actionBar.setDisplayUseLogoEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+//         //Custom action bar
+//         ActionBar actionBar = getSupportActionBar();
+//         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+//         actionBar.setDisplayShowCustomEnabled(true);
+//         actionBar.setCustomView(R.layout.custom_action_bar);
+//         actionBar.setDisplayUseLogoEnabled(true);
+//         actionBar.setDisplayShowHomeEnabled(true);
 
         check = false;
+
         editText = (EditText) findViewById(R.id.edt_nhapmascan);
+
         textView = (TextView) findViewById(R.id.tv_Result);
         button = (Button) findViewById(R.id.btn_Scan);
 
@@ -134,11 +145,21 @@ public class scan1 extends AppCompatActivity {
                         public void run() {
                             textView.setText(qrCodes.valueAt(0).displayValue);
                             try{
-                                Intent intent = new Intent(scan1.this, ProductDetails.class);
-                                int id = Integer.parseInt(qrCodes.valueAt(0).displayValue);
-                                check = true;
-                                intent.putExtra("ProductID", id);
-                                startActivity(intent);
+                                int txt = Integer.parseInt(qrCodes.valueAt(0).displayValue);
+                                db = openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
+
+                                Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE " + Utils.COL_ID + " = " + txt, null);
+                                if (c.getCount() == 0) {
+                                    Toast.makeText(scan1.this, "Mã sản phẩm không tồn tại", Toast.LENGTH_SHORT).show();
+                                    //textView.setText("");
+                                } else {
+                                    c.close();
+                                    int id = Integer.parseInt(qrCodes.valueAt(0).displayValue);
+                                    Intent intent = new Intent(scan1.this, ProductDetails.class);
+                                    intent.putExtra("ProductID", txt);
+                                    check = true;
+                                    startActivity(intent);
+                                }
                             }
                             catch (Exception e){
                                 Toast.makeText(scan1.this, "Mã sản phẩm không hợp lệ", Toast.LENGTH_SHORT).show();
@@ -149,30 +170,31 @@ public class scan1 extends AppCompatActivity {
             }
         });
     }
-    //Thêm action
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+//     //Thêm action
+//     @Override
+//     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-    //Sự kiện action bar
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_search:
-                Intent intentSearch = new Intent(scan1.this, ActivitySearch.class);
-                startActivity(intentSearch);
-                break;
-            case R.id.action_cart:
-                Intent intentCart = new Intent(scan1.this, MainActivity.class);
-                startActivity(intentCart);
-                break;
-            case R.id.action_menu:
-                Intent intentMenu = new Intent(scan1.this, MainMenu.class);
-                startActivity(intentMenu);
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//         getMenuInflater().inflate(R.menu.main, menu);
+//         return super.onCreateOptionsMenu(menu);
+//     }
+//     //Sự kiện action bar
+//     @Override
+//     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//         switch (item.getItemId()) {
+//             case R.id.action_search:
+//                 Intent intentSearch = new Intent(scan1.this, ActivitySearch.class);
+//                 startActivity(intentSearch);
+//                 break;
+//             case R.id.action_cart:
+//                 Intent intentCart = new Intent(scan1.this, MainActivity.class);
+//                 startActivity(intentCart);
+//                 break;
+//             case R.id.action_menu:
+//                 Intent intentMenu = new Intent(scan1.this, MainMenu.class);
+//                 startActivity(intentMenu);
+//                 break;
+//         }
+//         return super.onOptionsItemSelected(item);
+//     }
 }
+

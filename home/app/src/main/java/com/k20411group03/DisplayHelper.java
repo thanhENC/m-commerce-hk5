@@ -32,4 +32,11 @@ public class DisplayHelper {
         String formattedDate = sdf.format(date);
         return formattedDate;
     }
+
+    public static String shortenString(String str, int length){
+        if(str.length() > length){
+            return str.substring(0, length) + "...";
+        }
+        return str;
+    }
 }

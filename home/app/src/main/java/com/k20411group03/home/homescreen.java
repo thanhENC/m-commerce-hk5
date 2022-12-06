@@ -46,9 +46,9 @@ public class homescreen extends AppCompatActivity {
         File dbPath = getDatabasePath(Utils.DB_NAME);
         if (!dbPath.exists()) {
             if (copyDBFromAssets()) {
-                Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Chào mừng bạn đã đến\n với 🌟 THE WEEKDAYS 🌟!", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Fail!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Tải dữ liệu không thành công!", Toast.LENGTH_SHORT).show();
             }
         }
     }

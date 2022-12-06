@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.k20411group03.CustomerData;
+import com.k20411group03.DisplayHelper;
 import com.k20411group03.Utils;
 import com.k20411group03.adapters.ProductCollectionAdapter;
 import com.k20411group03.adapters.WishlishAdapter;
@@ -86,7 +87,7 @@ public class Wishlist extends AppCompatActivity {
         db.execSQL("delete from " + Utils.Wishlist.TBL_NAME + " where " + Utils.Wishlist.COL_PRODUCTID + " = " + p.getProductID() + " and " + Utils.Wishlist.COL_CUSTOMERID + " = " + CustomerData.info.USER_ID);
         CustomerData.wishlist.remove(p);
         adapter.notifyDataSetChanged();
-        Toast.makeText(this, "Đã xóa khỏi " + p.getProductName() + " wishlist", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Đã bỏ ♥️ " + DisplayHelper.shortenString(p.getProductName(), 20) + " khỏi wishlist", Toast.LENGTH_SHORT).show();
     }
 
     //Thêm action

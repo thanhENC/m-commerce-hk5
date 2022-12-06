@@ -146,7 +146,7 @@ public class ThanhToan extends AppCompatActivity {
                 //Get product info
                 Payment p = (Payment) adapter.getItem(i);
                 Intent intent1 = new Intent(ThanhToan.this, ThanhToanPre.class);
-                intent1.putExtra("Thanhtoan", p.getPaymentName());
+                intent1.putExtra("Phuongthucthanhtoan", p.getPaymentName());
                 intent1.putExtra("Image", p.getPaymentImage());
                 startActivity(intent1);
                 //ActivityResultLauncher<Intent> launcher = null;

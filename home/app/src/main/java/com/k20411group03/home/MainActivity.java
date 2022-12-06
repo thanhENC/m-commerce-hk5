@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.k20411group03.DisplayHelper;
 import com.k20411group03.Utils;
@@ -102,10 +103,28 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ProductInCartAdapter(MainActivity.this, R.layout.cartitem, products);
         binding.lvGioHang.setAdapter(adapter);
 
-        binding.txtTongTien.setText(String.valueOf(DisplayHelper.formatPrice(adapter.sumOfAllProductsInCart())));
+//        binding.txtSum.setText(String.valueOf(DisplayHelper.formatPrice(adapter.sumOfAllProductsInCart())));
     }
 
     private void addEvents() {
 
+        binding.txtThanhtoan.setText(String.valueOf(DisplayHelper.getValue(binding.txtSum.getText().toString()) -
+                DisplayHelper.getValue(binding.txtGiatriCoupon.getText().toString())));
+
+        binding.btnDatHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Open gio hang
+                Intent intent = new Intent(MainActivity.this, ThanhToanPre.class);
+                intent.putExtra("GiatriCoupon", binding.txtGiatriCoupon.getText().toString());
+                intent.putExtra("Thanhtoan", binding.txtThanhtoan.getText().toString());
+                startActivity(intent);
+            }
+        });
+    }
+    @Override
+    protected void onResume() {
+        loadData();
+        super.onResume();
     }
 }

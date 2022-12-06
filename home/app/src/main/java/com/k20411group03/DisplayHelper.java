@@ -42,8 +42,8 @@ public class DisplayHelper {
 
     public static int getValue(String sum){
         //Convert 250.000 -> 250000
-        String value = sum.replace(".", "");
         try{
+            String value = sum.replace(".", "");
             return Integer.parseInt(value);
         }catch (Exception e){
             return 0;

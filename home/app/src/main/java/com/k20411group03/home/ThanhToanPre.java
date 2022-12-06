@@ -76,7 +76,7 @@ public class ThanhToanPre extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Open Phuong thuc thanh toan
-                Intent intent = new Intent (ThanhToanPre.this,ThanhToan.class);
+                Intent intent = new Intent (ThanhToanPre.this, ThanhToan.class);
                 startActivity(intent);
             }
         });
@@ -92,8 +92,8 @@ public class ThanhToanPre extends AppCompatActivity {
                 intent.putExtra("Street1", binding.txtStreet.getText().toString());
                 
                 startActivity(intent);
-                ActivityResultLauncher<Intent> laucher = null;
-                laucher.launch(intent);
+                //ActivityResultLauncher<Intent> laucher = null;
+                //laucher.launch(intent);
             }
         });
     }

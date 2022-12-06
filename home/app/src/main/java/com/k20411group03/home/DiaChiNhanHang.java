@@ -37,7 +37,7 @@ import java.util.ArrayList;
 public class DiaChiNhanHang extends Activity {
 
     ActivityDiaChiNhanHangBinding binding;
-    ActivityResultLauncher<Intent> launcher;
+    //ActivityResultLauncher<Intent> launcher;
     ArrayAdapter<String> adapter, adapter1, adapter2;
     Intent intent;
 
@@ -307,7 +307,7 @@ public class DiaChiNhanHang extends Activity {
                 + ", " + binding.txtDistrict.getText().toString() + ", " + binding.txtProvince.getText().toString());
 
                 startActivity(intent);
-                launcher.launch(intent);
+                //launcher.launch(intent);
             }
         });
 

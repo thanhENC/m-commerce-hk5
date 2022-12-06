@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -25,14 +26,15 @@ import java.util.List;
 
 public class ThongBao extends AppCompatActivity {
     ActivityThongBaoBinding binding;
-    NotificationAdapter adapter;
+    NotificationAdapter adapterNoti;
     List<Notification> notifications;
     BottomNavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_thong_bao);
+        binding = ActivityThongBaoBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
          //Custom action bar
          ActionBar actionBar = getSupportActionBar();
@@ -42,41 +44,9 @@ public class ThongBao extends AppCompatActivity {
          actionBar.setDisplayUseLogoEnabled(true);
          actionBar.setDisplayShowHomeEnabled(true);
 
-        binding = ActivityThongBaoBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_thong_bao);
-
         addEvents();
         loadData();
     }
-
-//     //Thêm action
-//     @Override
-//     public boolean onCreateOptionsMenu(Menu menu) {
-
-//         getMenuInflater().inflate(R.menu.main, menu);
-//         return super.onCreateOptionsMenu(menu);
-//     }
-
-//     //Sự kiện action bar
-//     @Override
-//     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//         switch (item.getItemId()) {
-//             case R.id.action_search:
-//                 Intent intentSearch = new Intent(ThongBao.this, ActivitySearch.class);
-//                 startActivity(intentSearch);
-//                 break;
-//             case R.id.action_cart:
-//                 Intent intentCart = new Intent(ThongBao.this, MainActivity.class);
-//                 startActivity(intentCart);
-//                 break;
-//             case R.id.action_menu:
-//                 Intent intentMenu = new Intent(ThongBao.this, MainMenu.class);
-//                 startActivity(intentMenu);
-//                 break;
-//         }
-
-//         return super.onOptionsItemSelected(item);
-//     }
 
     //Thêm action
     @Override
@@ -126,18 +96,18 @@ public class ThongBao extends AppCompatActivity {
     private void loadData() {
         notifications = new ArrayList<>();
 
-        notifications.add(new Notification(R.drawable.thongbao_1, "Title 1", "Content 1"));
-        notifications.add(new Notification(R.drawable.thongbao_2, "Title 2", "Content 2"));
-        notifications.add(new Notification(R.drawable.thongbao_1, "Title 3", "Content 3"));
-        notifications.add(new Notification(R.drawable.thongbao_2, "Title 4", "Content 4"));
+        notifications.add(new Notification(R.drawable.bannersale, "Giảm giá Noel", "Giảm lên đến 50% các sản phẩm sweater"));
+        notifications.add(new Notification(R.drawable.bannersale, "Title 2", "Content 2"));
+        notifications.add(new Notification(R.drawable.bannersale, "Title 3", "Content 3"));
+        notifications.add(new Notification(R.drawable.bannersale, "Title 4", "Content 4"));
 
-        adapter = new NotificationAdapter(ThongBao.this, R.layout.thongbao_item, notifications);
-        binding.lvThongBao.setAdapter(adapter);
+        adapterNoti = new NotificationAdapter(ThongBao.this, R.layout.thongbao_item, notifications);
+        binding.lvThongBao.setAdapter(adapterNoti);
 
     }
 
     private void addEvents(){
-        navigationView = findViewById(R.id.mn_noti);
+        navigationView = binding.mnNoti;
         navigationView.setSelectedItemId(R.id.item_noti);
         navigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

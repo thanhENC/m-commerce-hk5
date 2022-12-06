@@ -151,7 +151,7 @@ public class TrangChu extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //"Ai nạp data thì sửa cái này" - said Copilot.
+    //"Ai nạp data thì sửa cái này"
     private List<Item> getListSaleItem(){
         List<Item> list = new ArrayList<>();
         list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));

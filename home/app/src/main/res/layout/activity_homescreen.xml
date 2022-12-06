@@ -10,22 +10,23 @@
     android:weightSum="10">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:layout_gravity="center"
-        android:gravity="bottom"
+        android:gravity="bottom|center"
         android:text="The Weekdays"
+        android:fontFamily="@font/futura"
         android:textColor="#ffffff"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:layout_weight="6"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:paddingHorizontal="80dp"
+        android:paddingHorizontal="30dp"
         android:text="Định nghĩa lại thời trang bằng cách riêng của bạn"
         android:textAlignment="center"
         android:textColor="#FFFFFF"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         <SurfaceView
             android:id="@+id/sfv_cameraSurfaceView"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="300dp"
             android:layout_gravity="center" />
 
         <TextView
@@ -72,8 +72,13 @@
             android:textSize="18dp" />
     </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/mn_scan"
+        android:id="@+id/mn_home"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        />
-</LinearLayout>
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_gravity="end|bottom"
+        app:itemTextColor="@color/bottom_navigation_style"
+        app:itemIconTint="@color/bottom_navigation_style"
+        app:labelVisibilityMode="unlabeled"
+        android:layout_weight="1"/>
+</FrameLayout>

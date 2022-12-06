@@ -266,8 +266,6 @@ public class TrangChu extends AppCompatActivity {
         });
 
 
-
-
         //Sự kiện khi click vào navigation bar
         navigationView = findViewById(R.id.mn_home);
         navigationView.setSelectedItemId(R.id.item_home);

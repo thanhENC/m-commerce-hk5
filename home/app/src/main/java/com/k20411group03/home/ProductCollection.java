@@ -19,15 +19,7 @@ import com.k20411group03.adapters.ProductCollectionAdapter;
 import com.k20411group03.home.databinding.ActivityProductCollectionBinding;
 import com.k20411group03.models.ProductModel;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class ProductCollection extends AppCompatActivity {
 
@@ -113,6 +105,14 @@ public class ProductCollection extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        //Nút lọc
+        binding.imvSort.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductCollection.this, Filter.class);
             }
         });
 

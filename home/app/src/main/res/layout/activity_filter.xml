@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Sort"
+    tools:context=".Filter"
     android:orientation="vertical">
 
     <FrameLayout
@@ -36,7 +36,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Danh mục:"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:layout_weight="4"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"/>
@@ -64,7 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Màu sắc:"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:layout_weight="4"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"/>
@@ -92,7 +92,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Kích cỡ:"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:layout_weight="4"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"/>
@@ -120,7 +120,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Giá:"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:layout_weight="4"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"/>
@@ -141,11 +141,12 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_FilterConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:text="Xác nhận"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#111111"/>
+        android:backgroundTint="@color/black"/>
 </LinearLayout>

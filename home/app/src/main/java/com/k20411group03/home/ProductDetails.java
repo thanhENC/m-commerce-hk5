@@ -86,15 +86,6 @@ public class ProductDetails extends AppCompatActivity {
     }
 
     private void addEvents(){
-
-        //back button
-        binding.imvBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
         binding.imvAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

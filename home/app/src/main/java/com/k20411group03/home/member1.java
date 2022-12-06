@@ -182,6 +182,26 @@ public class member1 extends AppCompatActivity {
                 .addOnFailureListener(e -> showToast("Unable to sign out"));
     }
     private void addEvents(){
+        //Đơn hàng của tôi
+
+        //Đã yêu thích
+        binding.btnYeuthich.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(member1.this, Wishlist.class);
+                startActivity(intent);
+            }
+        });
+
+        //Voucher của tôi
+        binding.btnVouchercuatoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(member1.this, voucher_main.class);
+                startActivity(intent);
+            }
+        });
+
         //Bottom navigation
         //navigationView = findViewById(R.id.mn_membership);
         navigationView = binding.mnMembership;

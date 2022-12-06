@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.k20411group03.DisplayHelper;
 import com.k20411group03.home.ProductDetails;
 import com.k20411group03.home.R;
 import com.k20411group03.models.Item;
@@ -51,8 +52,8 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
 
         holder.imv_Thumb.setImageBitmap(convertByteArrayToBitmap(item.getProductImage()));
         holder.txt_ItemName.setText(item.getProductName());
-        holder.txt_price.setText(String.valueOf(item.getProductSalePrice()));
-        holder.txt_originalPrice.setText(String.valueOf(item.getProductPrice()));
+        holder.txt_price.setText(DisplayHelper.formatPrice(item.getProductPrice()));
+        holder.txt_originalPrice.setText(DisplayHelper.formatPrice(item.getProductPrice()));
         holder.layout_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

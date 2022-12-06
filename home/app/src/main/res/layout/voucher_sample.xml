@@ -13,7 +13,7 @@
         android:layout_gravity="center_vertical"
         android:padding="10dp"
         android:src="@drawable/voucher"
-        android:background="#FFC107"
+        android:background="#FF5722"
         android:layout_weight="1.5"/>
 
     <LinearLayout
@@ -62,7 +62,7 @@
             android:backgroundTint="#FFFFFF"
             android:text="Dùng ngay"
             android:textColor="@color/black"
-            app:strokeColor="#FFC107"
+            app:strokeColor="#FF5722"
             app:strokeWidth="1.5dp"/>
 
         <TextView

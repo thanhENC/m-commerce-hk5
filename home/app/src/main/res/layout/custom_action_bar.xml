@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="The Weekdays"
         android:fontFamily="@font/futura"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:layout_marginHorizontal="20dp"
         android:layout_gravity="center"
         android:gravity="center"

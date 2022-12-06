@@ -97,9 +97,9 @@ public class ThongBao extends AppCompatActivity {
         notifications = new ArrayList<>();
 
         notifications.add(new Notification(R.drawable.bannersale, "Giảm giá Noel", "Giảm lên đến 50% các sản phẩm sweater"));
-        notifications.add(new Notification(R.drawable.bannersale, "Title 2", "Content 2"));
-        notifications.add(new Notification(R.drawable.bannersale, "Title 3", "Content 3"));
-        notifications.add(new Notification(R.drawable.bannersale, "Title 4", "Content 4"));
+        notifications.add(new Notification(R.drawable.jean001, "Cốc cốc cốc, bạn bỏ quên gì nè!", "Một sản phẩm quần jean đã được thêm vào giỏ hàng của bạn nhưng chưa được mua, đến ngay giỏ hàng để rinh ngay thôi nào!"));
+        notifications.add(new Notification(R.drawable.nha_giao_vietnam, "Mừng ngày Nhà giáo Việt Nam 20 - 11", "Mừng nhà giáo Việt Nam, The Weekdays giảm giá 20% cho tất cả các sản phẩm quần jean cho quý thầy!"));
+        notifications.add(new Notification(R.drawable.tiktok_channel, "Ra mắt kênh truyền thông TikTok của The Weekdays", "Tháng 11 vừa qua, thương hiệu thời trang nam The Weekdays đã thành lập kênh TikTok @theweekdaysvn để truyền tải thông điệp thời trang nam đến với tất cả các bạn trẻ. Hãy theo dõi kênh TikTok của The Weekdays để cập nhật những thông tin mới nhất về thương hiệu và những sản phẩm mới nhất của The Weekdays nhé!"));
 
         adapterNoti = new NotificationAdapter(ThongBao.this, R.layout.thongbao_item, notifications);
         binding.lvThongBao.setAdapter(adapterNoti);

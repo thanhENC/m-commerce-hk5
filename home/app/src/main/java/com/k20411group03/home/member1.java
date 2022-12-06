@@ -95,12 +95,18 @@ public class member1 extends AppCompatActivity {
     }
 
     private void updateToken(String token){
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS)
-                .document(preferenceManager.getString(Constants.KEY_USER_ID));
-        documentReference.update(Constants.KEY_FCM_TOKEN, token)
-                .addOnSuccessListener(unused -> showToast("Token updated successfully"))
-                .addOnFailureListener(e -> showToast("Unable to update token"));
+        try {
+            FirebaseFirestore database = FirebaseFirestore.getInstance();
+            DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS)
+                    .document(preferenceManager.getString(Constants.KEY_USER_ID));
+            documentReference.update(Constants.KEY_FCM_TOKEN, token)
+                    .addOnSuccessListener(unused -> showToast("Token updated successfully"))
+                    .addOnFailureListener(e -> showToast("Unable to update token"));
+        }
+        catch (Exception e){
+            showToast(e.getMessage());
+        }
+
     }
 
     private void signOut(){

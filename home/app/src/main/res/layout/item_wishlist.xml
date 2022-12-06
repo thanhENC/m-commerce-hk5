@@ -48,7 +48,7 @@
                     android:id="@+id/imv_AddWishList"
                     android:layout_width="0dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    android:src="@drawable/ic_baseline_favorite_24"
                     android:layout_weight="1"
                     android:layout_gravity="center"/>
 

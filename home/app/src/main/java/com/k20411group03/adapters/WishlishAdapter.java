@@ -9,7 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.k20411group03.CustomerData;
 import com.k20411group03.home.R;
+import com.k20411group03.home.Wishlist;
 import com.k20411group03.models.ProductModel;
 
 import org.w3c.dom.Text;
@@ -17,11 +19,11 @@ import org.w3c.dom.Text;
 import java.util.List;
 
 public class WishlishAdapter extends BaseAdapter {
-    Activity activity;
+    Wishlist activity;
     int item_layout;
     List<ProductModel> products;
 
-    public WishlishAdapter(Activity activity, int item_layout, List<ProductModel> products) {
+    public WishlishAdapter(Wishlist activity, int item_layout, List<ProductModel> products) {
         this.activity = activity;
         this.item_layout = item_layout;
         this.products = products;
@@ -54,6 +56,7 @@ public class WishlishAdapter extends BaseAdapter {
             view = inflater.inflate(item_layout, null);
 
             holder.imvProductImage = view.findViewById(R.id.imv_ProductImage);
+            holder.imvAddWishList = view.findViewById(R.id.imv_AddWishList);
             holder.txtProductName = view.findViewById(R.id.txt_ProductName);
             holder.txtSalePrice = view.findViewById(R.id.txt_SalePrice);
 
@@ -68,11 +71,18 @@ public class WishlishAdapter extends BaseAdapter {
         holder.txtSalePrice.setText(product.formatProductPrice(product.getProductSalePrice()) + " đ");
         holder.imvProductImage.setImageBitmap(product.getBitmapProductImage());
 
+        holder.imvAddWishList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.deleteWishlist(product);
+            }
+        });
+
         return view;
     }
 
     public static class ViewHolder{
-        ImageView imvProductImage;
+        ImageView imvProductImage, imvAddWishList;
         TextView txtProductName, txtSalePrice;
     }
 }

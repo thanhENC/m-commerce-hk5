@@ -75,8 +75,6 @@
 
             </LinearLayout>
 
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -86,14 +84,14 @@
                     android:id="@+id/txt_Surname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Lê"
+                    android:text="Lê"
                     android:fontFamily="@font/montserrat"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint=" "
+                    android:text=" "
                     android:fontFamily="@font/montserrat"
                     android:textSize="16sp"/>
 
@@ -101,14 +99,14 @@
                     android:id="@+id/txt_Firstname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Thanh Hải"
+                    android:text="Thanh Hải"
                     android:fontFamily="@font/montserrat"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint=" | "
+                    android:text=" | SĐT: "
                     android:fontFamily="@font/montserrat"
                     android:textSize="16sp"/>
 
@@ -116,7 +114,7 @@
                     android:id="@+id/txt_Phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="0168 382 4960"
+                    android:text="0168 382 4960"
                     android:fontFamily="@font/montserrat"
                     android:textSize="16sp"/>
 
@@ -126,7 +124,7 @@
                 android:id="@+id/txt_Street"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="461 Nguyễn Bình, tổ 12, khu 1"
+                android:text="461 Nguyễn Bình, tổ 12, khu 1"
                 android:fontFamily="@font/montserrat"
                 android:textSize="16sp"/>
 
@@ -134,7 +132,19 @@
                 android:id="@+id/txt_Address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Phường Hiệp Thành, Thành phố Thủ Dầu Một, Tỉnh Bình Dương"
+                android:text="Phường Hiệp Thành, Thành phố Thủ Dầu Một, Tỉnh Bình Dương"
+                android:fontFamily="@font/montserrat"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/txt_UseDefaultInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DÙNG ĐỊA CHỈ MẶC ĐỊNH"
+                android:layout_gravity="right"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:background="@color/black"
                 android:fontFamily="@font/montserrat"
                 android:textSize="16sp"/>
 
@@ -195,7 +205,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
-            android:text="0đ"
+            android:text="30.000đ"
             android:fontFamily="@font/montserrat"
             android:textSize="18sp"
             android:gravity="end"/>
@@ -263,6 +273,7 @@
             android:background="@color/white"
             android:text="TỔNG THANH TOÁN: "
             android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="end" />
@@ -275,12 +286,12 @@
             android:layout_marginEnd="10dp"
             android:text="200.000đ"
             android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="end" />
 
     </LinearLayout>
-
 
 
     <EditText
@@ -303,7 +314,5 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginHorizontal="20dp" />
-
-
 
 </LinearLayout>

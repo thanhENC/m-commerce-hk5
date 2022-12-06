@@ -15,7 +15,7 @@ public class CustomerData {
         public static String FIRST_NAME = "Đinh";
         public static String LAST_NAME = "Văn An";
         public static String EMAIL = "andv20411@st.uel.edu.vn";
-        public static String PHONE = "";
+        public static String PHONE = "0168 382 4960";
         public static int MEMBERSHIP_SCORE = 325;
         public static String MEMBERSHIP_LEVEL = "Thành viên Vàng";
     }

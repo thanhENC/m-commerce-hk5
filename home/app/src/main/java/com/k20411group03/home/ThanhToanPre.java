@@ -12,7 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
+import com.k20411group03.CustomerData;
+import com.k20411group03.DisplayHelper;
 import com.k20411group03.adapters.PaymentItemAdapter;
 import com.k20411group03.home.databinding.ActivityThanhToanPreBinding;
 import com.k20411group03.models.Product;
@@ -25,7 +28,7 @@ public class ThanhToanPre extends AppCompatActivity {
     ActivityThanhToanPreBinding binding;
     PaymentItemAdapter adapter;
     List<Product> products;
-    Intent intent;
+    Intent intent, intent1, intent2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,31 +46,50 @@ public class ThanhToanPre extends AppCompatActivity {
         binding = ActivityThanhToanPreBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        getData();
         loadData();
         addEvents();
+        getData();
+
+
     }
 
     private void getData() {
 
         intent = getIntent();
+
         binding.txtSurname.setText(intent.getStringExtra("Ho"));
         binding.txtFirstname.setText(intent.getStringExtra("Ten"));
         binding.txtPhone.setText(intent.getStringExtra("Phone"));
         binding.txtStreet.setText(intent.getStringExtra("Street"));
         binding.txtAddress.setText(intent.getStringExtra("Address"));
-        binding.txtPaymentMethod.setText(intent.getStringExtra("Thanhtoan"));
-        binding.imvPaymentImage.setImageResource(intent.getIntExtra("Image",R.drawable.payment_cash));
+
+        intent1 = getIntent();
+
+        binding.txtPaymentMethod.setText(intent1.getStringExtra("Phuongthucthanhtoan"));
+        binding.imvPaymentImage.setImageResource(intent1.getIntExtra("Image",R.drawable.payment_cash));
+
+        intent2 = getIntent();
+
+        binding.txtMaCoupon.setText(intent2.getStringExtra("GiatriCoupon"));
+        binding.txtPhiVanChuyen.setText("30000đ");
+        binding.txtTongTien.setText(String.valueOf(DisplayHelper.getValue(intent.getStringExtra("Thanhtoan")) +  30000));
+
     }
 
     private void addEvents() {
 
-        binding.ChangeDiachinhanhang.setOnClickListener(new View.OnClickListener(){
+        binding.txtUseDefaultInfo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 //Open Dia Chi Nhan Hang
-                Intent intent = new Intent (ThanhToanPre.this, DiaChiNhanHang.class);
-                startActivity(intent);
+                intent = getIntent();
+
+                binding.txtSurname.setText(CustomerData.info.FIRST_NAME);
+                binding.txtFirstname.setText(CustomerData.info.LAST_NAME);
+                binding.txtPhone.setText(CustomerData.info.PHONE);
+                binding.txtStreet.setText(CustomerData.address.HOUSE_NUMBER + ", " + CustomerData.address.STREET);
+                binding.txtAddress.setText(CustomerData.address.WARD + ", " + CustomerData.address.DISTRICT +
+                        ", " + CustomerData.address.CITY);
 
             }
         });
@@ -130,6 +152,7 @@ public class ThanhToanPre extends AppCompatActivity {
 //     }
 
     private void loadData() {
+
         products = new ArrayList<>();
 
         products.add(new Product("Product 1", 100, R.drawable.ic_baseline_image_24, "S", "Red", 1, false));
@@ -145,5 +168,13 @@ public class ThanhToanPre extends AppCompatActivity {
 
         adapter = new PaymentItemAdapter(ThanhToanPre.this, R.layout.paymentitem, products);
         binding.lvGioHang.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        loadData();
+        getData();
+        addEvents();
+        super.onResume();
     }
 }

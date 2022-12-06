@@ -46,14 +46,66 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginBottom="20dp" />
 
-    <TextView
-        android:id="@+id/txt_ChonCoupon"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:background="@color/white"
-        android:paddingHorizontal="10dp"
-        android:text="Chọn Coupon"
-        android:textSize="18sp" />
+        android:layout_marginBottom="5dp"
+        android:gravity="end">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="THÀNH TIỀN: đ "
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:gravity="end" />
+        <TextView
+            android:id="@+id/txt_Sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="10dp"
+            android:text="250.000"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:gravity="end" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:id="@+id/txt_ChonCoupon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:background="@color/white"
+            android:textColor="@color/red"
+            android:paddingHorizontal="10dp"
+            android:text="Chọn Coupon"
+            android:textSize="18sp"
+            android:layout_weight="6"/>
+
+        <TextView
+            android:id="@+id/txt_GiatriCoupon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingHorizontal="10dp"
+            android:text="50.000"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/red"
+            android:gravity="right"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,23 +117,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tổng thanh toán: đ "
+            android:text="TỔNG THANH TOÁN: đ "
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:gravity="end"
-            android:layout_marginTop="5dp"/>
+            android:gravity="end" />
         <TextView
-            android:id="@+id/txt_TongTien"
+            android:id="@+id/txt_Thanhtoan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:paddingEnd="10dp"
-            android:text="200"
+            android:text="200.000"
             android:textSize="20sp"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/price"
-            android:gravity="end"
-            android:layout_marginTop="5dp"/>
+            android:gravity="end" />
     </LinearLayout>
 
 
@@ -89,7 +140,7 @@
         android:id="@+id/btn_DatHang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/black"
         android:text="ĐẶT HÀNG"
         android:textColor="@color/white"
         android:textSize="20sp"

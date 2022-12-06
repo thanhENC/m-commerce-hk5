@@ -307,7 +307,7 @@ public class DiaChiNhanHang extends Activity {
                 + ", " + binding.txtDistrict.getText().toString() + ", " + binding.txtProvince.getText().toString());
 
                 startActivity(intent);
-                //launcher.launch(intent);
+
             }
         });
 

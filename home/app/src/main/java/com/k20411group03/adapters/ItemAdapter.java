@@ -2,15 +2,19 @@ package com.k20411group03.adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.k20411group03.home.ProductDetails;
 import com.k20411group03.home.R;
 import com.k20411group03.models.ProductModel;
 
@@ -73,6 +77,7 @@ public class ItemAdapter extends BaseAdapter {
         holder.txt_ItemName.setText(shortName(String.valueOf(item.getProductName())));
         holder.txt_price.setText(item.formatProductPrice(item.getProductSalePrice()));
         holder.txt_originalPrice.setText(item.formatProductPrice(item.getProductPrice()));
+
 
         return view;
     }

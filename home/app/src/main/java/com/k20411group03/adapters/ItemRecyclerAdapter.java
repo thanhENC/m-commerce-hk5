@@ -1,30 +1,36 @@
 package com.k20411group03.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.k20411group03.home.ProductDetails;
 import com.k20411group03.home.R;
 import com.k20411group03.models.Item;
+import com.k20411group03.models.ProductModel;
 
 import java.util.List;
 
 public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapter.ItemHolder>{
 
-    private List<Item> itemList;
+    private List<ProductModel> itemList;
     private Context context;
 
     public ItemRecyclerAdapter(Context context) {
         this.context = context;
     }
 
-    public void setData(List<Item> items){
+    public void setData(List<ProductModel> items){
         this.itemList = items;
         notifyDataSetChanged();
     }
@@ -38,18 +44,21 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
-        Item item = itemList.get(position);
+        ProductModel item = itemList.get(position);
         if(itemList == null){
             return;
         }
 
-        holder.imv_Thumb.setImageResource(item.getThumbID());
+        holder.imv_Thumb.setImageBitmap(convertByteArrayToBitmap(item.getProductImage()));
         holder.txt_ItemName.setText(item.getProductName());
-        holder.txt_price.setText(String.valueOf(item.getPrice()));
-        holder.txt_discount.setText("(-" + String.valueOf(item.getDiscount())+"%)");
-        holder.txt_originalPrice.setText(String.valueOf(item.getOriginalPrice()));
-        holder.txt_rating.setText("(" + String.valueOf(item.getRating()) + ")");
-        holder.txt_numOfReview.setText("(" +String.valueOf(item.getNumOfReviews())+")");
+        holder.txt_price.setText(String.valueOf(item.getProductSalePrice()));
+        holder.txt_originalPrice.setText(String.valueOf(item.getProductPrice()));
+        holder.layout_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickGoToDetail(item);
+            }
+        });
     }
 
     @Override
@@ -66,8 +75,7 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
         TextView txt_originalPrice;
         TextView txt_price;
         TextView txt_discount;
-        TextView txt_rating;
-        TextView txt_numOfReview;
+        LinearLayout layout_item;
 
         public ItemHolder(@NonNull View itemView) {
             super(itemView);
@@ -77,9 +85,18 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
             txt_originalPrice = itemView.findViewById(R.id.txt_originalPrice);
             txt_price = itemView.findViewById(R.id.txt_price);
             txt_discount = itemView.findViewById(R.id.txt_discount) ;
-            txt_rating = itemView.findViewById(R.id.txt_rating);
-            txt_numOfReview = itemView.findViewById(R.id.txt_numOfReview);
+            layout_item = itemView.findViewById(R.id.layout_item);
 
         }
+    }
+
+    //Function chuyển sang trang sản phẩm chi tiết khi nhấn vào sản phẩm trên recycler view
+    private void onClickGoToDetail(ProductModel item) {
+        Intent intent = new Intent(context, ProductDetails.class);
+        intent.putExtra("ProductID", item.getProductID());
+        context.startActivity(intent);
+    }
+    private Bitmap convertByteArrayToBitmap(byte[] image) {
+        return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
 }

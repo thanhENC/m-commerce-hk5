@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.k20411group03.Utils;
@@ -30,6 +32,8 @@ public class FlashSaleScreen extends AppCompatActivity {
     FlashsaleAdapter adapter;
     ArrayList<ProductModel> flashsales;
 
+    Intent intent;
+
     public static SQLiteDatabase db;
 
     @Override
@@ -37,54 +41,65 @@ public class FlashSaleScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
 
-//         //Custom action bar
-//         ActionBar actionBar = getSupportActionBar();
-//         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//         actionBar.setDisplayShowCustomEnabled(true);
-//         actionBar.setCustomView(R.layout.custom_action_bar);
-//         actionBar.setDisplayUseLogoEnabled(true);
-//         actionBar.setDisplayShowHomeEnabled(true);
+         //Custom action bar
+         ActionBar actionBar = getSupportActionBar();
+         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+         actionBar.setDisplayShowCustomEnabled(true);
+         actionBar.setCustomView(R.layout.custom_action_bar);
+         actionBar.setDisplayUseLogoEnabled(true);
+         actionBar.setDisplayShowHomeEnabled(true);
 
         binding = ActivityFlashSaleScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        registerForContextMenu(binding.lvFlashsale);
-
-        copyDB();
+        //registerForContextMenu(binding.lvFlashsale);
 
         loadData();
-
+        addEvents();
     }
 
-//     //Thêm action
-//     @Override
-//     public boolean onCreateOptionsMenu(Menu menu) {
+    //Thêm action
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
-//         getMenuInflater().inflate(R.menu.main, menu);
-//         return super.onCreateOptionsMenu(menu);
-//     }
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
-//     //Sự kiện action bar
-//     @Override
-//     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//         switch (item.getItemId()) {
-//             case R.id.action_search:
-//                 Intent intentSearch = new Intent(FlashSaleScreen.this, ActivitySearch.class);
-//                 startActivity(intentSearch);
-//                 break;
-//             case R.id.action_cart:
-//                 Intent intentCart = new Intent(FlashSaleScreen.this, MainActivity.class);
-//                 startActivity(intentCart);
-//                 break;
-//             case R.id.action_menu:
-//                 Intent intentMenu = new Intent(FlashSaleScreen.this, MainMenu.class);
-//                 startActivity(intentMenu);
-//                 break;
-//         }
+    //Sự kiện action bar
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                Intent intentSearch = new Intent(this, ActivitySearch.class);
+                startActivity(intentSearch);
+                break;
+            case R.id.action_cart:
+                Intent intentCart = new Intent(this, MainActivity.class);
+                startActivity(intentCart);
+                break;
+            case R.id.action_BoSuuTap:
+                Intent intentBoSuuTap = new Intent(this, ProductCollection.class);
+                intentBoSuuTap.putExtra("screenTitle", "Bộ sưu tập mới");
+                startActivity(intentBoSuuTap);
+                break;
+            case R.id.action_HangMoiVe:
+                Intent intentSanPhamMoi = new Intent(this, ProductCollection.class);
+                intentSanPhamMoi.putExtra("screenTitle", "Hàng mới về");
+                startActivity(intentSanPhamMoi);
+                break;
+            case R.id.action_Flashsale:
+                Intent intentFlashsale = new Intent(this, FlashSaleScreen.class);
+                startActivity(intentFlashsale);
+                break;
+            case R.id.action_SanPham:
+                Intent intentSanPham = new Intent(this, ProductCollection.class);
+                intentSanPham.putExtra("screenTitle", "Sản phẩm");
+                startActivity(intentSanPham);
+                break;
+        }
 
-//         return super.onOptionsItemSelected(item);
-//     }
-
-    //Khởi tạo và load data từ database:
+        return super.onOptionsItemSelected(item);
+    }
 
     private void loadData() {
         flashsales = new ArrayList<>();
@@ -132,40 +147,16 @@ public class FlashSaleScreen extends AppCompatActivity {
         binding.lvFlashsale.setAdapter(adapter);
     }
 
-    private void copyDB() {
-        File dbPath = getDatabasePath(Utils.DB_NAME);
-        if (!dbPath.exists()) {
-            if (copyDBFromAssets()) {
-                Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Fail!", Toast.LENGTH_SHORT).show();
+    private void addEvents() {
+        binding.lvFlashsale.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ProductModel product = flashsales.get(position);
+                intent = new Intent(FlashSaleScreen.this, ProductDetails.class);
+                intent.putExtra("ProductID", product.getProductID());
+                startActivity(intent);
             }
-            ;
-        }
-    }
-
-    private boolean copyDBFromAssets() {
-        String dbPath = getApplicationInfo().dataDir + Utils.DB_PATH_SUFFIX + Utils.DB_NAME;
-        try {
-            InputStream inputStream = getAssets().open(Utils.DB_NAME);
-            File f = new File(getApplicationInfo().dataDir + Utils.DB_PATH_SUFFIX);
-            if (!f.exists()) {
-                f.mkdir();
-            }
-            OutputStream outputStream = new FileOutputStream(dbPath);
-            byte[] buffer = new byte[1024];
-            int length;
-            while ((length = inputStream.read(buffer)) > 0) {
-                outputStream.write(buffer, 0, length);
-            }
-            outputStream.flush();
-            outputStream.close();
-            inputStream.close();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
+        });
     }
 
     @Override

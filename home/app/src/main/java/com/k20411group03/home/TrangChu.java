@@ -7,30 +7,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.TypefaceSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
-import android.widget.Switch;
-import androidx.appcompat.widget.Toolbar;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
+import com.k20411group03.Utils;
 import com.k20411group03.adapters.BannerAdapter;
 import com.k20411group03.adapters.CategoryAdapter;
 import com.k20411group03.adapters.ItemRecyclerAdapter;
 import com.k20411group03.models.Banners;
 import com.k20411group03.models.Item;
+import com.k20411group03.models.ProductModel;
 import com.k20411group03.models.category;
 
 import java.util.ArrayList;
@@ -46,6 +44,7 @@ public class TrangChu extends AppCompatActivity {
     CategoryAdapter categoryAdapter;
     BottomNavigationView navigationView;
     Timer timer;
+    public static SQLiteDatabase db;
 
 
     @Override
@@ -151,20 +150,25 @@ public class TrangChu extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //"Ai nạp data thì sửa cái này"
-    private List<Item> getListSaleItem(){
-        List<Item> list = new ArrayList<>();
-        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
-        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
-        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
-        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
-        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
-        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
-        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
-        list.add(new Item(1,1,"Áo sơ mi ca rô xanh rêu nhạt",150,R.drawable.somi,"Áo sơ mi caro",200000,300000,33,4.5,29,new String[]{"Red","Blue"},new String[]{"M","L","XL"}));
-
-
-
+    private List<ProductModel> getListSaleItem(){
+        List<ProductModel> list = new ArrayList<>();
+        //get top 10 item from database
+        db = openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
+        //get top 10 item from database
+        Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " ORDER BY " + Utils.COL_SALEPRICE + " DESC LIMIT 10", null);
+        //Thêm ProductModel vào list
+        while (c.moveToNext()) {
+            int id = c.getInt(0);
+            String name = c.getString(1);
+            String Cate = c.getString(2);
+            byte[] thumb = c.getBlob(3);
+            double price = c.getDouble(4);
+            double salePrice = c.getDouble(5);
+            String description = c.getString(6);
+            int inventory = c.getInt(7);
+            ProductModel productModel = new ProductModel(id, name, Cate, thumb, price, salePrice, description, inventory);
+            list.add(productModel);
+        }
         return list;
     }
 
@@ -218,6 +222,51 @@ public class TrangChu extends AppCompatActivity {
     }
 
     private void addEvents(){
+
+        //Sự kiện khi click vào sale banner
+        Button btnSale = findViewById(R.id.btn_SaleBanner);
+        btnSale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentSale = new Intent(TrangChu.this, FlashSaleScreen.class);
+                startActivity(intentSale);
+            }
+        });
+
+        //Sự kiện khi click vào xem thêm flash sale
+        TextView txtNavFlashsale = findViewById(R.id.txt_navFlashSale);
+        txtNavFlashsale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentFlashsale = new Intent(TrangChu.this, FlashSaleScreen.class);
+                startActivity(intentFlashsale);
+            }
+        });
+
+        //Sự kiện khi click vào xem thêm sản phẩm mới
+        TextView txtNavSanPham = findViewById(R.id.txt_navNewArrival);
+        txtNavSanPham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentSanPham = new Intent(TrangChu.this, ProductCollection.class);
+                intentSanPham.putExtra("screenTitle", "Hàng mới về");
+                startActivity(intentSanPham);
+            }
+        });
+
+        //Sự kiện khi click vào xem thêm bộ sưu tập
+        TextView txtNavBoSuuTap = findViewById(R.id.txt_navForYou);
+        txtNavBoSuuTap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentBoSuuTap = new Intent(TrangChu.this, ProductCollection.class);
+                intentBoSuuTap.putExtra("screenTitle", "Bộ sưu tập mới");
+                startActivity(intentBoSuuTap);
+            }
+        });
+
+
+
 
         //Sự kiện khi click vào navigation bar
         navigationView = findViewById(R.id.mn_home);

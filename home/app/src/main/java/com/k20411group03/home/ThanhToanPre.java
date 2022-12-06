@@ -1,5 +1,6 @@
 package com.k20411group03.home;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -42,21 +43,26 @@ public class ThanhToanPre extends AppCompatActivity {
         binding = ActivityThanhToanPreBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        getData();
         loadData();
         addEvents();
-        getData();
     }
 
     private void getData() {
 
-        Intent intent = getIntent();
-        binding.txtNguoiNhanSDT.setText( intent.getStringExtra("Ho") + " " + intent.getStringExtra("Ten") + " | " + intent.getStringExtra("Phone"));
-        binding.txtAddress.setText(intent.getStringExtra("Street") + ", " + intent.getStringExtra("Ward") + ", " + intent.getStringExtra("District") + ", " + intent.getStringExtra("Province"));
+        intent = getIntent();
+        binding.txtSurname.setText(intent.getStringExtra("Ho"));
+        binding.txtFirstname.setText(intent.getStringExtra("Ten"));
+        binding.txtPhone.setText(intent.getStringExtra("Phone"));
+        binding.txtStreet.setText(intent.getStringExtra("Street"));
+        binding.txtAddress.setText(intent.getStringExtra("Address"));
+        binding.txtPaymentMethod.setText(intent.getStringExtra("Thanhtoan"));
+        binding.imvPaymentImage.setImageResource(intent.getIntExtra("Image",R.drawable.payment_cash));
     }
 
     private void addEvents() {
 
-        binding.txtTitleDiaChi.setOnClickListener(new View.OnClickListener(){
+        binding.ChangeDiachinhanhang.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 //Open Dia Chi Nhan Hang
@@ -66,12 +72,28 @@ public class ThanhToanPre extends AppCompatActivity {
             }
         });
 
-        binding.txtPTThanhToan.setOnClickListener(new View.OnClickListener(){
+        binding.ChangePayment.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 //Open Phuong thuc thanh toan
                 Intent intent = new Intent (ThanhToanPre.this,ThanhToan.class);
                 startActivity(intent);
+            }
+        });
+
+        binding.ChangeDiachinhanhang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Open gio hang
+                Intent intent = new Intent(ThanhToanPre.this, DiaChiNhanHang.class);
+                intent.putExtra("Ho1", binding.txtSurname.getText().toString());
+                intent.putExtra("Ten1", binding.txtFirstname.getText().toString());
+                intent.putExtra("Phone1", binding.txtPhone.getText().toString());
+                intent.putExtra("Street1", binding.txtStreet.getText().toString());
+                
+                startActivity(intent);
+                ActivityResultLauncher<Intent> laucher = null;
+                laucher.launch(intent);
             }
         });
     }

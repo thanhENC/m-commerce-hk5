@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bee"
+    android:background="@color/white"
     tools:context=".ThanhToanPre">
 
     <FrameLayout
@@ -29,31 +29,118 @@
             android:textSize="20sp" />
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/txt_TitleDiaChi"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Địa chỉ nhận hàng >"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:background="@color/white"
+        android:orientation="horizontal"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="10dp" />
-    <TextView
-        android:id="@+id/txt_NguoiNhanSDT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lê Hiền Phú | 097 123 4567"
-        android:textSize="18sp"
-        android:layout_marginHorizontal="10dp" />
+        android:layout_marginTop="10dp"
+        android:weightSum="10">
 
-    <TextView
-        android:id="@+id/txt_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="461 Nguyễn Bình, Phường Hiệp Thành, Thành phố Thủ Dầu Một, Tỉnh Bình Dương"
-        android:textSize="18sp"
-        android:layout_marginHorizontal="10dp" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/address_icon"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="9"
+            android:layout_marginStart="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Thông tin đặt hàng"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_weight="5"/>
+
+                <ImageView
+                    android:id="@+id/Change_Diachinhanhang"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/edit_button"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_Surname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Lê"
+                    android:fontFamily="@font/montserrat"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    android:fontFamily="@font/montserrat"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/txt_Firstname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Thanh Hải"
+                    android:fontFamily="@font/montserrat"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint=" | "
+                    android:fontFamily="@font/montserrat"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/txt_Phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="0168 382 4960"
+                    android:fontFamily="@font/montserrat"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_Street"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="461 Nguyễn Bình, tổ 12, khu 1"
+                android:fontFamily="@font/montserrat"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/txt_Address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Phường Hiệp Thành, Thành phố Thủ Dầu Một, Tỉnh Bình Dương"
+                android:fontFamily="@font/montserrat"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/lv_GioHang"
@@ -61,82 +148,140 @@
         android:layout_height="0dip"
         android:layout_weight="1"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="10dp" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:paddingHorizontal="10dp"
-            android:text="Chọn Coupon"
+            android:text="Mã khuyến mãi"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat"
             android:textSize="18sp" />
+
         <TextView
-            android:id="@+id/txt_GiaTriCoupon"
+            android:id="@+id/txt_MaCoupon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
             android:text="-100.000đ"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/red"
             android:textSize="18sp"
             android:gravity="end"/>
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp">
+        android:layout_height="wrap_content">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:paddingHorizontal="10dp"
             android:text="Phí vận chuyển"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/txt_PhiVanChuyen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
             android:text="0đ"
+            android:fontFamily="@font/montserrat"
             android:textSize="18sp"
             android:gravity="end"/>
     </FrameLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp">
+        android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:paddingHorizontal="10dp"
             android:text="Phương thức thanh toán"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat"
             android:textSize="18sp" />
-        <TextView
-            android:id="@+id/txt_PTThanhToan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:text="BIDV [*34999]"
-            android:textSize="18sp"
-            android:gravity="end"/>
-    </FrameLayout>
 
-    <TextView
-        android:id="@+id/txt_TongTien"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <ImageView
+                android:id="@+id/imv_PaymentImage"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_baseline_image_24"
+                android:layout_gravity="center"
+                android:layout_weight="2"/>
+
+            <TextView
+                android:id="@+id/txt_PaymentMethod"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Thanh toán tiền mặt"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginStart="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/purple_700"
+                android:layout_weight="6"/>
+
+            <ImageView
+                android:id="@+id/Change_Payment"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:src="@drawable/formore_button"
+                android:layout_weight="2"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:paddingHorizontal="10dp"
-        android:text="Tổng thanh toán: 200.000đ"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="end"
-        android:layout_marginTop="10dp"/>
+        android:orientation="horizontal"
+        android:gravity="right">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="TỔNG THANH TOÁN: "
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="end" />
+
+        <TextView
+            android:id="@+id/txt_TongTien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginEnd="10dp"
+            android:text="200.000đ"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="end" />
+
+    </LinearLayout>
+
+
 
     <EditText
         android:id="@+id/txt_noteaddress"
@@ -145,20 +290,19 @@
         android:background="@color/white"
         android:paddingHorizontal="10dp"
         android:hint="Ghi chú cho The Weekdays"
-        android:textSize="18sp"
-        android:layout_marginTop="10dp"/>
+        android:fontFamily="@font/montserrat"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btn_DatHang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/teal_700"
         android:text="ĐẶT HÀNG"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginHorizontal="20dp" />
 
 
 

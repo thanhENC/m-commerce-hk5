@@ -10,12 +10,6 @@
         android:orientation="horizontal"
         android:gravity="center">
 
-        <RadioButton
-            android:id="@+id/rdbtn_Payment"
-            android:layout_width="35dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="5dp"/>
         <ImageView
             android:id="@+id/imv_PaymentImage"
             android:layout_width="70dp"

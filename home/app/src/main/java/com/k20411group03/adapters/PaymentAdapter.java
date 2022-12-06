@@ -15,6 +15,8 @@ import com.k20411group03.home.R;
 import com.k20411group03.models.Payment;
 import com.k20411group03.models.Product;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+
 import java.util.List;
 
 public class PaymentAdapter extends BaseAdapter {
@@ -47,7 +49,6 @@ public class PaymentAdapter extends BaseAdapter {
         public
         ImageView imvPaymentImage;
         TextView txtPaymentName, txtPaymentNote;
-        RadioButton rdbtnPayment;
     }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
@@ -62,7 +63,6 @@ public class PaymentAdapter extends BaseAdapter {
             viewHolder.txtPaymentName = view.findViewById(R.id.txt_PaymentMethod);
             viewHolder.txtPaymentNote = view.findViewById(R.id.txt_PaymentNote);
             viewHolder.imvPaymentImage = view.findViewById(R.id.imv_PaymentImage);
-            viewHolder.rdbtnPayment = view.findViewById(R.id.rdbtn_Payment);
 
             view.setTag(viewHolder);
         } else {
@@ -71,13 +71,11 @@ public class PaymentAdapter extends BaseAdapter {
 
         //binding data
         Payment payment = payments.get(i);
-        viewHolder.rdbtnPayment.setChecked(payment.getpaymentRadio());
         viewHolder.imvPaymentImage.setImageResource(payment.getPaymentImage());
         viewHolder.txtPaymentName.setText(payment.getPaymentName());
         viewHolder.txtPaymentNote.setText(payment.getPaymentNote());
 
         return view;
     }
-
 
 }

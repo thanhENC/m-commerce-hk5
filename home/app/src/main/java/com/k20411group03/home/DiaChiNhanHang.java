@@ -39,6 +39,7 @@ public class DiaChiNhanHang extends Activity {
     ActivityDiaChiNhanHangBinding binding;
     ActivityResultLauncher<Intent> launcher;
     ArrayAdapter<String> adapter, adapter1, adapter2;
+    Intent intent;
 
     private Spinner spinnerprovince, spinnerdistrict, spinnerward;
     TextView txtprovince, txtdistrict, txtWard;
@@ -77,6 +78,7 @@ public class DiaChiNhanHang extends Activity {
 //        loadData();
 
         copyDB();
+        getData();
 
         SQLiteDatabase db = openOrCreateDatabase(Utils.DB_LC_NAME, MODE_PRIVATE, null);
 
@@ -215,6 +217,14 @@ public class DiaChiNhanHang extends Activity {
 
     }
 
+    private void getData() {
+        intent = getIntent();
+        binding.edtSurname.setText(intent.getStringExtra("Ho1"));
+        binding.edtFirstname.setText(intent.getStringExtra("Ten1"));
+        binding.edtPhone.setText(intent.getStringExtra("Phone1"));
+        binding.edtStreet.setText(intent.getStringExtra("Street1"));
+    }
+
 
     private void copyDB() {
         File dbPath = getDatabasePath(Utils.DB_LC_NAME);
@@ -293,16 +303,10 @@ public class DiaChiNhanHang extends Activity {
                 intent.putExtra("Ten", binding.edtFirstname.getText().toString());
                 intent.putExtra("Phone", binding.edtPhone.getText().toString());
                 intent.putExtra("Street", binding.edtStreet.getText().toString());
-                intent.putExtra("Ward", binding.txtWard.getText().toString());
-                intent.putExtra("District", binding.txtDistrict.getText().toString());
-                intent.putExtra("Province", binding.txtProvince.getText().toString());
+                intent.putExtra("Address", binding.txtWard.getText().toString()
+                + ", " + binding.txtDistrict.getText().toString() + ", " + binding.txtProvince.getText().toString());
 
                 startActivity(intent);
-                //Để dữ liệu được gửi đi và trả về
-                //Cach 1: Sử dụng startActivityForResult
-                //                startActivityForResult(intent,REQUEST_CODE);
-
-                //Cach 2: Sử dụng ActivityResultLauncher
                 launcher.launch(intent);
             }
         });

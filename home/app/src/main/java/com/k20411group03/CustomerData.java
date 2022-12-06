@@ -1,5 +1,8 @@
 package com.k20411group03;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
 import com.k20411group03.models.ProductModel;
 
 import java.util.ArrayList;
@@ -56,32 +59,37 @@ public class CustomerData {
         address.ADDRESS = houseNumber + " " + street + ", " + ward + ", " + district + ", " + city;
     }
 
-    public static ProductModel[] cart = new ProductModel[0];
+    public static ArrayList<ProductModel> cart = new ArrayList<>();
 
     public static ArrayList<ProductModel> wishlist = new ArrayList<>();
     //select * from PRODUCT where ProductID in (select ProductID from WISHLIST WHERE CustomerID = 5)
 
-    //insert product to cart
-    public static void insertToCart(ProductModel product){
-        ProductModel[] temp = new ProductModel[cart.length + 1];
-        for(int i = 0; i < cart.length; i++){
-            temp[i] = cart[i];
-        }
-        temp[cart.length] = product;
-        cart = temp;
+    //insert product to cart by ProductModel
+    public static void addToCart(ProductModel product){
+        cart.add(product);
     }
 
-    //remove product from cart
+    //insert product to cart by ProductID
+    public static void addToCart(int productID, SQLiteDatabase db){
+        Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE " + Utils.COL_ID + " = " + productID, null);
+        c.moveToNext();
+        cart.add(new ProductModel(c.getInt(0), c.getString(1), c.getString(2), c.getBlob(3), c.getDouble(4), c.getDouble(5), c.getString(6), 1));
+        c.close();
+    }
+
+    //remove product from cart by ProductModel
     public static void removeFromCart(ProductModel product){
-        ProductModel[] temp = new ProductModel[cart.length - 1];
-        int j = 0;
-        for(int i = 0; i < cart.length; i++){
-            if(cart[i].getProductID() != product.getProductID()){
-                temp[j] = cart[i];
-                j++;
+        cart.remove(product);
+    }
+
+    //remove product from cart by productID
+    public static void removeFromCart(int productID){
+        for(int i = 0; i < cart.size(); i++){
+            if(cart.get(i).getProductID() == productID){
+                cart.remove(i);
+                break;
             }
         }
-        cart = temp;
     }
 
     //insert product to wishlist
@@ -89,8 +97,27 @@ public class CustomerData {
         wishlist.add(product);
     }
 
-    //remove product from wishlist
+    //insert product to wishlist by productID
+    public static void insertToWishlist(int productID, SQLiteDatabase db){
+        //get product from table PRODUCT, then create ProductModel and add to wishlist
+        Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE " + Utils.COL_ID + " = " + productID, null);
+        //c.moveToNext();
+        wishlist.add(new ProductModel(c.getInt(0), c.getString(1), c.getString(2), c.getBlob(3), c.getDouble(4), c.getDouble(5), c.getString(6), 1));
+        c.close();
+    }
+
+    //remove product from wishlist by ProductModel
     public static void removeFromWishlist(ProductModel product){
         wishlist.remove(product);
+    }
+
+    //remove product from wishlist by productID
+    public static void removeFromWishlist(int productID){
+        for(int i = 0; i < wishlist.size(); i++){
+            if(wishlist.get(i).getProductID() == productID){
+                wishlist.remove(i);
+                break;
+            }
+        }
     }
 }

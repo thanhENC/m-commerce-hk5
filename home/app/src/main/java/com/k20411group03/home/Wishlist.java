@@ -62,17 +62,9 @@ public class Wishlist extends AppCompatActivity {
 //        db.rawQuery("select * from PRODUCT where ProductID in (select ProductID from WISHLIST WHERE CustomerID = 5)", null);
 
             Cursor c =  db.rawQuery("select * from " + Utils.TBL_NAME+ " where " + Utils.COL_ID + " in (select " + Utils.Wishlist.COL_PRODUCTID  + " from " + Utils.Wishlist.TBL_NAME + " WHERE " + Utils.Wishlist.COL_CUSTOMERID +" = " + CustomerData.info.USER_ID + ")", null);
-            int id;
-            String name;
-            byte[] image;
-            Double salePrice;
-            while (c.moveToNext()) {
-                id = c.getInt(0);
-                name = c.getString(1);
-                image = c.getBlob(3);
-                salePrice = c.getDouble(5);
 
-                CustomerData.insertToWishlist(new ProductModel(id, name, null, image, null, salePrice, null, 1));
+            while (c.moveToNext()) {
+                CustomerData.insertToWishlist(new ProductModel(c.getInt(0), c.getString(1), c.getString(2), c.getBlob(3), c.getDouble(4), c.getDouble(5), c.getString(6), 1));
             }
             c.close();
         }
@@ -87,7 +79,7 @@ public class Wishlist extends AppCompatActivity {
         db.execSQL("delete from " + Utils.Wishlist.TBL_NAME + " where " + Utils.Wishlist.COL_PRODUCTID + " = " + p.getProductID() + " and " + Utils.Wishlist.COL_CUSTOMERID + " = " + CustomerData.info.USER_ID);
         CustomerData.wishlist.remove(p);
         adapter.notifyDataSetChanged();
-        Toast.makeText(this, "Đã bỏ ♥️ " + DisplayHelper.shortenString(p.getProductName(), 20) + " khỏi wishlist", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Đã bỏ 💔️ " + DisplayHelper.shortenString(p.getProductName(), 20) + " khỏi wishlist", Toast.LENGTH_SHORT).show();
     }
 
     //Thêm action

@@ -1,5 +1,7 @@
 package com.k20411group03.home;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
@@ -17,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.k20411group03.CustomerData;
 import com.k20411group03.DisplayHelper;
 import com.k20411group03.Utils;
 import com.k20411group03.home.databinding.ActivityProductDetailsBinding;
@@ -28,6 +31,7 @@ public class ProductDetails extends AppCompatActivity {
     ProductModel product;
     int productID;
     int quantity;
+    Boolean isFavorite = false;
     String size = "";
 
     @Override
@@ -58,11 +62,21 @@ public class ProductDetails extends AppCompatActivity {
         db = openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
         Cursor c = db.rawQuery("SELECT * FROM " + Utils.TBL_NAME + " WHERE(" + Utils.COL_ID + " = " + productID + ")",null);
         c.moveToFirst();
+        product = new ProductModel(c.getInt(0), c.getString(1), c.getString(2), c.getBlob(3), c.getDouble(4), c.getDouble(5), c.getString(6), 1);
+
+        //Kiểm tra sản phẩm có trong wishlist chưa
+        c = db.rawQuery("SELECT * FROM " + Utils.Wishlist.TBL_NAME + " WHERE(" + Utils.Wishlist.COL_PRODUCTID + " = " + productID + ")",null);
+        if(c.getCount() > 0){
+            isFavorite = true;
+            binding.imvAddWishList.setImageResource(R.drawable.ic_baseline_favorite_24);
+        }
+        else{
+            isFavorite = false;
+            binding.imvAddWishList.setImageResource(R.drawable.ic_baseline_favorite_border_24);
+        }
 
         //Đóng database để giải phóng bộ nhớ:
-        db.close();
-
-        product = new ProductModel(c.getInt(0), c.getString(1), null, c.getBlob(3), c.getDouble(4), c.getDouble(5), c.getString(6), 1);
+        c.close();
 
         //Hiển thị dữ liệu lên giao diện
         binding.txtProductsDetailName.setText(product.getProductName());
@@ -96,7 +110,7 @@ public class ProductDetails extends AppCompatActivity {
 
                 //Kiểm tra đơn hàng hợp lệ
                 if (size.equals("")){
-                    Toast.makeText(ProductDetails.this, "Vui lòng chọn size", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProductDetails.this, "Vui lòng chọn size", LENGTH_SHORT).show();
                     return;
                 }else {
                     //Lưu dữ liệu giỏ hàng vào database
@@ -155,10 +169,33 @@ public class ProductDetails extends AppCompatActivity {
         binding.imvAddWishList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Nạp dữ liệu vào database
-                //Hiện thông báo đã thêm vào yêu thích
-                Toast toast = Toast.makeText(getApplicationContext(), "Đã thêm vào danh sách yêu thích", Toast.LENGTH_SHORT);
-                toast.show();
+                //Cập nhật dữ liệu vào database và Class CustomerData
+                db = openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
+                try{
+                    if(isFavorite){
+                        //Delete where productID = productID and customerID = customerID
+                        int numbOfRows = db.delete(Utils.Wishlist.TBL_NAME, Utils.Wishlist.COL_PRODUCTID + "=? AND " + Utils.Wishlist.COL_CUSTOMERID + "=?", new String[]{ productID + "", CustomerData.info.USER_ID + ""});
+
+                        //db.execSQL("DELETE FROM " + Utils.Wishlist.TBL_NAME + " WHERE(" + Utils.Wishlist.COL_PRODUCTID + " = " + productID + " AND " + Utils.Wishlist.COL_CUSTOMERID + " = " + CustomerData.info.USER_ID + ")");
+                        CustomerData.removeFromWishlist(product);
+                        isFavorite = false;
+                        Toast.makeText(ProductDetails.this, "Đã bỏ 💔️ " + DisplayHelper.shortenString(product.getProductName(), 20) + "khỏi wishlist", LENGTH_SHORT).show();
+                        binding.imvAddWishList.setImageResource(R.drawable.ic_baseline_favorite_border_24);
+                    }
+                    else{
+                        //Insert into wishlist
+                        db.execSQL("INSERT INTO " + Utils.Wishlist.TBL_NAME + " VALUES(" + productID + ", " + CustomerData.info.USER_ID + ")");
+
+                        CustomerData.insertToWishlist(product);
+                        isFavorite = true;
+                        Toast.makeText(ProductDetails.this, "Đã thêm ♥️" + DisplayHelper.shortenString(product.getProductName(), 20) + "vào wishlist", LENGTH_SHORT).show();
+                        binding.imvAddWishList.setImageResource(R.drawable.ic_baseline_favorite_24);
+                    }
+                }
+                catch (Exception e){
+                    Toast.makeText(ProductDetails.this, "Lỗi: " + e.getMessage(), LENGTH_SHORT).show();
+                }
+
             }
         });
 

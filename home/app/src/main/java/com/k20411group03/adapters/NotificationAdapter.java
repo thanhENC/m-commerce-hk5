@@ -17,11 +17,11 @@ import java.util.List;
 
 public class NotificationAdapter extends BaseAdapter {
 
-    Activity activity;
+    ThongBao activity;
     int item_layout;
     List<Notification> listThongBao;
 
-    public NotificationAdapter(Activity activity, int item_layout, List<Notification> listThongBao) {
+    public NotificationAdapter(ThongBao activity, int item_layout, List<Notification> listThongBao) {
         this.activity = activity;
         this.item_layout = item_layout;
         this.listThongBao = listThongBao;
@@ -40,11 +40,6 @@ public class NotificationAdapter extends BaseAdapter {
     @Override
     public long getItemId(int i) {
         return 0;
-    }
-
-    public static class ViewHolder{
-        ImageView imvThongBao;
-        TextView txtThongBaoTitle, txtThongBaoContent;
     }
 
     @Override
@@ -70,5 +65,10 @@ public class NotificationAdapter extends BaseAdapter {
         viewHolder.txtThongBaoContent.setText(thongBao.getThongBao_Content());
 
         return view;
+    }
+
+    public static class ViewHolder{
+        ImageView imvThongBao;
+        TextView txtThongBaoTitle, txtThongBaoContent;
     }
 }

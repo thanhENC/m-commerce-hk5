@@ -32,6 +32,9 @@ public class Wishlist extends AppCompatActivity {
     ActivityWishlistBinding binding;
     WishlishAdapter adapter;
 
+    //Modify Wishlist sử dụng thuần query từ DB, không lưu qua bộ nhớ tạm CustomerData
+    ArrayList<ProductModel> wishListArray;
+
     ProductModel selectedProduct;
 
     public static SQLiteDatabase db;
@@ -57,16 +60,27 @@ public class Wishlist extends AppCompatActivity {
 // load data
 
     private void loadData() {
-        if (CustomerData.wishlist.size() == 0){
-            db =  openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
-//        db.rawQuery("select * from PRODUCT where ProductID in (select ProductID from WISHLIST WHERE CustomerID = 5)", null);
+        //Sử dụng bộ nhớ đệm CustomerData
+//        if (CustomerData.wishlist.size() == 0){
+//            wishListArray = new ArrayList<>();
+//            db =  openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
+////            db.rawQuery("select * from PRODUCT where ProductID in (select ProductID from WISHLIST WHERE CustomerID = 5)", null);
+//
+//            Cursor c =  db.rawQuery("select * from " + Utils.TBL_NAME+ " where " + Utils.COL_ID + " in (select " + Utils.Wishlist.COL_PRODUCTID  + " from " + Utils.Wishlist.TBL_NAME + " WHERE " + Utils.Wishlist.COL_CUSTOMERID +" = " + CustomerData.info.USER_ID + ")", null);
+//
+//            while (c.moveToNext()) {
+//                CustomerData.insertToWishlist(new ProductModel(c.getInt(0), c.getString(1), c.getString(2), c.getBlob(3), c.getDouble(4), c.getDouble(5), c.getString(6), 1));
+//            }
+//            c.close();
+//        }
 
-            Cursor c =  db.rawQuery("select * from " + Utils.TBL_NAME+ " where " + Utils.COL_ID + " in (select " + Utils.Wishlist.COL_PRODUCTID  + " from " + Utils.Wishlist.TBL_NAME + " WHERE " + Utils.Wishlist.COL_CUSTOMERID +" = " + CustomerData.info.USER_ID + ")", null);
+        //Không sử dụng bộ nhớ đệm CustomerData
+        wishListArray = new ArrayList<>();
+        db =  openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
+        Cursor c =  db.rawQuery("select * from " + Utils.TBL_NAME+ " where " + Utils.COL_ID + " in (select " + Utils.Wishlist.COL_PRODUCTID  + " from " + Utils.Wishlist.TBL_NAME + " WHERE " + Utils.Wishlist.COL_CUSTOMERID +" = " + CustomerData.info.USER_ID + ")", null);
 
-            while (c.moveToNext()) {
-                CustomerData.insertToWishlist(new ProductModel(c.getInt(0), c.getString(1), c.getString(2), c.getBlob(3), c.getDouble(4), c.getDouble(5), c.getString(6), 1));
-            }
-            c.close();
+        while (c.moveToNext()) {
+            wishListArray.add(new ProductModel(c.getInt(0), c.getString(1), c.getString(2), c.getBlob(3), c.getDouble(4), c.getDouble(5), c.getString(6), 1));
         }
 
         adapter = new WishlishAdapter(this, R.layout.item_wishlist, CustomerData.wishlist);
@@ -77,7 +91,7 @@ public class Wishlist extends AppCompatActivity {
     public void deleteWishlist(ProductModel p){
         db =  openOrCreateDatabase(Utils.DB_NAME, MODE_PRIVATE, null);
         db.execSQL("delete from " + Utils.Wishlist.TBL_NAME + " where " + Utils.Wishlist.COL_PRODUCTID + " = " + p.getProductID() + " and " + Utils.Wishlist.COL_CUSTOMERID + " = " + CustomerData.info.USER_ID);
-        CustomerData.wishlist.remove(p);
+        //CustomerData.wishlist.remove(p);
         adapter.notifyDataSetChanged();
         Toast.makeText(this, "Đã bỏ 💔️ " + DisplayHelper.shortenString(p.getProductName(), 20) + " khỏi wishlist", Toast.LENGTH_SHORT).show();
     }

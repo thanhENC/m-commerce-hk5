@@ -105,6 +105,7 @@ public class Utils {
     //BẢNG WISHLIST
     public static class Wishlist {
         public static final String TBL_NAME = "WISHLIST";
+        public static final String COL_ID = "LineID";
         public static final String COL_CUSTOMERID = "CustomerID";
         public static final String COL_PRODUCTID = "ProductID";
     }

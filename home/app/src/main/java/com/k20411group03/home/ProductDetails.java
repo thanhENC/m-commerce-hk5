@@ -55,7 +55,7 @@ public class ProductDetails extends AppCompatActivity {
 
     private void loadData(){
 
-        //Nhận productID từ intent
+        //Nhận ProductID từ intent
         Intent intent = getIntent();
         productID = intent.getExtras().getInt("ProductID");
         //Lấy dữ liệu từ database
@@ -177,16 +177,24 @@ public class ProductDetails extends AppCompatActivity {
                         int numbOfRows = db.delete(Utils.Wishlist.TBL_NAME, Utils.Wishlist.COL_PRODUCTID + "=? AND " + Utils.Wishlist.COL_CUSTOMERID + "=?", new String[]{ productID + "", CustomerData.info.USER_ID + ""});
 
                         //db.execSQL("DELETE FROM " + Utils.Wishlist.TBL_NAME + " WHERE(" + Utils.Wishlist.COL_PRODUCTID + " = " + productID + " AND " + Utils.Wishlist.COL_CUSTOMERID + " = " + CustomerData.info.USER_ID + ")");
-                        CustomerData.removeFromWishlist(product);
-                        isFavorite = false;
-                        Toast.makeText(ProductDetails.this, "Đã bỏ 💔️ " + DisplayHelper.shortenString(product.getProductName(), 20) + "khỏi wishlist", LENGTH_SHORT).show();
-                        binding.imvAddWishList.setImageResource(R.drawable.ic_baseline_favorite_border_24);
+
+                        if (numbOfRows != 0){
+                            //CustomerData.removeFromWishlist(product);
+                            // //Wishlist.adapter.notifyDataSetChanged();
+                            isFavorite = false;
+                            Toast.makeText(ProductDetails.this, "Đã bỏ 💔️ " + DisplayHelper.shortenString(product.getProductName(), 20) + "khỏi wishlist", LENGTH_SHORT).show();
+                            binding.imvAddWishList.setImageResource(R.drawable.ic_baseline_favorite_border_24);
+                        }
+                        else {
+                            Toast.makeText(ProductDetails.this, "Không thể bỏ 💔️ " + DisplayHelper.shortenString(product.getProductName(), 20) + "khỏi wishlist", LENGTH_SHORT).show();
+                        }
+
                     }
                     else{
                         //Insert into wishlist
-                        db.execSQL("INSERT INTO " + Utils.Wishlist.TBL_NAME + " VALUES(" + productID + ", " + CustomerData.info.USER_ID + ")");
+                        db.execSQL("INSERT INTO " + Utils.Wishlist.TBL_NAME + " VALUES( null, " + CustomerData.info.USER_ID + ", " + productID + ")");
 
-                        CustomerData.insertToWishlist(product);
+                        //CustomerData.insertToWishlist(product);
                         isFavorite = true;
                         Toast.makeText(ProductDetails.this, "Đã thêm ♥️" + DisplayHelper.shortenString(product.getProductName(), 20) + "vào wishlist", LENGTH_SHORT).show();
                         binding.imvAddWishList.setImageResource(R.drawable.ic_baseline_favorite_24);

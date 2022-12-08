@@ -3,6 +3,8 @@
 # M-Commerce HK5
 Dự án môn học M-Commerce Học kỳ 5, năm học 2022-2023.
 ĐH Kinh tế - Luật, ĐHQG HCM
+
+📌 <span style="color:red">Release v1.0.0</span>: **[Ứng Dụng Thời Trang Nam - 🌟The Weekdays🌟](https://github.com/thanhENC/m-commerce-hk5/releases)**
 <hr>
 
 ## Thành viên

@@ -6,6 +6,8 @@ Dự án môn học M-Commerce Học kỳ 5, năm học 2022-2023.
 <hr>
 
 ## Thành viên
+<img src="https://contrib.rocks/image?repo=thanhENC/m-commerce-hk5"/>
+
 Dự án môn học được phát triển bởi các sinh viên lớp `Phát Triển Thương Mại Di Động` của Thạc sĩ <a href="http://teacher.uelstore.com/Home/Detail?email=phucnq@uel.edu.vn&Type=html" target="_blank">Nguyễn Quang Phúc</a> với 5 thành viên
 - <a href="https://github.com/thanhENC" target="_blank">Đinh Văn An</a> (Nhóm Trưởng)
 - <a href="https://www.linkedin.com/in/thanh-h%E1%BA%A3i-l%C3%AA-6b7901228/" target="_blank">Lê Thanh Hải</a>

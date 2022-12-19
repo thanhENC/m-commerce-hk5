@@ -42,6 +42,7 @@
                 android:orientation="horizontal"
                 >
                 <ImageView
+                    android:id="@+id/imv_Ava"
                     android:layout_marginStart="20dp"
                     android:layout_width="60dp"
                     android:layout_height="60dp"

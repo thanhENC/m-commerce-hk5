@@ -182,6 +182,15 @@ public class member1 extends AppCompatActivity {
                 .addOnFailureListener(e -> showToast("Unable to sign out"));
     }
     private void addEvents(){
+        //Đăng nhập
+        binding.imvAva.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(member1.this, DangNhap.class);
+                startActivity(intent);
+            }
+        });
+
         //Đơn hàng của tôi
 
         //Đã yêu thích
